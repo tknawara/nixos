@@ -26,7 +26,7 @@
     # pkgs.hello
     pkgs.neovim
     pkgs.htop
-    pkgs.neofetch
+    pkgs.fastfetch
     pkgs.git
     pkgs.vscode
     pkgs.dotnet-sdk_8
@@ -48,6 +48,9 @@
     pkgs.gnomeExtensions.gnome-40-ui-improvements
     pkgs.stow
     pkgs.nerdfonts
+    pkgs.zellij
+    pkgs.delta
+    pkgs.bat
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -74,6 +77,7 @@
     
     shellAliases = {
       ll = "ls -lah";
+      cat = "bat";
       update = "sudo nixos-rebuild switch --flake /home/tarek/nixos#default";
     };
     history.size = 10000;
@@ -94,6 +98,15 @@
     enable = true;
     userName = "tknawara";
     userEmail = "tarek.nawara@gmail.com";
+    delta = {
+      enable = true;
+      options = {
+        side-by-side = true;
+        line-numbers = true;
+        hyperlinks = true;
+        hyperlinks-file-link-format = "vscode://file/{path}:{line}"; # opens links in vscode
+      };
+    };
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
