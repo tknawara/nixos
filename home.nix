@@ -20,37 +20,38 @@
   
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
-    pkgs.neovim
-    pkgs.htop
-    pkgs.fastfetch
-    pkgs.git
-    pkgs.vscode
-    pkgs.dotnet-sdk_8
-    pkgs.clang
-    pkgs.clang-tools
-    pkgs.rustup
-    pkgs.lldb
-    pkgs.unzip
-    pkgs.zsh
-    pkgs.zplug
-    pkgs.lua
-    pkgs.docker
-    pkgs.python3
-    pkgs.pipenv
-    pkgs.gnome3.gnome-tweaks
-    pkgs.adw-gtk3
-    pkgs.papirus-icon-theme
-    pkgs.gnomeExtensions.blur-my-shell
-    pkgs.gnomeExtensions.gnome-40-ui-improvements
-    pkgs.stow
-    pkgs.nerdfonts
-    pkgs.zellij
-    pkgs.delta
-    pkgs.bat
+    neovim
+    htop
+    fastfetch
+    git
+    vscode
+    dotnet-sdk_8
+    clang
+    clang-tools
+    rustup
+    lldb
+    unzip
+    zsh
+    zplug
+    lua
+    docker
+    python3
+    pipenv
+    gnome3.gnome-tweaks
+    adw-gtk3
+    papirus-icon-theme
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.gnome-40-ui-improvements
+    stow
+    nerdfonts
+    zellij
+    delta
+    bat
+    discord
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
