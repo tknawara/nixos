@@ -47,6 +47,7 @@
     pkgs.gnomeExtensions.blur-my-shell
     pkgs.gnomeExtensions.gnome-40-ui-improvements
     pkgs.stow
+    pkgs.nerdfonts
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
