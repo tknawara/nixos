@@ -46,6 +46,7 @@
     pkgs.papirus-icon-theme
     pkgs.gnomeExtensions.blur-my-shell
     pkgs.gnomeExtensions.gnome-40-ui-improvements
+    pkgs.stow
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -92,11 +93,6 @@
     enable = true;
     userName = "tknawara";
     userEmail = "tarek.nawara@gmail.com";
-  };
-
-  xdg.configFile."nvim" = {
-    source = ./dotfiles/nvim;
-    recursive = true;
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
