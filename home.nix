@@ -88,6 +88,17 @@
     };
   };
 
+  programs.git = {
+    enable = true;
+    userName = "tknawara";
+    userEmail = "tarek.nawara@gmail.com";
+  };
+
+  xdg.configFile."nvim" = {
+    source = ./dotfiles/nvim;
+    recursive = true;
+  };
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -115,7 +126,7 @@
   #  /etc/profiles/per-user/tarek/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
