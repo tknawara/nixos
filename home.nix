@@ -75,6 +75,7 @@
     syntaxHighlighting.enable = true;
     initExtra = ''
       source ~/.p10k.zsh
+      zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
     '';
     
     shellAliases = {
@@ -90,9 +91,6 @@
         { name = "zsh-users/zsh-completions"; }
         { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
       ];
-    };
-    prezto = {
-      caseSensitive = false;
     };
   };
 
