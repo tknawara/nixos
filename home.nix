@@ -57,6 +57,7 @@
     jdk
     jetbrains.idea-community
     nil
+    any-nix-shell
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -80,6 +81,7 @@
     initExtra = ''
       source ~/.p10k.zsh
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+      any-nix-shell zsh --info-right | source /dev/stdin
     '';
     
     shellAliases = {
