@@ -1,6 +1,0 @@
-[init]
-	defaultBranch = main
-[user]
-	name = tknawara
-	email = tarek.nawara@gmail.com
-	editor = nvim
