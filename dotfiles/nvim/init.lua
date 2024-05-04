@@ -574,6 +574,7 @@ require("lazy").setup({
 				},
 				-- gopls = {},
 				pyright = {},
+        nil_ls = {},
 				rust_analyzer = {
 					cmd = { "rust-analyzer" },
 				},
