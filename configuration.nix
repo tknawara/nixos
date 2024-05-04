@@ -92,10 +92,6 @@
     description = "tarek";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      firefox
-    #  thunderbird
-    ];
   };
 
   # Allow unfree packages

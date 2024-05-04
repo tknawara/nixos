@@ -24,6 +24,7 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
+    firefox
     neovim
     htop
     fastfetch
@@ -53,6 +54,8 @@
     bat
     discord
     wl-clipboard
+    jdk
+    jetbrains.idea-community
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -112,6 +115,10 @@
         hyperlinks-file-link-format = "vscode://file/{path}:{line}"; # opens links in vscode
       };
     };
+  };
+
+  programs.java = {
+    enable = true;
   };
 
   xdg.configFile."nvim" = {
