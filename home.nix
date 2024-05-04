@@ -46,11 +46,13 @@
     papirus-icon-theme
     gnomeExtensions.blur-my-shell
     gnomeExtensions.gnome-40-ui-improvements
+    gnomeExtensions.pano
     nerdfonts
     zellij
     delta
     bat
     discord
+    wl-clipboard
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -98,6 +100,11 @@
     enable = true;
     userName = "tknawara";
     userEmail = "tarek.nawara@gmail.com";
+    aliases = {
+      lg1 = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all";
+      lg2 = "lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'";
+      lg = "lg1";
+    };
     delta = {
       enable = true;
       options = {
