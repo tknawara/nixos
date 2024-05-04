@@ -46,7 +46,6 @@
     papirus-icon-theme
     gnomeExtensions.blur-my-shell
     gnomeExtensions.gnome-40-ui-improvements
-    stow
     nerdfonts
     zellij
     delta
