@@ -30,7 +30,6 @@
     fastfetch
     git
     vscode
-    dotnet-sdk_8
     clang
     clang-tools
     rustup
