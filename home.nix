@@ -54,7 +54,7 @@
     discord
     wl-clipboard
     jdk
-    jetbrains.idea-community
+    jetbrains-toolbox
     nil
     any-nix-shell
     nixfmt-classic
