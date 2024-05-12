@@ -1,6 +1,10 @@
-{ config, pkgs, ... }:
-
-{
+{ config, pkgs, inputs, ... }:
+let
+  marketplace =
+    inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace;
+  marketplace-release =
+    inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace-release;
+in {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "tarek";
@@ -17,7 +21,7 @@
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (_: true);
-  
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -29,7 +33,6 @@
     htop
     fastfetch
     git
-    vscode
     clang
     clang-tools
     rustup
@@ -73,7 +76,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-  
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -84,7 +87,7 @@
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
       any-nix-shell zsh --info-right | source /dev/stdin
     '';
-    
+
     shellAliases = {
       ll = "ls -lah";
       cat = "bat";
@@ -96,7 +99,10 @@
       enable = true;
       plugins = [
         { name = "zsh-users/zsh-completions"; }
-        { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
+        {
+          name = "romkatv/powerlevel10k";
+          tags = [ "as:theme" "depth:1" ];
+        }
       ];
     };
   };
@@ -106,8 +112,10 @@
     userName = "tknawara";
     userEmail = "tarek.nawara@gmail.com";
     aliases = {
-      lg1 = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all";
-      lg2 = "lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'";
+      lg1 =
+        "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all";
+      lg2 =
+        "lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'";
       lg = "lg1";
     };
     delta = {
@@ -116,14 +124,37 @@
         side-by-side = true;
         line-numbers = true;
         hyperlinks = true;
-        hyperlinks-file-link-format = "vscode://file/{path}:{line}"; # opens links in vscode
+        hyperlinks-file-link-format =
+          "vscode://file/{path}:{line}"; # opens links in vscode
       };
     };
   };
 
-  programs.java = {
+  programs.vscode = {
     enable = true;
+    mutableExtensionsDir = true;
+    enableExtensionUpdateCheck = true;
+    package = pkgs.vscode.fhs;
+    extensions = (with pkgs.vscode-extensions; [
+      github.vscode-github-actions
+      github.vscode-pull-request-github
+      jnoortheen.nix-ide
+      ms-python.python
+      ms-python.debugpy
+      ms-vscode.cmake-tools
+      twxs.cmake
+      rust-lang.rust-analyzer
+      ms-vscode.cpptools-extension-pack
+      golang.go
+      tamasfe.even-better-toml
+      ms-vscode-remote.remote-containers
+      eamodio.gitlens
+      vadimcn.vscode-lldb
+    ]) ++ (with marketplace; [ github.copilot ])
+      ++ (with marketplace-release; [ github.copilot-chat ]);
   };
+
+  programs.java = { enable = true; };
 
   xdg.configFile."nvim" = {
     source = ./dotfiles/nvim;
@@ -156,9 +187,7 @@
   #
   #  /etc/profiles/per-user/tarek/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = { EDITOR = "nvim"; };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
