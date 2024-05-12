@@ -1,10 +1,12 @@
 { config, pkgs, inputs, ... }:
-let
-  marketplace =
-    inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace;
-  marketplace-release =
-    inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace-release;
-in {
+
+{
+
+  imports = [
+    ./programs/vscode/default.nix
+    ./programs/zsh/default.nix
+    ./programs/git/default.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "tarek";
@@ -76,83 +78,6 @@ in {
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    initExtra = ''
-      source ~/.p10k.zsh
-      zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-      any-nix-shell zsh --info-right | source /dev/stdin
-    '';
-
-    shellAliases = {
-      ll = "ls -lah";
-      cat = "bat";
-      update = "sudo nixos-rebuild switch --flake /home/tarek/nixos#default";
-    };
-    history.size = 10000;
-    history.path = "${config.xdg.dataHome}/zsh/history";
-    zplug = {
-      enable = true;
-      plugins = [
-        { name = "zsh-users/zsh-completions"; }
-        {
-          name = "romkatv/powerlevel10k";
-          tags = [ "as:theme" "depth:1" ];
-        }
-      ];
-    };
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "tknawara";
-    userEmail = "tarek.nawara@gmail.com";
-    aliases = {
-      lg1 =
-        "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all";
-      lg2 =
-        "lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'";
-      lg = "lg1";
-    };
-    delta = {
-      enable = true;
-      options = {
-        side-by-side = true;
-        line-numbers = true;
-        hyperlinks = true;
-        hyperlinks-file-link-format =
-          "vscode://file/{path}:{line}"; # opens links in vscode
-      };
-    };
-  };
-
-  programs.vscode = {
-    enable = true;
-    mutableExtensionsDir = true;
-    enableExtensionUpdateCheck = true;
-    package = pkgs.vscode.fhs;
-    extensions = (with pkgs.vscode-extensions; [
-      github.vscode-github-actions
-      github.vscode-pull-request-github
-      jnoortheen.nix-ide
-      ms-python.python
-      ms-python.debugpy
-      ms-vscode.cmake-tools
-      twxs.cmake
-      rust-lang.rust-analyzer
-      ms-vscode.cpptools-extension-pack
-      golang.go
-      tamasfe.even-better-toml
-      ms-vscode-remote.remote-containers
-      eamodio.gitlens
-      vadimcn.vscode-lldb
-    ]) ++ (with marketplace; [ github.copilot ])
-      ++ (with marketplace-release; [ github.copilot-chat ]);
-  };
 
   programs.java = { enable = true; };
 
