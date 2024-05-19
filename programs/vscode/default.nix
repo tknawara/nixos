@@ -25,7 +25,8 @@ in {
       ms-vscode-remote.remote-containers
       eamodio.gitlens
       vadimcn.vscode-lldb
-    ]) ++ (with marketplace; [ github.copilot ])
+      ms-toolsai.jupyter
+    ]) ++ (with marketplace; [ github.copilot scalameta.metals scala-lang.scala ])
       ++ (with marketplace-release; [ github.copilot-chat ]);
   };
 }
