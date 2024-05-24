@@ -23,4 +23,9 @@
       };
     };
   };
+
+
+  programs.gh.enable = true;
+  programs.gh.settings.version = 1;
+  programs.gh.settings.git_protocol = "https";
 }
