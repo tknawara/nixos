@@ -6,6 +6,7 @@
     ./programs/vscode/default.nix
     ./programs/zsh/default.nix
     ./programs/git/default.nix
+    ./programs/nvim/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -31,7 +32,6 @@
     # # "Hello, world!" when run.
     # pkgs.hello
     firefox
-    neovim
     htop
     fastfetch
     git
@@ -70,6 +70,7 @@
     coursier 
     scala-cli 
     zoom-us
+    ripgrep
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -87,10 +88,10 @@
 
   programs.java = { enable = true; };
 
-  xdg.configFile."nvim" = {
-    source = ./dotfiles/nvim;
-    recursive = true;
-  };
+ # xdg.configFile."nvim" = {
+ #   source = ./dotfiles/nvim;
+ #   recursive = true;
+ # };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
