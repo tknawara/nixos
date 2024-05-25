@@ -32,6 +32,8 @@
       oil.enable = true;
       lsp-format.enable = true;
 
+      nvim-autopairs = { enable = true; };
+
       cmp = {
         enable = true;
         settings = {
