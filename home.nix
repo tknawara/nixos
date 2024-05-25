@@ -37,8 +37,8 @@
     git
     clang
     clang-tools
-    rustup
     lldb
+    rustup
     unzip
     zsh
     zplug
@@ -65,10 +65,10 @@
     nixfmt-classic
     go
     eza
-    mill 
-    metals 
-    coursier 
-    scala-cli 
+    mill
+    metals
+    coursier
+    scala-cli
     zoom-us
     ripgrep
 
@@ -88,10 +88,10 @@
 
   programs.java = { enable = true; };
 
- # xdg.configFile."nvim" = {
- #   source = ./dotfiles/nvim;
- #   recursive = true;
- # };
+  # xdg.configFile."nvim" = {
+  #   source = ./dotfiles/nvim;
+  #   recursive = true;
+  # };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

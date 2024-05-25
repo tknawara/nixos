@@ -102,8 +102,8 @@
           lua-ls.enable = true;
           rust-analyzer = {
             enable = true;
-            installCargo = false;
-            installRustc = false;
+            installCargo = true;
+            installRustc = true;
           };
           clangd.enable = true;
         };
