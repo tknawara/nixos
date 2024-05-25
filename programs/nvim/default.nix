@@ -2,9 +2,7 @@
 
 {
 
-  imports = [
-    inputs.nixvim.homeManagerModules.nixvim 
-  ];
+  imports = [ inputs.nixvim.homeManagerModules.nixvim ];
 
   programs.nixvim = {
     enable = true;
@@ -24,6 +22,8 @@
       bufferline.enable = true;
       lualine.enable = true;
       oil.enable = true;
+      lsp-format.enable = true;
+      indent-blankline.enable = true;
 
       treesitter = {
         enable = true;
@@ -54,14 +54,19 @@
           };
           clangd.enable = true;
         };
+        keymaps.lspBuf = {
+          "gd" = "definition";
+          "gD" = "references";
+          "gt" = "type_definition";
+          "gi" = "implementation";
+          "K" = "hover";
+        };
       };
     };
 
     colorschemes.kanagawa = {
       enable = true;
-      settings = {
-        background.dark = "dragon";
-      };
+      settings = { background.dark = "dragon"; };
     };
 
     extraPlugins = with pkgs.vimPlugins;
