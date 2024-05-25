@@ -8,7 +8,14 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
-    globals.mapleader = " ";
+    defaultEditor = true;
+
+    globals = { mapleader = " "; };
+
+    clipboard = {
+      providers.wl-copy.enable = true;
+      register = "unnamedplus";
+    };
 
     opts = {
       number = true;
@@ -16,6 +23,7 @@
       shiftwidth = 4;
       expandtab = true;
       mouse = "a";
+      smartindent = true;
     };
 
     plugins = {
@@ -23,10 +31,43 @@
       lualine.enable = true;
       oil.enable = true;
       lsp-format.enable = true;
-      indent-blankline.enable = true;
+
+      cmp = {
+        enable = true;
+        settings = {
+          sources = [
+            { name = "nvim_lsp"; }
+            { name = "nvim_lsp_document_symbol"; }
+            { name = "nvim_lsp_signature_help"; }
+            { name = "luasnip"; }
+            { name = "path"; }
+          ];
+          mapping = {
+            "<Tab>" = ''
+              cmp.mapping(
+                function(fallback)
+                  if cmp.visible() then
+                    cmp.select_next_item()
+                  elseif require("luasnip").expand_or_locally_jumpable() then
+                    require("luasnip").expand_or_jump()
+                  elseif has_words_before() then
+                    cmp.complete()
+                  else
+                    fallback()
+                  end
+                end,
+                {"i", "s"}
+              )
+            '';
+          };
+        };
+      };
+
+      cmp-nvim-lsp.enable = true;
 
       treesitter = {
         enable = true;
+        indent = true;
         nixGrammars = true;
       };
 
@@ -38,7 +79,19 @@
         };
       };
 
-      cmp = { enable = true; };
+      conform-nvim = {
+        enable = true;
+        formatOnSave = {
+          lspFallback = true;
+          timeoutMs = 500;
+        };
+        formattersByFt = {
+          nix = [ "nixfmt" ];
+          python = [ "isort" "black" ];
+          lua = [ "stylua" ];
+          markdown = [[ "prettierd" "prettier" ]];
+        };
+      };
 
       lsp = {
         enable = true;
