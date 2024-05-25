@@ -1,23 +1,72 @@
-{ pkgs, config, fetchFromGitHub, ... }:
+{ pkgs, inputs, config, ... }:
 
 {
-  programs.neovim = {
+
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim 
+  ];
+
+  programs.nixvim = {
     enable = true;
-    withPython3 = true;
-    extraPython3Packages = (ps: with ps; [ pynvim tasklib six packaging ]);
-    defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    vimdiffAlias = true;
-  };
+    globals.mapleader = " ";
 
-  home.file.".config/nvim" = {
-    source = pkgs.fetchFromGitHub {
-      owner = "NvChad";
-      repo = "starter";
-      rev = "aad624221adc6ed4e14337b3b3f2b74136696b53";
-      hash = "sha256-2HNqPdnIVkX+d5OxjsRbL3SoY8l5Ey7/Y274Pi5uZW4=";
+    opts = {
+      number = true;
+      tabstop = 4;
+      shiftwidth = 4;
+      expandtab = true;
+      mouse = "a";
     };
-    recursive = true;
+
+    plugins = {
+      bufferline.enable = true;
+      lualine.enable = true;
+      oil.enable = true;
+
+      treesitter = {
+        enable = true;
+        nixGrammars = true;
+      };
+
+      telescope = {
+        enable = true;
+        keymaps = {
+          "<leader>ff" = "find_files";
+          "<leader>lg" = "live_grep";
+        };
+      };
+
+      cmp = { enable = true; };
+
+      lsp = {
+        enable = true;
+        servers = {
+          nil_ls.enable = true;
+          bashls.enable = true;
+          pyright.enable = true;
+          lua-ls.enable = true;
+          rust-analyzer = {
+            enable = true;
+            installCargo = false;
+            installRustc = false;
+          };
+          clangd.enable = true;
+        };
+      };
+    };
+
+    colorschemes.kanagawa = {
+      enable = true;
+      settings = {
+        background.dark = "dragon";
+      };
+    };
+
+    extraPlugins = with pkgs.vimPlugins;
+      [
+
+      ];
   };
 }
