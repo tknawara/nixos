@@ -108,6 +108,7 @@
             installRustc = true;
           };
           clangd.enable = true;
+          jsonls.enable = true;
         };
         keymaps.lspBuf = {
           "gd" = "definition";

@@ -7,6 +7,7 @@
     ./programs/zsh/default.nix
     ./programs/git/default.nix
     ./programs/nvim/default.nix
+    ./programs/tmux/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -53,7 +54,6 @@
     gnomeExtensions.gnome-40-ui-improvements
     gnomeExtensions.pano
     nerdfonts
-    zellij
     delta
     bat
     discord
