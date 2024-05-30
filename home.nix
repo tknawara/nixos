@@ -8,6 +8,7 @@
     ./programs/git/default.nix
     ./programs/nvim/default.nix
     ./programs/tmux/default.nix
+    ./programs/alacritty/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
