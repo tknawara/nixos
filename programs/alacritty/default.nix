@@ -10,7 +10,7 @@
       };
       window = {
         decorations = "full";
-        opacity = 0.85;
+        opacity = 0.9;
         padding = {
           x = 5;
           y = 5;

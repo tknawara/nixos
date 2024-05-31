@@ -127,7 +127,10 @@
 
     colorschemes.kanagawa = {
       enable = true;
-      settings = { background.dark = "dragon"; };
+      settings = {
+        background.dark = "dragon";
+        transparent = true;
+      };
     };
 
     extraPlugins = with pkgs.vimPlugins;
