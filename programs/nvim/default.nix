@@ -98,10 +98,10 @@
       lsp = {
         enable = true;
         servers = {
-          nil_ls.enable = true;
-          bashls.enable = true;
+          nil-ls.enable = true;
           pyright.enable = true;
           lua-ls.enable = true;
+          sourcekit.enable = true;
           rust-analyzer = {
             enable = true;
             installCargo = true;
