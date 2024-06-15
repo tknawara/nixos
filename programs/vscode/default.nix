@@ -26,7 +26,12 @@ in {
       eamodio.gitlens
       vadimcn.vscode-lldb
       ms-toolsai.jupyter
-    ]) ++ (with marketplace; [ github.copilot scalameta.metals scala-lang.scala ])
-      ++ (with marketplace-release; [ github.copilot-chat ]);
+    ]) ++ (with marketplace; [
+      github.copilot
+      scalameta.metals
+      scala-lang.scala
+      sswg.swift-lang
+      vknabel.vscode-apple-swift-format
+    ]) ++ (with marketplace-release; [ github.copilot-chat ]);
   };
 }

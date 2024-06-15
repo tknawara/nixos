@@ -102,6 +102,7 @@
           pyright.enable = true;
           lua-ls.enable = true;
           sourcekit.enable = true;
+          ruby-lsp.enable = true;
           rust-analyzer = {
             enable = true;
             installCargo = true;
