@@ -10,7 +10,7 @@
       height = 20;
 
       modules-left = [ "hyprland/workspaces" ];
-      modules-center = [ "clock" ];
+      modules-center = [ ];
       modules-right = [
         "idle_inhibitor"
         #"bluetooth"
@@ -19,6 +19,7 @@
         "cpu"
         "memory"
         "pulseaudio"
+        "clock"
         #"backlight"
         "tray"
       ];
@@ -357,6 +358,7 @@
 
     #clock {
       font-weight: bold;
+      background-color: alpha(@base, 1); 
     }
 
     #cpu {
