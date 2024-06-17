@@ -26,6 +26,9 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+
+    catppuccin-waybar.url = "github:catppuccin/waybar/main";
+    catppuccin-waybar.flake = false;
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {

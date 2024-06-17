@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   programs.waybar.enable = true;
@@ -7,183 +7,421 @@
     mainBar = {
       layer = "top";
       position = "top";
-      height = 30;
-      spacing = 4;
-      modules-left = [ "hyprland/workspaces" "hyprland/window" ];
-      modules-right = [ "network" "cpu" "memory" "pulseaudio" ];
+      height = 20;
+
+      modules-left = [ "hyprland/workspaces" ];
       modules-center = [ "clock" ];
-      clock = {
-        format = "{:%I:%M %p %A, %B %d, %Y}";
-        tooltip-format = ''
-          <big>{:%Y %B}</big>
-          <tt><small>{calendar}</small></tt>'';
-        format-alt = "{:%I:%M %p}";
+      modules-right = [
+        "idle_inhibitor"
+        #"bluetooth"
+        "custom/vpn"
+        "network"
+        "cpu"
+        "memory"
+        "pulseaudio"
+        #"backlight"
+        "tray"
+      ];
+
+      backlight = {
+        format = "{icon}  {percent}%";
+        format-icons = [ "" "" ];
+        tooltip = true;
       };
-      cpu = { format = "{usage}% "; };
-      memory = { format = "{}% "; };
-      network = {
-        format-wifi = "{essid} ({signalStrength}%) ";
-        format-ethernet = "{ipaddr}/{cidr} ";
-        tooltip-format = ''
-          {ifname} via {gwaddr} 
-          up: {bandwidthUpBytes}
-          down: {bandwidthDownBytes}'';
-        format-linked = "{ifname} (No IP) ";
-        format-disconnected = "Disconnected ⚠";
-      };
+
       battery = {
-        interval = 30;
+        interval = 10;
         states = {
-          full = 100;
-          threeFour = 75;
-          half = 50;
-          critical = 25;
+          "good" = 95;
+          "warning" = 25;
+          "critical" = 15;
         };
-        format-discharging-full = "{capacity}% 󰁹";
-        format-discharging-threeFour = "{capacity}% 󰂀";
-        format-discharging-half = "{capacity}% 󰁾";
-        format-discharging-critical = "{capacity}% 󰂃";
-        format-charging = "{capacity}% 󰂄";
-        tooltip-format = ''
-          {power} W
-          {timeTo}'';
+        format = "{icon}  {capacity}% {time}";
+        format-icons = [
+          "" # battery-full
+          "" # battery-three-quarters
+          "" # battery-half
+          "" # battery-quarter
+          "" # battery-empty
+        ];
+        tooltip = true;
       };
-      backlight = { format = "{percent}% "; };
+
+      bluetooth = {
+        format = "{icon}  {status}";
+        interval = 30;
+        format-icons = {
+          enabled = "";
+          disabled = "";
+        };
+        tooltip-format = "bluetooth {status}";
+        on-click = "${pkgs.blueman}/bin/blueman-manager";
+      };
+
+      clock = {
+        interval = 1;
+        format = "  {:%Y-%m-%d %H:%M:%S}"; # Icon: calendar-alt
+        on-click = "${pkgs.gsimplecal}/bin/gsimplecal";
+        tooltip = true;
+      };
+
+      "clock#time" = {
+        interval = 1;
+        format = "{:%H:%M:%S}";
+        tooltip = false;
+      };
+
+      "clock#date" = {
+        interval = 60;
+        format = "  {:%Y-%m-%d}"; # Icon: calendar-alt
+      };
+
+      cpu = {
+        interval = 5;
+        format = "  {usage}% ({load})"; # Icon: microchip
+        states = {
+          warning = 70;
+          critical = 90;
+        };
+        on-click =
+          "${pkgs.kitty}/bin/kitty -e ${pkgs.bash}/bin/bash -ci htop --sort-key PERCENT_CPU";
+      };
+
+      idle_inhibitor = {
+        format = "{icon}";
+        format-icons = {
+          activated = "";
+          deactivated = "";
+        };
+        tooltip = true;
+      };
+
+      memory = {
+        interval = 5;
+        format =
+          "  {}% ({used}G  {avail}G  {swapPercentage}%󰓢)"; # Icon: memory
+        states = {
+          warning = 70;
+          critical = 90;
+        };
+        on-click =
+          "${pkgs.kitty}/bin/kitty -e ${pkgs.bash}/bin/bash -ci htop --sort-key PERCENT_MEM";
+        tooltip = true;
+      };
+
+      network = {
+        interval = 5;
+        format-wifi = "  {essid} ({signalStrength}%)"; # Icon: wifi
+        format-ethernet = "  {ifname}: {ipaddr}/{cidr}"; # Icon: ethernet
+        format-disconnected = "⚠  Disconnected";
+        tooltip-format = "{ifname}: {ipaddr}";
+        on-click =
+          "${pkgs.kitty}/bin/kitty -e ${pkgs.bash}/bin/bash -ci ${pkgs.networkmanager}/bin/nmtui";
+      };
+
+      "hyprland/window" = {
+        format = "{}";
+        max-length = 120;
+      };
+
+      "hyprland/workspaces" = {
+        all-outputs = false;
+        disable-scroll = true;
+      };
+
       pulseaudio = {
-        format = "{volume}% 󰓃";
-        format-muted = "Muted 󰓄";
-        format-bluetooth = "{volume}% 󰦢";
+        format = "{icon}  {volume}%";
+        format-bluetooth = "{icon}  {volume}%";
+        format-muted = "";
+        format-icons = {
+          headphones = "";
+          handsfree = "";
+          headset = "";
+          phone = "";
+          portable = "";
+          car = "";
+          default = [ "" "" ];
+        };
+        on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
+      };
+
+      temperature = {
+        critical-threshold = 80;
+        interval = 5;
+        format = "{icon}  {temperatureC}°C";
+        format-icons = [
+          "" # Icon: temperature-empty
+          "" # Icon: temperature-quarter
+          "" # Icon: temperature-half
+          "" # Icon: temperature-three-quarters
+          "" # Icon: temperature-full
+        ];
+        tooltip = true;
+      };
+
+      tray = {
+        icon-size = 21;
+        spacing = 10;
+      };
+
+      "custom/vpn" = {
+        format = "{icon}  {alt}";
+        tooltip-format = "{}";
+        exec = pkgs.writeShellScript "waybar-vpn" ''
+          if [ -d /proc/sys/net/ipv4/conf/tun0 ]; then
+            conn=$( \
+              ${pkgs.networkmanager}/bin/nmcli c show --active \
+                | ${pkgs.gnugrep}/bin/grep ' vpn ' \
+                | ${pkgs.coreutils}/bin/head -n1 \
+                | ${pkgs.gawk}/bin/awk '{print $1}' \
+            )
+            echo "{\"text\":\"Connected\", \"alt\":\"$conn\", \"class\":\"on\", \"percentage\":100}"
+          else
+            echo '{"text":"Disconnected", "alt":"vpn", "class":"off", "percentage":0}'
+          fi
+        '';
+        return-type = "json";
+        interval = 5;
+        format-icons = [ "" "" ];
+        on-click = ''
+          ${pkgs.alacritty}/bin/kitty -e ${pkgs.bash}/bin/bash -ci "${pkgs.networkmanager}/bin/nmtui connect"'';
+      };
+
+      "wlr/taskbar" = {
+        format = "{icon}";
+        all-outputs = false;
+        on-click = "activate";
+        on-middle-click = "close";
+        rewrite = { "Firefox Web Browser" = "Firefox"; };
       };
     };
   };
 
   programs.waybar.style = ''
+    @import "${inputs.catppuccin-waybar}/themes/latte.css";
+
+    @keyframes blink-warning {
+      70% {
+        color: white;
+      }
+      to {
+        color: white;
+        background-color: orange;
+      }
+    }
+
+    @keyframes blink-critical {
+      70% {
+        color: white;
+      }
+      to {
+        color: white;
+        background-color: red;
+      }
+    }
+
+    /* -----------------------------------------------------------------------------
+    * Base styles
+    * -------------------------------------------------------------------------- */
+
+    /* Reset all styles */
     * {
-        border: none;
-        font-family: Cousine Nerd Font;
-        font-size: 15px;
+      color: @text;
+      border: none;
+      border-radius: 0;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
     }
 
-    window#waybar {
-        background-color: rgba(57, 53, 82, 0);
-        transition-property: background-color;
-        transition-duration: .5s;
-        opacity: 0.75;
-    }
-
-    #window {
-      color: #e0def4;
-      background-color: #232136;
-      border: 2px solid #eb6f92;
-      border-radius: 0 10px 10px 0;
-      padding: 0px 10px 0px 10px;
-    }
-
-    window#waybar.empty #window {
+    /* The whole bar */
+    #waybar {
+      /* background-color: alpha(@base, 1); */
       background-color: transparent;
-    }
-
-    window#waybar.hidden {
-        opacity: 0.2;
+      border: 0 solid alpha(@crust, 0.3);
+      color: @text;
+      font-family: UbuntuMono Nerd Font, Hack, Ubuntu;
+      font-size: 15px;
     }
 
     #workspaces {
-        background-color: #232136;
-        border: 2px solid #eb6f92;
-        border-radius: 10px 0 0 10px;
+      border-right: 1px solid @crust;
     }
-
     #workspaces button {
-        padding: 0 5px;
-        background-color: transparent;
-        color: #908caa;
+      padding: 0 5px;
+      border-left: 1px solid @mantle;
     }
-
+    #workspaces button * {
+      color: @text;
+    }
+    #workspaces button.visible {
+      background-color: alpha(@peach, 0.5);
+    }
+    #workspaces button.focused {
+      background-color: @peach;
+    }
+    /*
+      * https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect
+      */
     #workspaces button:hover {
-        box-shadow: inherit;
-        color: #eb6f92;
+      background: @pink;
+      border-top: none;
+      border-right: none;
+      border-bottom: none;
+      padding: 0 5px;
+      box-shadow: inherit;
+      text-shadow: inherit;
     }
-
-    #workspaces button.active {
-        color: #e0def4;
-        border-radius: 10px;
-    }
-
     #workspaces button.urgent {
-        background-color: #eb6f92;
-        color: #000000;
+      background-color: @red;
+    }
+    #workspaces button.visible *,
+    #workspaces button.focused *,
+    #workspaces button.urgent *,
+    #workspaces button:hover * {
+      color: @base;
     }
 
-    #clock,
-    #battery,
-    #cpu,
-    #memory,
-    #network,
-    #tray,
+    /* Each module */
     #backlight,
-    #pulseaudio {
-        padding: 0 10px;
-        color: #ffffff;
+    #battery,
+    #bluetooth,
+    #clock,
+    #cpu,
+    #custom-keyboard-layout,
+    #custom-vpn,
+    #idle_inhibitor,
+    #memory,
+    #mode,
+    #network,
+    #pulseaudio,
+    #temperature,
+    #tray {
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-left: 2px;
+      margin-right: 2px;
+      border-radius: 8px;
+    }
+
+    #cpu {
+      margin-right: 0;
+      padding-right: 5px;
+      border-radius: 8px 0px 0px 8px;
+      border-right: 5px solid #17a1c5;
+    }
+    #memory {
+      margin-left: 0;
+      padding-left: 5px;
+      border-radius: 0px 8px 8px 0px;
+      border-left: 5px solid #0da3d5;
+    }
+
+    /* -----------------------------------------------------------------------------
+      * Module styles
+      * -------------------------------------------------------------------------- */
+
+    #idle_inhibitor { }
+    #bluetooth {  color: #ffffff; background-color: @blue; }
+    #custom-vpn.on {  color: #ffffff;   background-color: @mauve; }
+    #custom-vpn.off { color: @subtext0; background-color: @crust; }
+    #network {    color: #ffffff; background-color: @lavender; }
+    #cpu {        color: #ffffff; background-color: @sapphire; }
+    #memory {     color: #ffffff; background-color: @sky; }
+    #pulseaudio { color: #ffffff; background-color: @teal; }
+    #battery {    color: #ffffff; background-color: @green; }
+    #backlight {  color: #ffffff; background-color: @yellow; }
+    #tray {       color: #ffffff; background-color: @surface0; }
+    #clock { }
+
+
+    #battery {
+    }
+    #battery.warning {
+    }
+    #battery.critical {
+    }
+    #battery.warning.discharging {
+      background-color: @maroon;
+      animation-name: blink-warning;
+      animation-duration: 3s;
+    }
+    #battery.critical.discharging {
+      background-color: @red;
+      animation-name: blink-critical;
+      animation-duration: 2s;
     }
 
     #clock {
-        border-radius: 10px;
-        background-color: #eb6f92;
-        color: #000000;
+      font-weight: bold;
     }
 
-    #battery {
-        background-color: #eb6f92;
-        color: #000000;
-        border-radius: 0 10px 10px 0;
+    #cpu {
+    }
+    #cpu.warning {
+    }
+    #cpu.critical {
+      animation-name: blink-critical;
+      animation-duration: 2s;
     }
 
-    #battery.charging {
-        color: #000000;
-        background-color: #f6c177;
+    #custom-vpn.connected {
+    }
+    #custom-vpn.disconnected {
+      background-color: @crust;
+      color: @subtext0;
     }
 
-    #battery.critical:not(.charging) {
-        background-color: #ea9a97;
-        color: #ffffcc;
-        animation-name: blink;
-        animation-duration: 0.5s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
+    #memory {
+    }
+    #memory.warning {
+    }
+    #memory.critical {
+      animation-name: blink-critical;
+      animation-duration: 2s;
     }
 
-    @keyframes blink {
-        to {
-            background-color: #ffffff;
-            color: #000000;
-        }
-    }
-
-    label:focus {
-        background-color: #000000;
-    }
-
-    #cpu,
-    #memory,
-    #backlight,
-    #pulseaudio {
-        background-color: #eb6f92;
-        color: #000000;
+    #mode {
+      background: #64727D;
+      border-top: 2px solid white;
+      /* To compensate for the top border and still have vertical centering */
+      padding-bottom: 2px;
     }
 
     #network {
-        background-color: #eb6f92;
-        border-radius: 10px 0 0 10px;
-        color: #000000;
+    }
+    #network.disconnected {
+      background-color: @red;
     }
 
-    #network.disconnected {
-        background-color: #3e8fb0;
+    #pulseaudio {
+      background-color: @teal;
+    }
+    #pulseaudio.muted {
+    }
+
+    #custom-spotify {
+      color: rgb(102, 220, 105);
+    }
+
+    #temperature {
+    }
+    #temperature.critical {
+      background-color: @red;
     }
 
     #tray {
-        background-color: transparent;
+      border-left: 1px solid @mantle;
+      border-right: 1px solid @mantle;
     }
+
+    #window {
+      font-weight: bold;
+      padding-left: 10px;
+    }
+
   '';
 }

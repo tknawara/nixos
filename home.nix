@@ -79,6 +79,11 @@
     black
     rofi-wayland
     swww
+    dunst
+    libnotify
+    blueman
+    gsimplecal
+    pavucontrol
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -95,6 +100,9 @@
   ];
 
   programs.java = { enable = true; };
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "*";
 
   # xdg.configFile."nvim" = {
   #   source = ./dotfiles/nvim;

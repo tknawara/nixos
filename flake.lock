@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "catppuccin-waybar": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1711907468,
+        "narHash": "sha256-9lY+v1CTbpw2lREG/h65mLLw5KuT8OJdEPOb+NNC6Fo=",
+        "owner": "catppuccin",
+        "repo": "waybar",
+        "rev": "0830796af6aa64ce8bc7453d42876a628777ac68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "ref": "main",
+        "repo": "waybar",
+        "type": "github"
+      }
+    },
     "devshell": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -526,6 +543,7 @@
     },
     "root": {
       "inputs": {
+        "catppuccin-waybar": "catppuccin-waybar",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
