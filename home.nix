@@ -9,6 +9,7 @@
     ./programs/nvim/default.nix
     ./programs/tmux/default.nix
     ./programs/alacritty/default.nix
+    ./programs/hyprland/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -73,6 +74,8 @@
     zoom-us
     ripgrep
     black
+    kitty
+    rofi-wayland
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
