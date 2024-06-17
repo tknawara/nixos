@@ -11,6 +11,8 @@
     ./programs/alacritty/default.nix
     ./programs/hyprland/default.nix
     ./programs/kitty/default.nix
+    ./programs/waybar/default.nix
+    ./programs/rofi/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -76,6 +78,7 @@
     ripgrep
     black
     rofi-wayland
+    swww
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
