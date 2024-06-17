@@ -10,6 +10,7 @@
     ./programs/tmux/default.nix
     ./programs/alacritty/default.nix
     ./programs/hyprland/default.nix
+    ./programs/kitty/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -74,7 +75,6 @@
     zoom-us
     ripgrep
     black
-    kitty
     rofi-wayland
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
