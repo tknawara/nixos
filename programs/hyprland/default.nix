@@ -7,7 +7,7 @@ let
 
     sleep 1
 
-    ${pkgs.swww}/bin/swww img ~/nixos/wallpapers/nighttime-nature-landscape-galaxy-mountain-water-star-beauty-generative-ai.jpg &
+    ${pkgs.swww}/bin/swww img ~/nixos/wallpapers/coast-landscape-digital-art.jpg
   '';
 in {
 
