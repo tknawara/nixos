@@ -285,8 +285,8 @@
 
     /* The whole bar */
     #waybar {
-      /* background-color: alpha(@base, 1); */
-      background-color: transparent;
+      background-color: alpha(#1e1e2e, 0.8);
+      /* background-color: transparent; */
       border: 0 solid alpha(@crust, 0.3);
       color: @text;
       font-family: UbuntuMono Nerd Font, Hack, Ubuntu;
