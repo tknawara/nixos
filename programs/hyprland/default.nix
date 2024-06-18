@@ -36,6 +36,7 @@ in {
         "$mod_shift, right, movewindow, r"
         "$mod_shift, up, movewindow, u"
         "$mod_shift, down, movewindow, d"
+        "$mod_shift, L, exec, hyprlock"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"

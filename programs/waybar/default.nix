@@ -12,8 +12,9 @@
       modules-left = [ "hyprland/workspaces" ];
       modules-center = [ ];
       modules-right = [
-        "idle_inhibitor"
+        # "idle_inhibitor"
         #"bluetooth"
+        "group/power-group"
         "custom/vpn"
         "network"
         "cpu"
@@ -112,7 +113,7 @@
 
       network = {
         interval = 5;
-        format-wifi = "  {essid} ({signalStrength}%)"; # Icon: wifi
+        format-wifi = "󰖩 {signalStrength}%"; # Icon: wifi
         format-ethernet = "  {ifname}: {ipaddr}/{cidr}"; # Icon: ethernet
         format-disconnected = "⚠  Disconnected";
         tooltip-format = "{ifname}: {ipaddr}";
@@ -194,6 +195,43 @@
         on-click = "activate";
         on-middle-click = "close";
         rewrite = { "Firefox Web Browser" = "Firefox"; };
+      };
+
+      "group/power-group" = {
+        "orientation" = "inherit";
+        "drawer" = {
+          "transition-duration" = 500;
+          "children-class" = "not-power";
+          "transition-left-to-right" = true;
+        };
+        "modules" =
+          [ "custom/power" "custom/quit" "custom/lock" "custom/reboot" ];
+      };
+
+      "custom/quit" = {
+        "format" = "󰗼";
+        "tooltip" = true;
+        "on-click" = "hyprctl dispatch exit";
+        "tooltip-format" = "{icon} Quit Application";
+      };
+      "custom/lock" = {
+        "format" = "󰍁";
+        "tooltip" = true;
+        "on-click" = "hyprlock";
+        "tooltip-format" = "Lock Screen";
+      };
+
+      "custom/reboot" = {
+        "format" = "󰜉";
+        "tooltip" = true;
+        "on-click" = "systemctl reboot";
+        "tooltip-format" = "Reboot";
+      };
+      "custom/power" = {
+        "format" = " ";
+        "tooltip" = true;
+        "on-click" = "systemctl poweroff";
+        "tooltip-format" = "Shutdown";
       };
     };
   };
@@ -285,6 +323,10 @@
 
     /* Each module */
     #backlight,
+    #custom-power,
+    #custom-quit,
+    #custom-lock,
+    #custom-reboot,
     #battery,
     #bluetooth,
     #clock,
@@ -403,6 +445,30 @@
       background-color: @teal;
     }
     #pulseaudio.muted {
+    }
+
+    #custom-power {
+      background-color: @pink;
+      font-size: 16px;
+      border-radius: 19px;
+    }
+
+    #custom-quit {
+      background-color: @yellow;
+      font-size: 16px;
+      border-radius: 19px;
+    }
+
+    #custom-lock {
+      background-color: @peach;
+      font-size: 16px;
+      border-radius: 19px;
+    }
+
+    #custom-reboot {
+      background-color: @green;
+      font-size: 16px;
+      border-radius: 19px;
     }
 
     #custom-spotify {

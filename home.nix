@@ -13,6 +13,7 @@
     ./programs/kitty/default.nix
     ./programs/waybar/default.nix
     ./programs/rofi/default.nix
+    ./programs/hyprlock/hyprlock.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -84,6 +85,7 @@
     blueman
     gsimplecal
     pavucontrol
+    hyprlock
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
