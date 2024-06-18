@@ -7,7 +7,7 @@ let
 
     sleep 1
 
-    ${pkgs.swww}/bin/swww img ~/nixos/wallpapers/coast-landscape-digital-art.jpg
+    ${pkgs.swww}/bin/swww img ~/nixos/wallpapers/single-mountain-landscape.jpg
   '';
 in {
 
