@@ -113,7 +113,7 @@
 
       network = {
         interval = 5;
-        format-wifi = "󰖩 {signalStrength}%"; # Icon: wifi
+        format-wifi = " {signalStrength}%"; # Icon: wifi
         format-ethernet = "  {ifname}: {ipaddr}/{cidr}"; # Icon: ethernet
         format-disconnected = "⚠  Disconnected";
         tooltip-format = "{ifname}: {ipaddr}";
@@ -204,34 +204,44 @@
           "children-class" = "not-power";
           "transition-left-to-right" = true;
         };
-        "modules" =
-          [ "custom/power" "custom/quit" "custom/lock" "custom/reboot" ];
+        "modules" = [
+          "custom/power"
+          "custom/quit"
+          "custom/lock"
+          "custom/reboot"
+          "custom/suspend"
+        ];
       };
 
       "custom/quit" = {
-        "format" = "󰗼";
-        "tooltip" = true;
-        "on-click" = "hyprctl dispatch exit";
-        "tooltip-format" = "{icon} Quit Application";
+        format = "󰗼";
+        tooltip = true;
+        on-click = "hyprctl dispatch exit";
+        tooltip-format = "{icon} Quit Application";
       };
       "custom/lock" = {
-        "format" = "󰍁";
-        "tooltip" = true;
-        "on-click" = "hyprlock";
-        "tooltip-format" = "Lock Screen";
+        format = "󰍁";
+        tooltip = true;
+        on-click = "hyprlock";
+        tooltip-format = "Lock Screen";
       };
-
       "custom/reboot" = {
-        "format" = "󰜉";
-        "tooltip" = true;
-        "on-click" = "systemctl reboot";
-        "tooltip-format" = "Reboot";
+        format = "󰜉";
+        tooltip = true;
+        on-click = "systemctl reboot";
+        tooltip-format = "Reboot";
       };
       "custom/power" = {
-        "format" = " ";
-        "tooltip" = true;
-        "on-click" = "systemctl poweroff";
-        "tooltip-format" = "Shutdown";
+        format = " ";
+        tooltip = true;
+        on-click = "systemctl poweroff";
+        tooltip-format = "Shutdown";
+      };
+      "custom/suspend" = {
+        format = "󰤄";
+        tooltip = true;
+        on-click = "systemctl suspend";
+        tooltip-format = "Suspend";
       };
     };
   };
@@ -327,6 +337,7 @@
     #custom-quit,
     #custom-lock,
     #custom-reboot,
+    #custom-suspend,
     #battery,
     #bluetooth,
     #clock,
@@ -448,7 +459,8 @@
     }
 
     #custom-power {
-      background-color: @pink;
+      background-color: @maroon;
+      color: #ffffff;
       font-size: 16px;
       border-radius: 19px;
     }
@@ -456,18 +468,28 @@
     #custom-quit {
       background-color: @yellow;
       font-size: 16px;
+      color: #ffffff;
       border-radius: 19px;
     }
 
     #custom-lock {
       background-color: @peach;
       font-size: 16px;
+      color: #ffffff;
       border-radius: 19px;
     }
 
     #custom-reboot {
-      background-color: @green;
+      background-color: @flamingo;
       font-size: 16px;
+      color: #ffffff;
+      border-radius: 19px;
+    }
+
+    #custom-suspend {
+      background-color: @lavender;
+      font-size: 16px;
+      color: #ffffff;
       border-radius: 19px;
     }
 
