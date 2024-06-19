@@ -217,7 +217,7 @@
         format = "󰗼";
         tooltip = true;
         on-click = "hyprctl dispatch exit";
-        tooltip-format = "{icon} Quit Application";
+        tooltip-format = "Logout";
       };
       "custom/lock" = {
         format = "󰍁";
