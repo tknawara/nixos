@@ -32,11 +32,17 @@ in {
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
 
-        "$mod_shift, left, movewindow, l"
-        "$mod_shift, right, movewindow, r"
-        "$mod_shift, up, movewindow, u"
-        "$mod_shift, down, movewindow, d"
-        "$mod_shift, L, exec, hyprlock"
+        "$mod SHIFT, left, movewindow, l"
+        "$mod SHIFT, right, movewindow, r"
+        "$mod SHIFT, up, movewindow, u"
+        "$mod SHIFT, down, movewindow, d"
+
+        "$mod SHIFT, L, exec, hyprlock"
+
+        "$mod R, left, resizeactive, -10 0"
+        "$mod R, right, resizeactive, 10 0"
+        "$mod R, up, resizeactive, 0 -10"
+        "$mod R, down, resizeactive, 0 10"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
