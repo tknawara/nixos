@@ -103,9 +103,6 @@
   ];
 
   programs.java = { enable = true; };
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  xdg.portal.config.common.default = "*";
 
   # xdg.configFile."nvim" = {
   #   source = ./dotfiles/nvim;
