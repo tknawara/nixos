@@ -9,7 +9,7 @@
       position = "top";
       height = 20;
 
-      modules-left = [ "hyprland/workspaces" ];
+      modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
       modules-center = [ ];
       modules-right = [
         # "idle_inhibitor"
@@ -129,6 +129,12 @@
       "hyprland/workspaces" = {
         all-outputs = false;
         disable-scroll = true;
+      };
+
+      "hyprland/submap" = {
+        format = "✌️ {}";
+        max-length = 8;
+        tooltip = false;
       };
 
       pulseaudio = {
@@ -329,6 +335,11 @@
     #workspaces button.urgent *,
     #workspaces button:hover * {
       color: @base;
+    }
+    #submap {
+      background-color: @maroon;
+      font-weight: bold;
+      color: #ffffff;
     }
 
     /* Each module */

@@ -18,11 +18,10 @@ in {
       exec-once = "${startupScript}/bin/start";
 
       "$mod" = "SUPER";
-      "$mod_shfit" = "SUPER SHIFT";
       bind = [
         "$mod, RETURN, exec, kitty"
         "$mod, SPACE, exec, rofi -show drun"
-        "$mod_shift, SPACE, exec, rofi -show window"
+        "$mod SHIFT, SPACE, exec, rofi -show window"
         "$mod, Q, killactive"
         "$mod, M, exit,"
         "$mod, V, togglefloating"
@@ -38,11 +37,6 @@ in {
         "$mod SHIFT, down, movewindow, d"
 
         "$mod SHIFT, L, exec, hyprlock"
-
-        "$mod R, left, resizeactive, -10 0"
-        "$mod R, right, resizeactive, 10 0"
-        "$mod R, up, resizeactive, 0 -10"
-        "$mod R, down, resizeactive, 0 10"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
@@ -65,7 +59,18 @@ in {
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
+
       ];
     };
+    extraConfig = ''
+      bind = $mod, S, submap, resize
+      submap = resize
+      binde = , right, resizeactive, 10 0
+      binde = , left, resizeactive, -10 0
+      binde = , up, resizeactive, 0 -10
+      binde = , down, resizeactive, 0 10
+      bind = , escape, submap, reset
+      submap = reset
+    '';
   };
 }
