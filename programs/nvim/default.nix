@@ -126,11 +126,11 @@
       };
     };
 
-    colorschemes.kanagawa = {
+    colorschemes.catppuccin = {
       enable = true;
       settings = {
-        background.dark = "dragon";
-        transparent = true;
+        flavor = "mocha";
+        transparent_background = true;
       };
     };
 
