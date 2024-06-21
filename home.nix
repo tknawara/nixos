@@ -86,6 +86,9 @@
     gsimplecal
     pavucontrol
     hyprlock
+    hyprshot
+    grim
+    slurp
     libsecret
     cliphist
 

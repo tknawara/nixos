@@ -22,11 +22,14 @@ in {
       "$mod" = "SUPER";
       bind = [
         "$mod, RETURN, exec, kitty"
+
         "$mod, SPACE, exec, rofi -show drun"
         "$mod SHIFT, SPACE, exec, rofi -show window"
+
         "$mod, Q, killactive"
         "$mod, M, exit,"
         "$mod, V, togglefloating"
+        "$mod, F, fullscreen"
 
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
@@ -63,10 +66,14 @@ in {
         "$mod SHIFT, 0, movetoworkspace, 10"
 
         "$mod, C, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+        "$mod, S, exec, hyprshot --mode region --clipboard-only"
+
+        "$mod SHIFT, S, exec, hyprshot -m output -o ~/Pictures/Screenshots"
+        "$mod SHIFT, W, exec, hyprshot -m window -o ~/Pictures/Screenshots"
       ];
     };
     extraConfig = ''
-      bind = $mod, S, submap, resize
+      bind = $mod, R, submap, resize
       submap = resize
       binde = , right, resizeactive, 10 0
       binde = , left, resizeactive, -10 0
