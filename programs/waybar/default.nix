@@ -63,7 +63,8 @@
       clock = {
         interval = 1;
         format = "  {:%Y-%m-%d %H:%M:%S}"; # Icon: calendar-alt
-        on-click = "${pkgs.gsimplecal}/bin/gsimplecal";
+        on-click =
+          "${pkgs.kitty}/bin/kitty -e ${pkgs.bash}/bin/bash -ci 'cal $(date +%Y); read'";
         tooltip = true;
       };
 
@@ -113,8 +114,8 @@
 
       network = {
         interval = 5;
-        format-wifi = " {signalStrength}%"; # Icon: wifi
-        format-ethernet = "  {ifname}: {ipaddr}/{cidr}"; # Icon: ethernet
+        format-wifi = "  {signalStrength}%"; # Icon: wifi
+        format-ethernet = "  {ifname}: {ipaddr}/{cidr}"; # Icon: ethernet
         format-disconnected = "⚠  Disconnected";
         tooltip-format = "{ifname}: {ipaddr}";
         on-click =
@@ -246,7 +247,7 @@
       "custom/suspend" = {
         format = "󰤄";
         tooltip = true;
-        on-click = "systemctl suspend";
+        on-click = "systemctl suspend && hyprlock --immediate";
         tooltip-format = "Suspend";
       };
     };
