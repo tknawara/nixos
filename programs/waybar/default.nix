@@ -22,7 +22,7 @@
         "pulseaudio"
         "clock"
         #"backlight"
-        "tray"
+        # "tray"
       ];
 
       backlight = {
@@ -399,7 +399,7 @@
     #pulseaudio { color: #ffffff; background-color: @teal; }
     #battery {    color: #ffffff; background-color: @green; }
     #backlight {  color: #ffffff; background-color: @yellow; }
-    #tray {       color: #ffffff; background-color: @surface0; }
+    #tray {       color: #ffffff; background-color: transparent; }
     #clock { }
 
 
