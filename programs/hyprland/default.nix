@@ -4,6 +4,8 @@ let
     ${pkgs.waybar}/bin/waybar &
     ${pkgs.swww}/bin/swww init &
     ${pkgs.dunst}/bin/dunst &
+    ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store &
+    ${pkgs.wl-clipboard}/bin/wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store &
 
     sleep 1
 
@@ -60,6 +62,7 @@ in {
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
 
+        "$mod, C, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
       ];
     };
     extraConfig = ''
