@@ -65,7 +65,11 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Gnome keyring
   security.pam.services.gdm.enableGnomeKeyring = true;
+  services.gnome.gnome-keyring.enable = true;
+  environment.variables.XDG_RUNTIME_DIR = "/run/user/$UID";
+  programs.seahorse.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
