@@ -66,10 +66,8 @@
   services.printing.enable = true;
 
   # Gnome keyring
-  security.pam.services.gdm.enableGnomeKeyring = true;
+  security.pam.services.gdm-password.enableGnomeKeyring = true;
   services.gnome.gnome-keyring.enable = true;
-  environment.variables.XDG_RUNTIME_DIR = "/run/user/$UID";
-  programs.seahorse.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
