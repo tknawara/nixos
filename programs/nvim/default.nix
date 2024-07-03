@@ -92,6 +92,7 @@
           python = [ "isort" "black" ];
           lua = [ "stylua" ];
           markdown = [[ "prettierd" "prettier" ]];
+          scala = [ "scalafmt" ];
         };
       };
 
@@ -103,6 +104,9 @@
           lua-ls.enable = true;
           sourcekit.enable = true;
           ruby-lsp.enable = true;
+          metals.enable = true;
+          java-language-server.enable = true;
+          dockerls.enable = true;
           rust-analyzer = {
             enable = true;
             installCargo = true;
