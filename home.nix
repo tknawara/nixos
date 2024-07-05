@@ -53,7 +53,7 @@
     docker
     python3
     pipenv
-    gnome3.gnome-tweaks
+    gnome-tweaks
     adw-gtk3
     papirus-icon-theme
     gnomeExtensions.blur-my-shell
