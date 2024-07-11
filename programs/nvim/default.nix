@@ -80,8 +80,8 @@
 
       treesitter = {
         enable = true;
-        indent = true;
         nixGrammars = true;
+        settings = { indent.enable = true; };
       };
 
       telescope = {
