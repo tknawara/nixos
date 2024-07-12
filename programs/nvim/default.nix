@@ -32,6 +32,7 @@
       lualine.enable = true;
       oil.enable = true;
       lsp-format.enable = true;
+      nvim-tree.enable = true;
       dap = {
         enable = true;
         extensions = {
