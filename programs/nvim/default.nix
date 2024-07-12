@@ -33,6 +33,9 @@
       oil.enable = true;
       lsp-format.enable = true;
       nvim-tree.enable = true;
+      gitgutter.enable = true;
+      surround.enable = true;
+      todo-comments.enable = true;
       dap = {
         enable = true;
         extensions = {
@@ -90,6 +93,10 @@
         keymaps = {
           "<leader>ff" = "find_files";
           "<leader>lg" = "live_grep";
+        };
+        extensions.fzf-native = {
+          enable = true;
+          settings = { fuzzy = true; };
         };
       };
 
