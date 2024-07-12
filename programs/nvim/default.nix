@@ -33,7 +33,7 @@
       oil.enable = true;
       lsp-format.enable = true;
       nvim-tree.enable = true;
-      gitgutter.enable = true;
+      gitsigns.enable = true;
       surround.enable = true;
       todo-comments.enable = true;
       dap = {
