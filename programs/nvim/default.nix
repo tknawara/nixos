@@ -36,6 +36,7 @@
       gitsigns.enable = true;
       surround.enable = true;
       todo-comments.enable = true;
+      trouble = { enable = true; };
       dap = {
         enable = true;
         extensions = {
@@ -256,6 +257,10 @@
           local widgets = require('dap.ui.widgets')
           widgets.centered_float(widgets.scopes)
         end)
+
+        -- key bindings for nvim tree
+        vim.keymap.set('n', '<Leader>tt', ':NvimTreeToggle<CR>', { noremap = true })
+        vim.keymap.set('n', '<Leader>tc', ':NvimTreeClose<CR>', { noremap = true })
       '';
   };
 }
