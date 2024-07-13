@@ -32,6 +32,7 @@ in {
       scala-lang.scala
       sswg.swift-lang
       vknabel.vscode-apple-swift-format
+      vscodevim.vim
     ]) ++ (with marketplace-release; [ github.copilot-chat ]);
   };
 }
