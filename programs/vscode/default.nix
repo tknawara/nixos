@@ -16,10 +16,7 @@ in {
       jnoortheen.nix-ide
       ms-python.python
       ms-python.debugpy
-      ms-vscode.cmake-tools
-      twxs.cmake
       rust-lang.rust-analyzer
-      ms-vscode.cpptools-extension-pack
       golang.go
       tamasfe.even-better-toml
       ms-vscode-remote.remote-containers
@@ -33,6 +30,10 @@ in {
       sswg.swift-lang
       vknabel.vscode-apple-swift-format
       vscodevim.vim
+      ms-vscode.cpptools-extension-pack
+      ms-vscode.cmake-tools
+      ms-vscode.cpptools
+      ms-vscode.cpptools-themes
     ]) ++ (with marketplace-release; [ github.copilot-chat ]);
   };
 }
