@@ -42,17 +42,12 @@
     htop
     fastfetch
     git
-    clang
-    clang-tools
-    lldb
-    rustup
+    fzf
     unzip
     zsh
     zplug
     lua
     docker
-    python3
-    pipenv
     gnome-tweaks
     adw-gtk3
     papirus-icon-theme
@@ -69,12 +64,7 @@
     nil
     any-nix-shell
     nixfmt-classic
-    go
     eza
-    mill
-    metals
-    coursier
-    scala-cli
     zoom-us
     ripgrep
     black
