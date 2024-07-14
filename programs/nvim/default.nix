@@ -10,7 +10,10 @@
     vimAlias = true;
     defaultEditor = true;
 
-    globals = { mapleader = " "; };
+    globals = {
+      mapleader = " ";
+      nofoldenable = true;
+    };
 
     clipboard = {
       providers.wl-copy.enable = true;
