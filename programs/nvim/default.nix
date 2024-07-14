@@ -89,6 +89,7 @@
       treesitter = {
         enable = true;
         nixGrammars = true;
+        folding = false;
         settings = { indent.enable = true; };
       };
 
