@@ -1,5 +1,8 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 if vim.g.vscode then
-    -- VSCode extension
+    vim.keymap.set({ "n", "v" }, "y", [["+y]])
 else
     -- ordinary Neovim
 end
