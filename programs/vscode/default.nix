@@ -35,6 +35,17 @@ in {
       ms-vscode.cpptools
       ms-vscode.cpptools-themes
     ]) ++ (with marketplace-release; [ github.copilot-chat ]);
+    userSettings = {
+      "window.titleBarStyle" = "custom";
+      "editor.fontFamily" =
+        "'CaskaydiaMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace";
+      "editor.fontSize" = 15;
+      "terminal.integrated.fontSize" = 15;
+      "extensions.experimental.affinity" = { "asvetliakov.vscode-neovim" = 1; };
+      "window.zoomLevel" = 0.1;
+      "vscode-neovim.neovimInitVimPaths.linux" =
+        "/home/tarek/.config/vscode/init.lua";
+    };
   };
 
   xdg.configFile."vscode" = {
