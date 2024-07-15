@@ -45,6 +45,11 @@ in {
       "window.zoomLevel" = 0.1;
       "vscode-neovim.neovimInitVimPaths.linux" =
         "/home/tarek/.config/vscode/init.lua";
+      "files.watcherExclude" = {
+        "**/.bloop" = true;
+        "**/.metals" = true;
+        "**/.ammonite" = true;
+      };
     };
   };
 
