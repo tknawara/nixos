@@ -29,11 +29,16 @@ in {
       scala-lang.scala
       sswg.swift-lang
       vknabel.vscode-apple-swift-format
-      vscodevim.vim
+      asvetliakov.vscode-neovim
       ms-vscode.cpptools-extension-pack
       ms-vscode.cmake-tools
       ms-vscode.cpptools
       ms-vscode.cpptools-themes
     ]) ++ (with marketplace-release; [ github.copilot-chat ]);
+  };
+
+  xdg.configFile."vscode" = {
+    source = ./dotfiles;
+    recursive = true;
   };
 }
