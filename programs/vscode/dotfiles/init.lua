@@ -1,8 +1,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.opt.clipboard = "unnamedplus"
 
 if vim.g.vscode then
-    vim.keymap.set({ "n", "v" }, "y", [["+y]])
+    -- VSCode config
 else
     -- ordinary Neovim
 end
