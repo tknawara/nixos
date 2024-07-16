@@ -34,10 +34,12 @@
 
     plugins = {
       bufferline.enable = true;
+      mini.enable = true;
+      noice = { enable = true; };
       lualine.enable = true;
       oil.enable = true;
       lsp-format.enable = true;
-      nvim-tree.enable = true;
+      neo-tree.enable = true;
       gitsigns.enable = true;
       surround.enable = true;
       todo-comments.enable = true;
@@ -263,10 +265,6 @@
           local widgets = require('dap.ui.widgets')
           widgets.centered_float(widgets.scopes)
         end)
-
-        -- key bindings for nvim tree
-        vim.keymap.set('n', '<Leader>tt', ':NvimTreeToggle<CR>', { noremap = true })
-        vim.keymap.set('n', '<Leader>tc', ':NvimTreeClose<CR>', { noremap = true })
       '';
   };
 }
