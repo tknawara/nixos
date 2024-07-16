@@ -28,6 +28,8 @@
       expandtab = true;
       mouse = "a";
       smartindent = true;
+      ignorecase = true;
+      smartcase = true;
     };
 
     plugins = {
