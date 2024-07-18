@@ -67,7 +67,6 @@
     eza
     zoom-us
     ripgrep
-    black
     rofi-wayland
     swww
     dunst
