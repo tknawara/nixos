@@ -63,8 +63,7 @@
       clock = {
         interval = 1;
         format = "  {:%Y-%m-%d %H:%M:%S}"; # Icon: calendar-alt
-        on-click =
-          "${pkgs.kitty}/bin/kitty -e ${pkgs.bash}/bin/bash -ci 'cal $(date +%Y); read'";
+        on-click = "${pkgs.gnome-calendar}/bin/gnome-calendar";
         tooltip = true;
       };
 
