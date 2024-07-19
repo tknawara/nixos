@@ -44,6 +44,7 @@
       gitsigns.enable = true;
       surround.enable = true;
       todo-comments.enable = true;
+      notify.enable = true;
       trouble = { enable = true; };
       dap = {
         enable = true;
