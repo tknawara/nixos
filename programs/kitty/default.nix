@@ -3,11 +3,9 @@
 {
   programs.kitty = {
     enable = true;
-    #    theme = "Catppuccin-Mocha";
 
     settings = {
       enable_audio_bell = false;
-      #      background_opacity = "0.8";
       dynamic_background_opacity = true;
       open_url_with = "firefox";
       enable_layouts = "fat, tall, vertical";
