@@ -147,12 +147,12 @@
 
       serif = {
         package = pkgs.inter;
-        name = "Inter Serif";
+        name = "Inter Variable Serif";
       };
 
       sansSerif = {
         package = pkgs.inter;
-        name = "Inter Sans";
+        name = "Inter Variable Sans Serif";
       };
 
       emoji = {
