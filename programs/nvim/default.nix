@@ -44,7 +44,10 @@
       gitsigns.enable = true;
       surround.enable = true;
       todo-comments.enable = true;
-      notify.enable = true;
+      notify = {
+        enable = true;
+        backgroundColour = "#000000";
+      };
       trouble = { enable = true; };
       dap = {
         enable = true;

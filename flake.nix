@@ -15,6 +15,8 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix.url = "github:danth/stylix";
+
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.flake-utils.follows = "flake-utils";
@@ -34,8 +36,11 @@
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
-      modules =
-        [ ./configuration.nix inputs.home-manager.nixosModules.default ];
+      modules = [
+        ./configuration.nix
+        inputs.home-manager.nixosModules.default
+        inputs.stylix.nixosModules.stylix
+      ];
     };
   };
 }
