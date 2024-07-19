@@ -38,6 +38,7 @@
       noice = { enable = true; };
       lualine.enable = true;
       oil.enable = true;
+      comment.enable = true;
       lsp-format.enable = true;
       neo-tree.enable = true;
       gitsigns.enable = true;
