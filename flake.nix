@@ -29,8 +29,14 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    catppuccin-waybar.url = "github:catppuccin/waybar/main";
-    catppuccin-waybar.flake = false;
+    catppuccin-waybar = {
+      url = "github:catppuccin/waybar/main";
+      flake = false;
+    };
+    catppuccin-rofi = {
+      url = "github:catppuccin/rofi/main";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {

@@ -94,6 +94,9 @@
     # '')
   ];
 
+  # stylix
+  stylix.targets.rofi.enable = false;
+
   programs.java = { enable = true; };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -114,6 +114,23 @@
         "type": "github"
       }
     },
+    "catppuccin-rofi": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1718841465,
+        "narHash": "sha256-zA8Zum19pDTgn0KdQ0gD2kqCOXK4OCHBidFpGwrJOqg=",
+        "owner": "catppuccin",
+        "repo": "rofi",
+        "rev": "b636a00fd40a7899a8206195464ae8b7f0450a6d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "ref": "main",
+        "repo": "rofi",
+        "type": "github"
+      }
+    },
     "catppuccin-waybar": {
       "flake": false,
       "locked": {
@@ -730,6 +747,7 @@
     },
     "root": {
       "inputs": {
+        "catppuccin-rofi": "catppuccin-rofi",
         "catppuccin-waybar": "catppuccin-waybar",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
