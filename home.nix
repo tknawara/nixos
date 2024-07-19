@@ -8,7 +8,6 @@
     ./programs/git/default.nix
     ./programs/nvim/default.nix
     ./programs/tmux/default.nix
-    ./programs/alacritty/default.nix
     ./programs/hyprland/default.nix
     ./programs/kitty/default.nix
     ./programs/waybar/default.nix
