@@ -13,7 +13,7 @@
         decorations = "full";
         dynamic_title = true;
         decorations_theme_variant = "Dark";
-        opacity = 0.9;
+        # opacity = 0.9;
         padding = {
           x = 5;
           y = 5;

@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.rofi = {
     enable = true;
-    theme = ./catppuccin.rasi;
+    #    theme = ./catppuccin.rasi;
     package = pkgs.rofi-wayland;
     extraConfig = {
       modi = "drun,run,window,filebrowser";

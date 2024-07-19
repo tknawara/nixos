@@ -128,9 +128,42 @@
   programs.neovim.defaultEditor = true;
 
   # stylix
-  stylix.base16Scheme =
-    "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-  stylix.image = ./wallpapers/single-mountain-landscape.jpg;
+  stylix = {
+    enable = true;
+    polarity = "dark";
+    opacity = { terminal = 0.8; };
+    cursor = {
+      package = pkgs.catppuccin-cursors;
+      name = "frappeDark";
+    };
+
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    image = ./wallpapers/single-mountain-landscape.jpg;
+    fonts = {
+      monospace = {
+        package = pkgs.nerdfonts;
+        name = "CaskaydiaMono Nerd Font";
+      };
+
+      serif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Serif";
+      };
+
+      sansSerif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Sans";
+      };
+
+      sizes = {
+        applications = 14;
+        desktop = 14;
+        popups = 12;
+        terminal = 11;
+      };
+
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
