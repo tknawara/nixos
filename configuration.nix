@@ -146,19 +146,24 @@
       };
 
       serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif";
+        package = pkgs.noto-fonts;
+        name = "Noto Serif";
       };
 
       sansSerif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
+        package = pkgs.noto-fonts;
+        name = "Noto Sans";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
       };
 
       sizes = {
-        applications = 14;
-        desktop = 14;
-        popups = 12;
+        applications = 11;
+        desktop = 11;
+        popups = 11;
         terminal = 11;
       };
 
