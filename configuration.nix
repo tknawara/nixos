@@ -146,13 +146,13 @@
       };
 
       serif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Serif";
+        package = pkgs.inter;
+        name = "Inter Serif";
       };
 
       sansSerif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Sans";
+        package = pkgs.inter;
+        name = "Inter Sans";
       };
 
       emoji = {
