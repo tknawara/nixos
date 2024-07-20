@@ -132,10 +132,11 @@
     enable = true;
     polarity = "dark";
     opacity = { terminal = 0.8; };
-    # cursor = {
-    #   package = pkgs.catppuccin-cursors;
-    #   name = "frappeDark";
-    # };
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 16;
+    };
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     image = ./wallpapers/single-mountain-landscape.jpg;

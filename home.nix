@@ -95,8 +95,12 @@
   ];
 
   # stylix
-  stylix.targets.rofi.enable = false;
-  stylix.targets.waybar.enable = false;
+  stylix = {
+    targets = {
+      rofi.enable = false;
+      waybar.enable = false;
+    };
+  };
 
   programs.java = { enable = true; };
 
