@@ -34,6 +34,7 @@ in {
       ms-vscode.cmake-tools
       ms-vscode.cpptools
       ms-vscode.cpptools-themes
+      shopify.ruby-lsp
     ]) ++ (with marketplace-release; [ github.copilot-chat ]);
     userSettings = {
       "window.titleBarStyle" = "custom";
