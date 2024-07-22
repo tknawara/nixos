@@ -29,7 +29,7 @@ in {
       scala-lang.scala
       sswg.swift-lang
       vknabel.vscode-apple-swift-format
-      asvetliakov.vscode-neovim
+      vscodevim.vim
       ms-vscode.cpptools-extension-pack
       ms-vscode.cmake-tools
       ms-vscode.cpptools
@@ -40,7 +40,19 @@ in {
       "window.titleBarStyle" = "custom";
       "editor.fontSize" = 15;
       "terminal.integrated.fontSize" = 15;
-      "extensions.experimental.affinity" = { "asvetliakov.vscode-neovim" = 1; };
+      "vim.leader" = "<space>";
+      "vim.useSystemClipboard" = true;
+      "vim.hlsearch" = true;
+      "vim.incsearch" = true;
+      "vim.enableNeovim" = true;
+      "vim.smartRelativeLine" = false;
+      "vim.neovimUseConfigFile" = true;
+      "vim.neovimConfigPath" = "/home/tarek/.config/vscode/init.lua";
+      "vim.handleKeys" = { "<C-p>" = false; };
+      "extensions.experimental.affinity" = {
+        "vscodevim.vim" = 1;
+        "asvetliakov.vscode-neovim" = 1;
+      };
       "window.zoomLevel" = 0.1;
       "vscode-neovim.neovimInitVimPaths.linux" =
         "/home/tarek/.config/vscode/init.lua";
