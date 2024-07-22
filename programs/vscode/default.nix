@@ -45,7 +45,7 @@ in {
       "vim.hlsearch" = true;
       "vim.incsearch" = true;
       "vim.enableNeovim" = true;
-      "vim.smartRelativeLine" = false;
+      "vim.smartRelativeLine" = true;
       "vim.neovimUseConfigFile" = true;
       "vim.neovimConfigPath" = "/home/tarek/.config/vscode/init.lua";
       "vim.handleKeys" = { "<C-p>" = false; };
