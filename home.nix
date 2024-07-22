@@ -99,6 +99,8 @@
     targets = {
       rofi.enable = false;
       waybar.enable = false;
+      firefox.enable = false;
+      vscode.enable = false;
     };
   };
 
