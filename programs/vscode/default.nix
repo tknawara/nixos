@@ -41,10 +41,6 @@ in {
       "editor.semanticHighlighting.enabled" = true;
       "terminal.integrated.minimumContrastRatio" = 1;
       "workbench.colorTheme" = "Catppuccin Mocha";
-      "catppuccin.customUIColors" = {
-        "mocha" = { "statusBar.foreground" = "accent"; };
-      };
-      "catppuccin.accentColor" = "pink";
       "window.titleBarStyle" = "custom";
       "editor.fontSize" = 15;
       "terminal.integrated.fontSize" = 15;
