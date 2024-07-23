@@ -137,6 +137,7 @@
           lua-ls.enable = true;
           sourcekit.enable = true;
           ruby-lsp.enable = true;
+          gopls.enable = true;
           metals.enable = true;
           java-language-server.enable = true;
           dockerls.enable = true;
