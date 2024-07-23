@@ -99,6 +99,8 @@
     targets = {
       rofi.enable = false;
       waybar.enable = false;
+      kitty.enable = false;
+      nixvim.enable = false;
       vscode.enable = false;
     };
   };

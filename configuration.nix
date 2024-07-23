@@ -130,7 +130,6 @@
   # stylix
   stylix = {
     enable = true;
-    polarity = "dark";
     opacity = { terminal = 0.8; };
     cursor = {
       package = pkgs.bibata-cursors;
@@ -138,7 +137,7 @@
       size = 14;
     };
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-light.yaml";
     image = ./wallpapers/single-mountain-landscape.jpg;
     fonts = {
       monospace = {
@@ -162,9 +161,9 @@
       };
 
       sizes = {
-        applications = 11;
-        desktop = 11;
-        popups = 11;
+        applications = 10;
+        desktop = 10;
+        popups = 10;
         terminal = 11;
       };
 
