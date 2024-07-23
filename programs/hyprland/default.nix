@@ -6,6 +6,7 @@ let
     ${pkgs.dunst}/bin/dunst &
     ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store &
     ${pkgs.wl-clipboard}/bin/wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store &
+    ${pkgs.hyprland}/bin/hyprctl setcursor 'Bibata-Modern-Classic' 14 &
 
     sleep 1
 
