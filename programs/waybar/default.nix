@@ -15,7 +15,7 @@
         # "idle_inhibitor"
         #"bluetooth"
         "group/power-group"
-        "custom/vpn"
+        # "custom/vpn"
         "network"
         "cpu"
         "memory"
@@ -192,7 +192,7 @@
         interval = 5;
         format-icons = [ "" "" ];
         on-click = ''
-          ${pkgs.alacritty}/bin/kitty -e ${pkgs.bash}/bin/bash -ci "${pkgs.networkmanager}/bin/nmtui connect"'';
+          ${pkgs.kitty}/bin/kitty -e ${pkgs.bash}/bin/bash -ci "${pkgs.networkmanager}/bin/nmtui connect"'';
       };
 
       "wlr/taskbar" = {
