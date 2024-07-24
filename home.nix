@@ -14,6 +14,7 @@
     ./programs/waybar/default.nix
     ./programs/rofi/default.nix
     ./programs/hyprlock/hyprlock.nix
+    ./programs/starship/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -80,6 +81,7 @@
     slurp
     libsecret
     cliphist
+    yazi
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
