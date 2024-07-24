@@ -1,57 +1,60 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
 
+{
   programs.hyprlock = {
     enable = true;
-
     settings = {
-      general = { hide_cursor = true; };
-
-      background = {
-        monitor = "";
-        path = "${config.stylix.image}";
-
-        blur_size = 2;
-        blur_passes = 3; # 0 disables blurring;;
-        noise = 1.17e-2;
-        contrast = 1.3; # Vibrant!!!
-        brightness = 0.8;
-        vibrancy = 0.21;
-        vibrancy_darkness = 0.0;
+      general = {
+        disable_loading_bar = true;
+        hide_cursor = true;
       };
 
-      input-field = {
-        # monitor =
+      input-field = [{
         size = {
-          width = 250;
-          hight = 50;
+          width = 300;
+          height = 60;
         };
-        outline_thickness = 2;
-        dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
-        dots_spacing = 0.64; # Scale of dots' absolute size, 0.0 - 1.0
+        outline_thickness = 4;
+        dots_size = 0.2;
+        dots_spacing = 0.2;
         dots_center = true;
-        fade_on_empty = true;
-        placeholder_text =
-          "<i></i>"; # Text rendered in the input box when it's empty.
+        fade_on_empty = false;
+        placeholder_text = ''
+          <span foreground="##cdd6f4"><i>󰌾 Logged in as </i><span foreground="##cba6f7">$USER</span></span>'';
         hide_input = false;
+        fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
         position = {
-          x = 0;
-          y = 275;
-        };
-        halign = "center";
-        valign = "bottom";
-      };
-
-      # Current time
-      label = {
-        monitor = "";
-        text = ''cmd[update:1000] echo "$(date +"%R")"'';
-        position = {
-          x = 0;
-          y = 16;
+          x = -0;
+          y = -35;
         };
         halign = "center";
         valign = "center";
-      };
+      }];
+
+      label = [
+        {
+          text = ''cmd[update:43200000] echo "$(date +"%A, %d %B %Y")"'';
+          font_size = 25;
+          position = {
+            x = -30;
+            y = -150;
+          };
+          halign = "right";
+          valign = "top";
+        }
+        {
+          text = ''cmd[update:30000] echo "$(date +"%R")"'';
+          font_size = 90;
+          position = {
+            x = -30;
+            y = 0;
+          };
+          halign = "right";
+          valign = "top";
+        }
+      ];
+
+      background = [{ path = "${config.stylix.image}"; }];
     };
   };
 }
