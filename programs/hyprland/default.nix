@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, ... }:
+{ pkgs, config, inputs, ... }:
 let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
@@ -10,7 +10,7 @@ let
 
     sleep 1
 
-    ${pkgs.swww}/bin/swww img ~/nixos/wallpapers/single-mountain-landscape.jpg
+    ${pkgs.swww}/bin/swww img ${config.stylix.image}
   '';
 in {
 
