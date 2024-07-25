@@ -172,6 +172,19 @@
     };
   };
 
+  # fonts
+  fonts = {
+    packages = with pkgs; [ ubuntu_font_family cascadia-code nerdfonts inter ];
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        monospace = [ "CaskaydiaMono Nerd Font" ];
+        serif = [ "Inter Variable Serif" ];
+        sansSerif = [ "Inter Variable Sans Serif" ];
+      };
+    };
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

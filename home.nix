@@ -56,7 +56,6 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.gnome-40-ui-improvements
     gnomeExtensions.pano
-    nerdfonts
     delta
     bat
     discord
