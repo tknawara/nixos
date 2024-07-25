@@ -38,6 +38,8 @@ in {
       catppuccin.catppuccin-vsc
     ]) ++ (with marketplace-release; [ github.copilot-chat ]);
     userSettings = {
+      "editor.fontFamily" =
+        "'CaskaydiaMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace";
       "editor.semanticHighlighting.enabled" = true;
       "terminal.integrated.minimumContrastRatio" = 1;
       "workbench.colorTheme" = "Catppuccin Mocha";
