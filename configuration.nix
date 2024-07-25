@@ -99,13 +99,14 @@
     isNormalUser = true;
     description = "tarek";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (_: true);
 
+  programs.fish.enable = true;
   programs.zsh.enable = true;
 
   home-manager = {
@@ -136,6 +137,7 @@
       name = "Bibata-Modern-Classic";
       size = 14;
     };
+    targets = { fish.enable = false; };
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-light.yaml";
     image = ./wallpapers/single-mountain-landscape.jpg;
