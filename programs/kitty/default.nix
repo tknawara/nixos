@@ -4,6 +4,10 @@
   programs.kitty = {
     enable = true;
     theme = "Catppuccin-Mocha";
+    font = {
+      package = pkgs.nerdfonts;
+      name = "CaskaydiaMono Nerd Font";
+    };
 
     settings = {
       enable_audio_bell = false;
