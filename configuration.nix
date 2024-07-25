@@ -130,7 +130,7 @@
 
   # stylix
   stylix = {
-    enable = true;
+    # enable = true;
     opacity = { terminal = 0.8; };
     cursor = {
       package = pkgs.bibata-cursors;
