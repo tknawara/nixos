@@ -32,15 +32,15 @@ in {
         "$mod, V, togglefloating"
         "$mod, F, fullscreen"
 
-        "$mod, left, movefocus, l"
-        "$mod, right, movefocus, r"
-        "$mod, up, movefocus, u"
-        "$mod, down, movefocus, d"
+        "$mod, l, movefocus, l"
+        "$mod, h, movefocus, r"
+        "$mod, k, movefocus, u"
+        "$mod, j, movefocus, d"
 
-        "$mod SHIFT, left, movewindow, l"
-        "$mod SHIFT, right, movewindow, r"
-        "$mod SHIFT, up, movewindow, u"
-        "$mod SHIFT, down, movewindow, d"
+        "$mod SHIFT, h, movewindow, l"
+        "$mod SHIFT, l, movewindow, r"
+        "$mod SHIFT, k, movewindow, u"
+        "$mod SHIFT, j, movewindow, d"
 
         "$mod SHIFT, L, exec, hyprlock"
 
@@ -76,10 +76,10 @@ in {
     extraConfig = ''
       bind = $mod, R, submap, resize
       submap = resize
-      binde = , right, resizeactive, 10 0
-      binde = , left, resizeactive, -10 0
-      binde = , up, resizeactive, 0 -10
-      binde = , down, resizeactive, 0 10
+      binde = , l, resizeactive, 10 0
+      binde = , h, resizeactive, -10 0
+      binde = , k, resizeactive, 0 -10
+      binde = , j, resizeactive, 0 10
       bind = , escape, submap, reset
       submap = reset
     '';
