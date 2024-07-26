@@ -67,6 +67,8 @@ in {
         "**/.metals" = true;
         "**/.ammonite" = true;
       };
+      "cmake.showOptionsMovedNotification" = false;
+      "editor.formatOnSave" = true;
     };
   };
 
