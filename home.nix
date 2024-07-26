@@ -4,6 +4,7 @@
 
   imports = [
     ./programs/atuin/default.nix
+    ./programs/gtk/default.nix
     ./programs/vscode/default.nix
     ./programs/fish/default.nix
     ./programs/zsh/default.nix
