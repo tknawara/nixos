@@ -130,9 +130,9 @@
     # enable = true;
     opacity = { terminal = 0.8; };
     cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
-      size = 14;
+      package = config.cursor.package;
+      name = "${config.cursor.name}";
+      size = config.cursor.size;
     };
     targets = { fish.enable = false; };
 
@@ -140,18 +140,18 @@
     image = ./wallpapers/single-mountain-landscape.jpg;
     fonts = {
       monospace = {
-        package = pkgs.nerdfonts;
-        name = "CaskaydiaMono Nerd Font";
+        package = config.font.monospace.package;
+        name = "${config.font.monospace.name}";
       };
 
       serif = {
-        package = pkgs.inter;
-        name = "Inter Variable Serif";
+        package = config.font.serif.package;
+        name = "${config.font.serif.name}";
       };
 
       sansSerif = {
-        package = pkgs.inter;
-        name = "Inter Variable Sans Serif";
+        package = config.font.sansSerif.package;
+        name = "${config.font.sansSerif.name}";
       };
 
       emoji = {
@@ -171,13 +171,19 @@
 
   # fonts
   fonts = {
-    packages = with pkgs; [ ubuntu_font_family cascadia-code nerdfonts inter ];
+    packages = with pkgs; [
+      ubuntu_font_family
+      cascadia-code
+      config.font.monospace.package
+      config.font.serif.package
+      config.font.sansSerif.package
+    ];
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = [ "CaskaydiaMono Nerd Font" ];
-        serif = [ "Inter Variable Serif" ];
-        sansSerif = [ "Inter Variable Sans Serif" ];
+        monospace = [ "${config.font.monospace.name}" ];
+        serif = [ "${config.font.serif.name}" ];
+        sansSerif = [ "${config.font.sansSerif.name}" ];
       };
     };
   };

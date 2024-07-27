@@ -44,7 +44,7 @@ in {
         "$mod SHIFT, k, movewindow, u"
         "$mod SHIFT, j, movewindow, d"
 
-        "$mod SHIFT, L, exec, hyprlock"
+        "$mod SHIFT, Q, exec, hyprlock"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"

@@ -54,7 +54,7 @@
         }
       ];
 
-      background = [{ path = "${config.stylix.image}"; }];
+      background = [{ path = "${config.image}"; }];
     };
   };
 }

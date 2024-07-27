@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   gtk = {
@@ -12,8 +12,8 @@
       name = "adt-gtk3";
     };
     cursorTheme = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
+      package = config.cursor.package;
+      name = "${config.cursor.name}";
     };
     iconTheme = {
       package = pkgs.papirus-icon-theme;
