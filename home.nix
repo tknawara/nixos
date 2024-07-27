@@ -3,6 +3,7 @@
 {
 
   imports = [
+    ./consts.nix
     ./programs/atuin/default.nix
     ./programs/gtk/default.nix
     ./programs/vscode/default.nix
@@ -128,12 +129,12 @@
   };
 
   home.pointerCursor = {
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
+    package = config.cursor.package;
+    name = "${config.cursor.name}";
     size = 14;
     x11 = {
       enable = true;
-      defaultCursor = "Bibata-Modern-Classic";
+      defaultCursor = "${config.cursor.name}";
     };
   };
 
