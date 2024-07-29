@@ -71,6 +71,7 @@ in {
       };
       "cmake.showOptionsMovedNotification" = false;
       "editor.formatOnSave" = true;
+      "terminal.integrated.enableMultiLinePasteWarning" = false;
     };
   };
 
