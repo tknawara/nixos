@@ -18,6 +18,7 @@
     ./programs/rofi/default.nix
     ./programs/hyprlock/default.nix
     ./programs/starship/default.nix
+    ./programs/wezterm/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

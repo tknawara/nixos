@@ -29,6 +29,11 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    wezterm = {
+      url = "github:wez/wezterm?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     catppuccin-waybar = {
       url = "github:catppuccin/waybar/main";
       flake = false;
