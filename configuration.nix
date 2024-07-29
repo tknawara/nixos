@@ -174,6 +174,7 @@
     packages = with pkgs; [
       ubuntu_font_family
       cascadia-code
+      monaspace
       config.font.monospace.package
       config.font.serif.package
       config.font.sansSerif.package
