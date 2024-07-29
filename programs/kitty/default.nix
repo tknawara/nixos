@@ -1,12 +1,12 @@
-{ pkgs, lib, inputs, ... }:
+{ pkgs, config, ... }:
 
 {
   programs.kitty = {
     enable = true;
     theme = "Catppuccin-Mocha";
     font = {
-      package = pkgs.nerdfonts;
-      name = "CaskaydiaMono Nerd Font";
+      package = config.font.monospace.package;
+      name = "${config.font.monospace.name}";
     };
 
     settings = {
