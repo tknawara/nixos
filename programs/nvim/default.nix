@@ -37,6 +37,8 @@
       mini.enable = true;
       noice = { enable = true; };
       lualine.enable = true;
+      zen-mode.enable = true;
+      twilight.enable = true;
       oil.enable = true;
       comment.enable = true;
       lsp-format.enable = true;
