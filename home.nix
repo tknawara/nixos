@@ -20,6 +20,7 @@
     ./programs/starship/default.nix
     ./programs/wezterm/default.nix
     ./programs/zoxide/default.nix
+    ./programs/zellij/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -87,6 +88,7 @@
     cliphist
     yazi
     bibata-cursors
+    obsidian
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
