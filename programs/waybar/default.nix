@@ -272,7 +272,7 @@
         border: 2px solid alpha(@crust, 0.3);
         color: @text;
         font-family: UbuntuMono Nerd Font, Hack, Ubuntu; 
-        font-size: 15px; 
+        font-size: 16px; 
       }
 
       #workspaces {
@@ -294,13 +294,8 @@
         * https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect
         */
       #workspaces button:hover {
-        background: @pink;
-        border-top: none;
-        border-right: none;
-        border-bottom: none;
-        padding: 0 5px;
-        box-shadow: inherit;
-        text-shadow: inherit;
+        color: @pink;
+        border-bottom: 2px solid @pink;
       }
       #workspaces button.urgent {
         color: @red;

@@ -5,6 +5,7 @@
   imports = [
     ./consts.nix
     ./programs/atuin/default.nix
+    ./programs/dunst/default.nix
     ./programs/gtk/default.nix
     ./programs/vscode/default.nix
     ./programs/fish/default.nix
@@ -76,7 +77,6 @@
     ripgrep
     rofi-wayland
     swww
-    dunst
     libnotify
     blueman
     gsimplecal
