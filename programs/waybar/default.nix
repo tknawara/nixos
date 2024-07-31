@@ -64,7 +64,7 @@
         interval = 1;
         format = "  {:%Y-%m-%d %H:%M:%S}"; # Icon: calendar-alt
         on-click = "${pkgs.gnome-calendar}/bin/gnome-calendar";
-        tooltip = true;
+        tooltip = false;
       };
 
       "clock#time" = {
@@ -133,7 +133,7 @@
 
       "hyprland/submap" = {
         format = "✌️ {}";
-        max-length = 8;
+        max-length = 20;
         tooltip = false;
       };
 
@@ -254,31 +254,7 @@
 
   programs.waybar.style = # css
     ''
-      @import "${inputs.catppuccin-waybar}/themes/latte.css";
-
-      @keyframes blink-warning {
-        70% {
-          color: white;
-        }
-        to {
-          color: white;
-          background-color: orange;
-        }
-      }
-
-      @keyframes blink-critical {
-        70% {
-          color: white;
-        }
-        to {
-          color: white;
-          background-color: red;
-        }
-      }
-
-      /* -----------------------------------------------------------------------------
-      * Base styles
-      * -------------------------------------------------------------------------- */
+      @import "${inputs.catppuccin-waybar}/themes/mocha.css";
 
       /* Reset all styles */
       * {
@@ -292,9 +268,8 @@
 
       /* The whole bar */
       #waybar {
-        background-color: alpha(#1e1e2e, 0.8);
-        /* background-color: transparent; */
-        border: 0 solid alpha(@crust, 0.3);
+        background-color: shade(@base, 0.9);
+        border: 2px solid alpha(@crust, 0.3);
         color: @text;
         font-family: UbuntuMono Nerd Font, Hack, Ubuntu; 
         font-size: 15px; 
@@ -307,14 +282,13 @@
         padding: 0 5px;
         border-left: 1px solid @mantle;
       }
-      #workspaces button * {
-        color: @text;
-      }
       #workspaces button.visible {
-        background-color: alpha(@peach, 0.5);
+        color: @peach;
+        border-bottom: 2px solid @peach;
       }
       #workspaces button.focused {
-        background-color: @peach;
+        color: @green;
+        border-bottom: 2px solid @green;
       }
       /*
         * https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect
@@ -329,18 +303,10 @@
         text-shadow: inherit;
       }
       #workspaces button.urgent {
-        background-color: @red;
-      }
-      #workspaces button.visible *,
-      #workspaces button.focused *,
-      #workspaces button.urgent *,
-      #workspaces button:hover * {
-        color: @base;
+        color: @red;
       }
       #submap {
-        background-color: @maroon;
-        font-weight: bold;
-        color: #ffffff;
+        color: @maroon;
       }
 
       /* Each module */
@@ -373,38 +339,18 @@
         border-radius: 8px;
       }
 
-      #cpu {
-        margin-right: 0;
-        padding-right: 5px;
-        border-radius: 8px 0px 0px 8px;
-        border-right: 5px solid #17a1c5;
-      }
-      #memory {
-        margin-left: 0;
-        padding-left: 5px;
-        border-radius: 0px 8px 8px 0px;
-        border-left: 5px solid #0da3d5;
-      }
 
       /* -----------------------------------------------------------------------------
         * Module styles
         * -------------------------------------------------------------------------- */
 
-      #idle_inhibitor { }
       #bluetooth {  color: #ffffff; background-color: @blue; }
-      #custom-vpn.on {  color: #ffffff;   background-color: @mauve; }
-      #custom-vpn.off { color: @subtext0; background-color: @crust; }
-      #network {    color: #ffffff; background-color: @lavender; }
-      #cpu {        color: #ffffff; background-color: @sapphire; }
-      #memory {     color: #ffffff; background-color: @sky; }
-      #pulseaudio { color: #ffffff; background-color: @teal; }
-      #battery {    color: #ffffff; background-color: @green; }
-      #backlight {  color: #ffffff; background-color: @yellow; }
-      #tray {       color: #ffffff; background-color: transparent; }
-      #clock { }
+      #backlight {  color: @yellow; }
+      #tray {       background-color: transparent; }
 
 
       #battery {
+          color: @green;
       }
       #battery.warning {
       }
@@ -422,11 +368,17 @@
       }
 
       #clock {
-        font-weight: bold;
-        background-color: alpha(@base, 1); 
+        color: @lavender; 
+        margin-left: 8px;
+        margin-right: 8px;
+        padding-right: 8px;
+        padding-left: 8px;
       }
 
       #cpu {
+        color: @sapphire;
+        padding-right: 8px;
+        padding-left: 8px;
       }
       #cpu.warning {
       }
@@ -435,14 +387,24 @@
         animation-duration: 2s;
       }
 
+      #custom-vpn {
+      }
+      #custom-vpn.on {  
+        color: @mauve;  
+      }
+      #custom-vpn.off {
+        color: @crust;
+      }
       #custom-vpn.connected {
       }
       #custom-vpn.disconnected {
-        background-color: @crust;
-        color: @subtext0;
+          color: @crust;
       }
 
       #memory {
+        color: @sky;
+        padding-left: 8px;
+        padding-right: 8px;
       }
       #memory.warning {
       }
@@ -459,49 +421,49 @@
       }
 
       #network {
+        color: @lavender;
+        padding-left: 8px;
+        padding-right: 8px;
       }
       #network.disconnected {
-        background-color: @red;
+        color: @read;
       }
 
       #pulseaudio {
-        background-color: @teal;
+        color: @teal;
+        padding-left: 8px;
+        padding-right: 8px;
       }
       #pulseaudio.muted {
       }
 
       #custom-power {
-        background-color: @maroon;
-        color: #ffffff;
+        color: @maroon;
         font-size: 16px;
         border-radius: 19px;
       }
 
       #custom-quit {
-        background-color: @yellow;
+        color: @yellow;
         font-size: 16px;
-        color: #ffffff;
         border-radius: 19px;
       }
 
       #custom-lock {
-        background-color: @peach;
+        color: @peach;
         font-size: 16px;
-        color: #ffffff;
         border-radius: 19px;
       }
 
       #custom-reboot {
-        background-color: @flamingo;
+        color: @flamingo;
         font-size: 16px;
-        color: #ffffff;
         border-radius: 19px;
       }
 
       #custom-suspend {
-        background-color: @lavender;
+        color: @lavender;
         font-size: 16px;
-        color: #ffffff;
         border-radius: 19px;
       }
 
