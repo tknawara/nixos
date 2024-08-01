@@ -238,7 +238,7 @@
         tooltip-format = "Reboot";
       };
       "custom/power" = {
-        format = " ";
+        format = "";
         tooltip = true;
         on-click = "systemctl poweroff";
         tooltip-format = "Shutdown";
