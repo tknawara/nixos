@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   services.dunst = {
     enable = true;
-    settings = { global = { font = "UbuntuMono Nerd Font 10"; }; };
+    settings = { global = { font = "${config.font.sansSerif.name} 10"; }; };
   };
 }
