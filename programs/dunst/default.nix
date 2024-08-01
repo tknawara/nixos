@@ -3,6 +3,6 @@
 {
   services.dunst = {
     enable = true;
-    settings = { global = { font = "UbuntuMono Nerd Font 16"; }; };
+    settings = { global = { font = "UbuntuMono Nerd Font 10"; }; };
   };
 }

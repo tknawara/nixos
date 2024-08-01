@@ -151,6 +151,7 @@
           };
           clangd.enable = true;
           jsonls.enable = true;
+          cmake.enable = true;
         };
         keymaps.lspBuf = {
           "gd" = "definition";
