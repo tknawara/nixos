@@ -296,6 +296,7 @@
       #workspaces button:hover {
         color: @pink;
         border-bottom: 2px solid @pink;
+        background-color: transparent;
       }
       #workspaces button.urgent {
         color: @red;
