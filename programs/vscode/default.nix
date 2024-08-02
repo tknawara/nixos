@@ -72,6 +72,7 @@ in {
       "cmake.showOptionsMovedNotification" = false;
       "editor.formatOnSave" = true;
       "terminal.integrated.enableMultiLinePasteWarning" = false;
+      "C_Cpp.default.cppStandard" = "c++23";
     };
   };
 
