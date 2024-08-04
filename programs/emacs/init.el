@@ -26,8 +26,6 @@
 (load-theme 'catppuccin :no-confirm)
 (setq catppuccin-flavor 'mocha) ;; or  'frappe 'latte, 'macchiato, or 'mocha
 (catppuccin-reload)
-(set-frame-parameter nil 'alpha-background 90)
-(add-to-list 'default-frame-alist '(alpha-background . 90))
 
 ;; * Modeline
 (use-package doom-modeline
