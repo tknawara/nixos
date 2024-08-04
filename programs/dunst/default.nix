@@ -3,6 +3,6 @@
 {
   services.dunst = {
     enable = true;
-    settings = { global = { font = "${config.font.sansSerif.name} 10"; }; };
+    settings = { global = { font = "Droid Sans 9"; }; };
   };
 }

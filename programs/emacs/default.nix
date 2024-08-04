@@ -6,9 +6,15 @@
     package = pkgs.emacs29-pgtk;
     extraPackages = epkgs:
       with epkgs; [
+        all-the-icons
         breadcrumb
+        cargo
         catppuccin-theme
+        company
+        company-box
         consult
+        counsel
+        counsel-projectile
         dap-mode
         diff-hl
         dockerfile-mode
@@ -19,25 +25,33 @@
         evil-collection
         evil-indent-plus
         evil-matchit
+        evil-nerd-commenter
         evil-org
         evil-surround
         evil-tex
         evil-textobj-tree-sitter
         exec-path-from-shell
-        flycheck
         general
-        helm
+        hydra
         ivy
+        ivy-rich
+        lsp-ivy
         lsp-mode
         lsp-treemacs
+        lsp-ui
         magit
         magit-todos
         nix-mode
+        projectile
+        python-mode
+        rainbow-delimiters
         rust-mode
+        swiper
         tree-sitter
         treemacs
         treemacs-projectile
         treesit-grammars.with-all-grammars
+        which-key
       ];
   };
 
