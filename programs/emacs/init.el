@@ -36,7 +36,7 @@
 ;; ----------------------------------------
 ;; * UI, editing
 ;; ---------------------------------------
-(set-frame-font "CaskaydiaMono Nerd Font 11")
+(set-frame-font "CaskaydiaMono Nerd Font 12")
 (variable-pitch-mode 1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
