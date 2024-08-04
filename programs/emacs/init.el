@@ -55,7 +55,6 @@
 (global-display-line-numbers-mode 1)
 (setq display-line-numbers-type 'relative)
 (set-fringe-mode 10)
-(setq visible-bell t)
 (setgd c-basic-offset 4)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (use-package all-the-icons)
