@@ -77,7 +77,19 @@
 
 ;; * lsp
 (use-package lsp-mode
+  :ensure
+  :commands (lsp lsp-deferred)
+  :hook ((c-mode   ; clangd
+          c++-mode ; clangd
+          c-or-c++-mode ; clangd
+          python-mode   ; pyright
+          ) . lsp)
+  :init
   :config
+  )
+
+(use-package flycheck
+  :ensure
   )
 
 ;; * treemacs

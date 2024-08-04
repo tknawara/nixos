@@ -24,8 +24,10 @@
         evil-tex
         evil-textobj-tree-sitter
         exec-path-from-shell
+        flycheck
         general
         helm
+        ivy
         lsp-mode
         lsp-treemacs
         magit
