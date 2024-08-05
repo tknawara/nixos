@@ -286,12 +286,6 @@
   :hook (company-mode . company-box-mode))
 
 ;; -------------------------------
-;; Rainbow
-;; ------------------------------
-(use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode))
-
-;; -------------------------------
 ;; Electric
 ;; -------------------------------
 (use-package electric

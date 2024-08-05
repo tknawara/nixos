@@ -45,7 +45,6 @@
         nix-mode
         projectile
         python-mode
-        rainbow-delimiters
         rust-mode
         swiper
         tree-sitter
