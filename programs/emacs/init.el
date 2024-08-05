@@ -99,6 +99,7 @@
 
 (use-package evil-nerd-commenter
   :bind ("M-/" . evilnc-comment-or-uncomment-lines))
+
 ;; -------------------------------------
 ;; Hydra
 ;; ------------------------------------
@@ -116,7 +117,6 @@
 ;; -------------------------------------
 ;; Helpful
 ;; ------------------------------------
-
 (use-package helpful
   :custom
   (counsel-describe-function-function #'helpful-callable)
@@ -206,7 +206,19 @@
          (before-save . lsp-format-buffer)
          (before-save . lsp-organise-imports))
   :config)
-  
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp-deferred)))) 
+ 
+;; ---------------------------------------
+;; Guile scheme
+;; --------------------------------------
+(use-package geiser
+  :config
+  (add-hook 'scheme-mode-hook 'geiser-mode))
+(use-package geiser-guile :after geiser)
 ;; -----------------------------------
 ;; Projectile
 ;; -----------------------------------
@@ -263,3 +275,17 @@
 ;; ------------------------------
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
+
+;; -------------------------------
+;; Electric
+;; -------------------------------
+(use-package electric
+  :config
+  (setq electric-pair-preserve-balance t
+        electric-pair-delete-adjacent-pairs nil
+        electric-pair-open-newline-between-pairs nil)
+
+  ;; https://github.com/hlissner/doom-emacs/issues/1739#issuecomment-529858261
+  ;; NOTE: fix indent after electric pair appear
+  ;; BUG not work properly
+  (electric-pair-mode 1))

@@ -30,12 +30,15 @@
         evil-tex
         evil-textobj-tree-sitter
         exec-path-from-shell
+        geiser
+        geiser-guile
         general
         hydra
         ivy
         ivy-rich
         lsp-ivy
         lsp-mode
+        lsp-pyright
         lsp-treemacs
         lsp-ui
         magit
