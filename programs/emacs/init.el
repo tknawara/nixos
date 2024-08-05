@@ -1,3 +1,7 @@
+;; You will most likely need to adjust this font size for your system!
+(defvar efs/default-font-size 120)
+(defvar efs/default-variable-font-size 120)
+
 (require 'package)
 (package-initialize)
 (setq use-package-always-ensure t)
@@ -34,12 +38,11 @@
 ;; ----------------------------------------
 ;; * UI, editing
 ;; ---------------------------------------
-(set-frame-font "Cascadia Code NF 12")
 (variable-pitch-mode 1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(modify-all-frames-parameters '((internal-border-width . 10)))
+(set-fringe-mode 10) 
 (prefer-coding-system       'utf-8)
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
@@ -56,6 +59,13 @@
 (set-fringe-mode 10)
 (setgd c-basic-offset 4)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+
+(set-face-attribute 'default nil :font "FiraCode Nerd Font Mono Ret" :height efs/default-font-size)
+;; Set the fixed pitch face
+(set-face-attribute 'fixed-pitch nil :font "FiraCode Nerd Font Mono Ret" :height efs/default-font-size)
+;; Set the variable pitch face
+(set-face-attribute 'variable-pitch nil :font "Cantarell" :height efs/default-variable-font-size :weight 'regular)
 
 ;; ----------------------------
 ;; Magit
@@ -294,3 +304,4 @@
   ;; NOTE: fix indent after electric pair appear
   ;; BUG not work properly
   (electric-pair-mode 1))
+
