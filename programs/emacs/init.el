@@ -34,7 +34,7 @@
 ;; ----------------------------------------
 ;; * UI, editing
 ;; ---------------------------------------
-(set-frame-font "CaskaydiaMono Nerd Font 12")
+(set-frame-font "Cascadia Code NF 12")
 (variable-pitch-mode 1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
@@ -56,7 +56,6 @@
 (set-fringe-mode 10)
 (setgd c-basic-offset 4)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-(use-package all-the-icons)
 
 ;; ----------------------------
 ;; Magit
@@ -166,6 +165,11 @@
   :commands (lsp lsp-deferred)
   :hook ((lsp-mode . efs/lsp-mode-setup)
          ((c-mode c++-mode c-or-c++-mode) . lsp))
+  :custom
+  (lsp-headerline-breadcrumb-enable-symbol-numbers nil)
+  (lsp-headerline-arrow "")
+  (lsp-headerline-breadcrumb-enable-diagnostics nil)
+  (lsp-headerline-breadcrumb-icons-enable nil)
   :init
   (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
   :config

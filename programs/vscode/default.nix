@@ -41,7 +41,7 @@ in {
       "editor.fontFamily" =
         "'${config.font.monospace.name}', 'Droid Sans Mono', 'monospace', monospace";
       "editor.fontLigatures" =
-        "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09'";
+        "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09','ss19', 'ss20'";
       "editor.semanticHighlighting.enabled" = true;
       "terminal.integrated.minimumContrastRatio" = 1;
       "workbench.colorTheme" = "Catppuccin Mocha";

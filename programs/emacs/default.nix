@@ -5,7 +5,6 @@
     enable = true;
     extraPackages = epkgs:
       with epkgs; [
-        all-the-icons
         breadcrumb
         cargo
         catppuccin-theme

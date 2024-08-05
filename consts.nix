@@ -31,11 +31,11 @@ in {
               options = {
                 name = mkOption {
                   type = types.str;
-                  default = "CaskaydiaMono Nerd Font";
+                  default = "Cascadia Code NF";
                 };
                 package = mkOption {
                   type = types.package;
-                  default = pkgs.nerdfonts;
+                  default = pkgs.cascadia-code;
                 };
               };
             };
