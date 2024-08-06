@@ -6,24 +6,24 @@
     ./consts.nix
     ./programs/atuin/default.nix
     ./programs/dunst/default.nix
-    ./programs/gtk/default.nix
-    ./programs/vscode/default.nix
-    ./programs/fish/default.nix
-    ./programs/zsh/default.nix
-    ./programs/git/default.nix
-    ./programs/nvim/default.nix
-    ./programs/tmux/default.nix
-    ./programs/hyprland/default.nix
-    ./programs/kitty/default.nix
-    ./programs/waybar/default.nix
-    ./programs/rofi/default.nix
-    ./programs/hyprlock/default.nix
-    ./programs/starship/default.nix
-    ./programs/wezterm/default.nix
-    ./programs/zoxide/default.nix
-    ./programs/zellij/default.nix
-    ./programs/index/default.nix
     ./programs/emacs/default.nix
+    ./programs/fish/default.nix
+    ./programs/git/default.nix
+    ./programs/gtk/default.nix
+    ./programs/hyprland/default.nix
+    ./programs/hyprlock/default.nix
+    ./programs/index/default.nix
+    ./programs/kitty/default.nix
+    ./programs/nvim/default.nix
+    ./programs/rofi/default.nix
+    ./programs/starship/default.nix
+    ./programs/tmux/default.nix
+    ./programs/vscode/default.nix
+    ./programs/waybar/default.nix
+    ./programs/wezterm/default.nix
+    ./programs/zellij/default.nix
+    ./programs/zoxide/default.nix
+    ./programs/zsh/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -48,49 +48,49 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
-    firefox
-    htop
-    fastfetch
-    git
-    fzf
-    unzip
-    zsh
-    zplug
-    lua
-    docker
-    gnome-tweaks
     adw-gtk3
-    papirus-icon-theme
+    any-nix-shell
+    bat
+    bibata-cursors
+    blueman
+    cliphist
+    delta
+    discord
+    docker
+    eza
+    fastfetch
+    firefox
+    fzf
+    git
+    gnome-tweaks
     gnomeExtensions.blur-my-shell
     gnomeExtensions.gnome-40-ui-improvements
     gnomeExtensions.pano
-    delta
-    bat
-    discord
-    wl-clipboard
-    jdk
-    jetbrains.idea-community-bin
-    nil
-    any-nix-shell
-    nixfmt-classic
-    eza
-    zoom-us
-    ripgrep
-    rofi-wayland
-    swww
-    libnotify
-    blueman
+    grim
     gsimplecal
-    pavucontrol
+    htop
     hyprlock
     hyprshot
-    grim
-    slurp
+    jdk
+    jetbrains.idea-community-bin
+    libnotify
     libsecret
-    cliphist
-    yazi
-    bibata-cursors
+    lua
+    nil
+    nixfmt-classic
     obsidian
+    papirus-icon-theme
+    pavucontrol
+    ripgrep
+    rofi-wayland
+    slurp
+    swww
+    unzip
+    wl-clipboard
+    yazi
+    zoom-us
+    zplug
+    zsh
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

@@ -177,8 +177,8 @@
       config.font.monospace.package
       config.font.sansSerif.package
       config.font.serif.package
-      fira-code-nerdfont
       monaspace
+      nerdfonts
       ubuntu_font_family
     ];
     fontconfig = {
