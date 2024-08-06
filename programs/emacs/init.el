@@ -167,15 +167,13 @@
 ;; ---------------------------------------
 ;; * Lsp
 ;; ---------------------------------------
-(defun efs/lsp-mode-setup ()
-  (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
-  (lsp-headerline-breadcrumb-mode))
-
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
-  :hook ((lsp-mode . efs/lsp-mode-setup)
-         ((c-mode c++-mode c-or-c++-mode) . lsp))
+  :hook (((c-mode c++-mode c-or-c++-mode) . lsp))
   :custom
+  (lsp-headerline-breadcrumb-enable nil)
+  (lsp-headerline-breadcrumb-segments
+   '(project symbols))
   (lsp-headerline-breadcrumb-enable-symbol-numbers nil)
   (lsp-headerline-breadcrumb-enable-diagnostics nil)
   (lsp-headerline-breadcrumb-icons-enable nil)
@@ -205,9 +203,10 @@
 ;; Treesitter
 ;; -----------------------------------------
 (use-package tree-sitter
-  :after lsp-mode)
-(use-package tree-sitter-langs
-  :after tree-sitter)
+  :after lsp-mode
+  :config
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
 ;; ------------------------------------------
 ;; Rust
