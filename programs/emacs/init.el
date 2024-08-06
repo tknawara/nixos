@@ -177,12 +177,12 @@
          ((c-mode c++-mode c-or-c++-mode) . lsp))
   :custom
   (lsp-headerline-breadcrumb-enable-symbol-numbers nil)
-  (lsp-headerline-arrow "")
   (lsp-headerline-breadcrumb-enable-diagnostics nil)
   (lsp-headerline-breadcrumb-icons-enable nil)
   :init
   (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
   :config
+  (setq lsp-headerline-arrow "")
   (lsp-enable-which-key-integration t))
 
 (use-package lsp-treemacs
@@ -200,6 +200,14 @@
   :hook (lsp-mode . lsp-ui-mode)
   :custom
   (lsp-ui-doc-position 'bottom))
+
+;; -----------------------------------------
+;; Treesitter
+;; -----------------------------------------
+(use-package tree-sitter
+  :after lsp-mode)
+(use-package tree-sitter-langs
+  :after tree-sitter)
 
 ;; ------------------------------------------
 ;; Rust

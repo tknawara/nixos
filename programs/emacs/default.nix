@@ -49,6 +49,7 @@
         rust-mode
         swiper
         tree-sitter
+        tree-sitter-langs
         treemacs
         treemacs-projectile
         treesit-grammars.with-all-grammars
