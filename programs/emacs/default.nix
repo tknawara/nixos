@@ -45,6 +45,7 @@
         nix-mode
         projectile
         python-mode
+        racket-mode
         rust-mode
         swiper
         tree-sitter

@@ -219,8 +219,7 @@
 (use-package python-mode
   :hook ((python-mode . lsp-deferred)
          (before-save . lsp-format-buffer)
-         (before-save . lsp-organise-imports))
-  :config)
+         (before-save . lsp-organise-imports)))
 (use-package lsp-pyright
   :ensure t
   :hook (python-mode . (lambda ()
@@ -234,6 +233,15 @@
   :config
   (add-hook 'scheme-mode-hook 'geiser-mode))
 (use-package geiser-guile :after geiser)
+
+;; ------------------------------------
+;; Racket
+;; ------------------------------------
+(use-package racket-mode
+  :hook ((racket-mode . lsp-deferred)
+         (before-save . lsp-format-buffer)
+         (before-save . lsp-organise-imports)))
+
 ;; -----------------------------------
 ;; Projectile
 ;; -----------------------------------
