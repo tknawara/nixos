@@ -61,9 +61,9 @@
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 
-(set-face-attribute 'default nil :font "FiraCode Nerd Font Mono Med" :height efs/default-font-size)
+(set-face-attribute 'default nil :font "Cascadia Code NF" :height efs/default-font-size)
 ;; Set the fixed pitch face
-(set-face-attribute 'fixed-pitch nil :font "FiraCode Nerd Font Mono Med" :height efs/default-font-size)
+(set-face-attribute 'fixed-pitch nil :font "Cascadia Code NF" :height efs/default-font-size)
 ;; Set the variable pitch face
 (set-face-attribute 'variable-pitch nil :font "Cantarell" :height efs/default-variable-font-size :weight 'regular)
 
