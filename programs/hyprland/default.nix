@@ -20,6 +20,17 @@ in {
     xwayland.enable = true;
     settings = {
       exec-once = "${startupScript}/bin/start";
+      source = [ "${inputs.catppuccin-hyprland}/themes/mocha.conf" ];
+
+      group = {
+        groupbar = {
+          font_family = "Cascadia Code NF";
+          font_size = 12;
+          render_titles = false;
+          "col.active" = "rgba($greenAlphaee)";
+          "col.inactive" = "rgba($rosewaterAlphaee)";
+        };
+      };
 
       "$mod" = "SUPER";
       bind = [
@@ -32,6 +43,8 @@ in {
         "$mod, M, exit,"
         "$mod, V, togglefloating"
         "$mod, F, fullscreen"
+
+        "$mod, t, togglegroup"
 
         "$mod, l, movefocus, l"
         "$mod, h, movefocus, r"
@@ -81,6 +94,17 @@ in {
       binde = , h, resizeactive, -10 0
       binde = , k, resizeactive, 0 -10
       binde = , j, resizeactive, 0 10
+      bind = , escape, submap, reset
+      submap = reset
+
+      bind = $mod, G, submap, grouping 
+      submap = grouping 
+      bind = SHIFT, h, moveintogroup, l 
+      bind = SHIFT, l, moveintogroup, r 
+      bind = SHIFT, k, moveintogroup, u 
+      bind = SHIFT, j, moveintogroup, d 
+      bind = , h, changegroupactive, b 
+      bind = , l, changegroupactive, f 
       bind = , escape, submap, reset
       submap = reset
     '';

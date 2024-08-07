@@ -34,6 +34,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    catppuccin-hyprland = {
+      url = "github:catppuccin/hyprland/main";
+      flake = false;
+    };
     catppuccin-waybar = {
       url = "github:catppuccin/waybar/main";
       flake = false;
