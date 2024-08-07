@@ -28,7 +28,7 @@ in {
           font_size = 12;
           render_titles = false;
           "col.active" = "rgba($greenAlphaee)";
-          "col.inactive" = "rgba($rosewaterAlphaee)";
+          "col.inactive" = "rgba($baseAlphaee)";
         };
       };
 
