@@ -14,7 +14,6 @@
         counsel
         counsel-projectile
         dap-mode
-        diff-hl
         dockerfile-mode
         doom-modeline
         embark
@@ -48,13 +47,11 @@
         racket-mode
         rust-mode
         swiper
-        tree-sitter
         treemacs
         treemacs-projectile
-        treesit-grammars.with-all-grammars
         which-key
       ];
   };
 
-  home.file.".emacs.d/init.el" = { source = ./init.el; };
+  home.file = { ".emacs.d/init.el" = { source = ./init.el; }; };
 }

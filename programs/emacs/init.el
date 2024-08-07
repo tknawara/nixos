@@ -58,6 +58,7 @@
 (setq display-line-numbers-type 'relative)
 (set-fringe-mode 10)
 (setgd c-basic-offset 4)
+(setgd c-ts-basic-offset 4)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 
@@ -169,7 +170,7 @@
 ;; ---------------------------------------
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
-  :hook (((c-mode c++-mode c-or-c++-mode) . lsp))
+  :hook (((c-mode c++-mode c-or-c++-mode c-ts-mode c++-ts-mode c-or-c++-ts-mode) . lsp))
   :custom
   (lsp-headerline-breadcrumb-enable nil)
   (lsp-headerline-breadcrumb-segments
@@ -189,8 +190,13 @@
 (add-hook 'c-mode-hook
           (lambda ()
             (add-hook 'before-save-hook #'lsp-format-buffer nil t)))
-
 (add-hook 'c++-mode-hook
+          (lambda ()
+            (add-hook 'before-save-hook #'lsp-format-buffer nil t)))
+(add-hook 'c-ts-mode-hook
+          (lambda ()
+            (add-hook 'before-save-hook #'lsp-format-buffer nil t)))
+(add-hook 'c++-ts-mode-hook
           (lambda ()
             (add-hook 'before-save-hook #'lsp-format-buffer nil t)))
 
@@ -202,17 +208,25 @@
 ;; -----------------------------------------
 ;; Treesitter
 ;; -----------------------------------------
-(use-package tree-sitter
-  :after lsp-mode
-  :config
-  (global-tree-sitter-mode)
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+(push '(python-mode . python-ts-mode) major-mode-remap-alist)
+(push '(rust-mode . rust-ts-mode) major-mode-remap-alist)
+(push '(c-mode . c-ts-mode) major-mode-remap-alist)
+(push '(c++-mode . c++-ts-mode) major-mode-remap-alist)
+(push '(c-or-c++-mode . c-or-c++-ts-mode) major-mode-remap-alist)
+(push '(cc-mode . cc-ts-mode) major-mode-remap-alist)
+;;(push '(javascript-mode . js-ts-mode) major-mode-remap-alist)
+;;(push '(toml-mode . toml-ts-mode) major-mode-remap-alist)
+;;(push '(tsx-mode . tsx-ts-mode) major-mode-remap-alist)
+;;(push '(typescript-mode . tsx-ts-mode) major-mode-remap-alist)
+;;(push '(javascript-mode . tsx-ts-mode) major-mode-remap-alist)
+;;(push '(css-mode . css-ts-mode) major-mode-remap-alist)
 
 ;; ------------------------------------------
 ;; Rust
 ;; ------------------------------------------
 (use-package rust-mode
   :hook ((rust-mode . lsp-deferred)
+         (rust-ts-mode . lsp-deferred)
          (before-save . lsp-format-buffer)
          (before-save . lsp-organize-imports))
   :config
@@ -225,6 +239,7 @@
 ;; --------------------------------------------
 (use-package python-mode
   :hook ((python-mode . lsp-deferred)
+         (python-ts-mode . lsp-deferred)
          (before-save . lsp-format-buffer)
          (before-save . lsp-organise-imports)))
 (use-package lsp-pyright
@@ -299,6 +314,8 @@
 
 (use-package company-box
   :hook (company-mode . company-box-mode))
+
+(use-package evil-textobj-tree-sitter)
 
 ;; -------------------------------
 ;; Electric
