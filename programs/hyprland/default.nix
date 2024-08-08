@@ -26,6 +26,7 @@ in {
         groupbar = {
           font_family = "Cascadia Code NF";
           font_size = 12;
+          text_color = "rgba($subtext1Alphaee)";
           render_titles = false;
           "col.active" = "rgba($greenAlphaee)";
           "col.inactive" = "rgba($baseAlphaee)";
