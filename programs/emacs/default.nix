@@ -7,7 +7,7 @@
     package = pkgs.emacsWithPackagesFromUsePackage {
       config = ./init.el;
       alwaysEnsure = true;
-      package = pkgs.emacs-pgtk;
+      package = pkgs.emacs-unstable;
       extraEmacsPackages = (epkgs:
         with epkgs; [
           catppuccin-theme
