@@ -10,6 +10,7 @@
     ./programs/fish/default.nix
     ./programs/git/default.nix
     ./programs/gtk/default.nix
+    ./programs/helix/default.nix
     ./programs/hyprland/default.nix
     ./programs/hyprlock/default.nix
     ./programs/index/default.nix
