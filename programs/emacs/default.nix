@@ -1,57 +1,22 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
+  nixpkgs.overlays = [ (import inputs.emacs-overlay) ];
   programs.emacs = {
     enable = true;
-    extraPackages = epkgs:
-      with epkgs; [
-        breadcrumb
-        cargo
-        catppuccin-theme
-        company
-        company-box
-        consult
-        counsel
-        counsel-projectile
-        dap-mode
-        dockerfile-mode
-        doom-modeline
-        embark
-        evil
-        evil-cleverparens
-        evil-collection
-        evil-indent-plus
-        evil-matchit
-        evil-nerd-commenter
-        evil-org
-        evil-surround
-        evil-tex
-        evil-textobj-tree-sitter
-        exec-path-from-shell
-        geiser
-        geiser-guile
-        general
-        hydra
-        ivy
-        ivy-rich
-        lsp-ivy
-        lsp-mode
-        lsp-pyright
-        lsp-treemacs
-        lsp-ui
-        magit
-        magit-todos
-        nix-mode
-        projectile
-        python-mode
-        racket-mode
-        rust-mode
-        swiper
-        treemacs
-        treemacs-projectile
-        which-key
-      ];
+    package = pkgs.emacsWithPackagesFromUsePackage {
+      config = ./init.el;
+      alwaysEnsure = true;
+      package = pkgs.emacs-pgtk;
+      extraEmacsPackages = (epkgs:
+        with epkgs; [
+          catppuccin-theme
+          treesit-grammars.with-all-grammars
+        ]);
+    };
   };
 
+  services.emacs.enable = true;
+  home.packages = with pkgs; [ emacs-all-the-icons-fonts ];
   home.file = { ".emacs.d/init.el" = { source = ./init.el; }; };
 }

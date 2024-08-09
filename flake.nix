@@ -34,6 +34,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+
     catppuccin-hyprland = {
       url = "github:catppuccin/hyprland/main";
       flake = false;
@@ -55,6 +62,7 @@
         ./configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.stylix.nixosModules.stylix
+        { _module.args.emacs-overlay = inputs.emacs-overlay.overlay; }
       ];
     };
   };

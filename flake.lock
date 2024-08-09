@@ -219,6 +219,32 @@
         "type": "github"
       }
     },
+    "emacs-overlay": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-stable": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1723220466,
+        "narHash": "sha256-uQivZ+/bSUcB2fWjvb9c1hYhYncM5m+PsSXXmzV8JLA=",
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "rev": "52d4cb2d128a3ebf06dfc8d9c539bfd8515cd4a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -892,6 +918,7 @@
         "catppuccin-hyprland": "catppuccin-hyprland",
         "catppuccin-rofi": "catppuccin-rofi",
         "catppuccin-waybar": "catppuccin-waybar",
+        "emacs-overlay": "emacs-overlay",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
