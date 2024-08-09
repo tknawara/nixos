@@ -8,10 +8,21 @@
       editor = {
         true-color = true;
         line-number = "relative";
+        color-modes = true;
+        bufferline = "always";
         cursor-shape = {
           normal = "block";
           insert = "bar";
           select = "underline";
+        };
+
+        gutters = [ "diff" "diagnostics" "line-numbers" "spacer" ];
+
+        statusline = {
+          separator = "│";
+          mode.normal = "NORMAL";
+          mode.insert = "INSERT";
+          mode.select = "SELECT";
         };
 
         lsp = {
