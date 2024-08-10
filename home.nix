@@ -51,6 +51,7 @@
     # pkgs.hello
     adw-gtk3
     any-nix-shell
+    anytype
     bat
     bibata-cursors
     blueman
@@ -63,10 +64,10 @@
     firefox
     fzf
     git
-    gnome-tweaks
     gnomeExtensions.blur-my-shell
     gnomeExtensions.gnome-40-ui-improvements
     gnomeExtensions.pano
+    gnome-tweaks
     grim
     gsimplecal
     htop
