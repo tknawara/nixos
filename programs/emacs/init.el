@@ -320,14 +320,8 @@
 ;; -------------------------------
 ;; Electric
 ;; -------------------------------
-(use-package electric
-  :config
-  (setq electric-pair-preserve-balance t
-        electric-pair-delete-adjacent-pairs nil
-        electric-pair-open-newline-between-pairs nil)
-
-  ;; https://github.com/hlissner/doom-emacs/issues/1739#issuecomment-529858261
-  ;; NOTE: fix indent after electric pair appear
-  ;; BUG not work properly
-  (electric-pair-mode 1))
+(setq electric-pair-preserve-balance t)
+(setq electric-pair-delete-adjacent-pairs nil)
+(setq electric-pair-open-newline-between-pairs t)
+(setq electric-pair-mode 1)
 

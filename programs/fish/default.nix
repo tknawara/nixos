@@ -16,6 +16,7 @@
       ls = "eza";
       ll = "ls -lah";
       cat = "bat";
+      grep = "rg";
       em = "emacsclient -n";
       update = "sudo nixos-rebuild switch --flake /home/tarek/nixos#default";
     };
