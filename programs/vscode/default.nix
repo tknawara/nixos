@@ -36,6 +36,9 @@ in {
       ms-vscode.cpptools-themes
       shopify.ruby-lsp
       catppuccin.catppuccin-vsc
+      ms-dotnettools.csdevkit
+      ms-dotnettools.csharp
+      ms-dotnettools.vscode-dotnet-runtime
     ]) ++ (with marketplace-release; [ github.copilot-chat ]);
     userSettings = {
       "editor.fontFamily" =
