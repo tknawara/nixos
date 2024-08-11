@@ -52,11 +52,21 @@
           args = [ "start" ];
         };
       };
-      language = [{
-        name = "nix";
-        auto-format = true;
-        formatter.command = "${pkgs.nixfmt-classic}/bin/nixfmt";
-      }];
+      language = [
+        {
+          name = "nix";
+          auto-format = true;
+          formatter.command = "${pkgs.nixfmt-classic}/bin/nixfmt";
+        }
+        {
+          name = "cpp";
+          auto-format = true;
+        }
+        {
+          name = "rust";
+          auto-format = true;
+        }
+      ];
       themes = {
         autumn_night_transparent = {
           "inherits" = "autumn_night";
