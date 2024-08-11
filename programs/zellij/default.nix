@@ -5,9 +5,6 @@
     enable = true;
     enableZshIntegration = true;
     enableFishIntegration = true;
-    settings = {
-      theme = "catppuccin-mocha";
-      pane_frames = false;
-    };
+    settings = { pane_frames = false; };
   };
 }

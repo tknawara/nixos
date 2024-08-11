@@ -2,6 +2,7 @@
 
 {
   gtk = {
+    enable = true;
     font = {
       package = pkgs.inter;
       name = "Inter";
@@ -9,7 +10,7 @@
     };
     theme = {
       package = pkgs.adw-gtk3;
-      name = "adt-gtk3";
+      name = "adw-gtk3";
     };
     cursorTheme = {
       package = config.cursor.package;
