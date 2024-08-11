@@ -108,7 +108,9 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users = { "tarek" = import ./home.nix; };
+    users.tarek = {
+      imports = [ ./home.nix inputs.catppuccin.homeManagerModules.catppuccin ];
+    };
   };
 
   programs.hyprland.enable = true;

@@ -1,8 +1,6 @@
 { pkgs, inputs, ... }: {
   programs.rofi = {
     enable = true;
-    theme =
-      "${inputs.catppuccin-rofi}/basic/.local/share/rofi/themes/catppuccin-mocha.rasi";
     package = pkgs.rofi-wayland;
     extraConfig = {
       modi = "drun,run,window,filebrowser";

@@ -20,7 +20,6 @@ in {
     xwayland.enable = true;
     settings = {
       exec-once = "${startupScript}/bin/start";
-      source = [ "${inputs.catppuccin-hyprland}/themes/mocha.conf" ];
 
       group = {
         groupbar = {
