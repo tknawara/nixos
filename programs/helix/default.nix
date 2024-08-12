@@ -66,6 +66,10 @@
           name = "rust";
           auto-format = true;
         }
+        {
+          name = "clojure";
+          auto-format = true;
+        }
       ];
       themes = {
         autumn_night_transparent = {
