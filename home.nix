@@ -90,6 +90,7 @@
     unzip
     wl-clipboard
     yazi
+    zed-editor
     zoom-us
     zplug
     zsh
