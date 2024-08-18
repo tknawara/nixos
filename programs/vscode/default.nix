@@ -39,6 +39,7 @@ in {
       ms-dotnettools.csdevkit
       ms-dotnettools.csharp
       ms-dotnettools.vscode-dotnet-runtime
+      betterthantomorrow.calva
     ]) ++ (with marketplace-release; [ github.copilot-chat ]);
     userSettings = {
       "editor.fontFamily" =
@@ -76,6 +77,12 @@ in {
       "editor.formatOnSave" = true;
       "terminal.integrated.enableMultiLinePasteWarning" = false;
       "C_Cpp.default.cppStandard" = "c++23";
+      "calva.prettyPrintingOptions" = {
+        "printEngine" = "pprint";
+        "enabled" = true;
+        "width" = 120;
+        "maxLength" = 50;
+      };
     };
   };
 
