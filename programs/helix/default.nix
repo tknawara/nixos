@@ -51,6 +51,10 @@
           command = "${pkgs.bash-language-server}/bin/bash-language-server";
           args = [ "start" ];
         };
+        ucm = {
+          command = "nc"; # or 'ncat' or 'netcat'
+          args = [ "localhost" "5757" ];
+        };
       };
       language = [
         {
@@ -73,6 +77,21 @@
         {
           name = "clojure";
           auto-format = true;
+        }
+        {
+          name = "unison";
+          scope = "source.unison";
+          injection-regex = "unison";
+          file-types = [ "u" ];
+          shebangs = [ ];
+          roots = [ ];
+          auto-format = false;
+          comment-token = "--";
+          indent = {
+            tab-width = 4;
+            unit = "    ";
+          };
+          language-servers = [ "ucm" ];
         }
       ];
       themes = {
