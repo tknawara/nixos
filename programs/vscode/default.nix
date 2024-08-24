@@ -23,19 +23,17 @@ in {
       eamodio.gitlens
       vadimcn.vscode-lldb
       ms-toolsai.jupyter
-    ]) ++ (with marketplace; [
-      github.copilot
-      scalameta.metals
-      scala-lang.scala
-      sswg.swift-lang
-      vknabel.vscode-apple-swift-format
-      vscodevim.vim
       ms-vscode.cpptools-extension-pack
       ms-vscode.cmake-tools
       ms-vscode.cpptools
-      ms-vscode.cpptools-themes
-      shopify.ruby-lsp
+      scalameta.metals
+      scala-lang.scala
+      sswg.swift-lang
       catppuccin.catppuccin-vsc
+      shopify.ruby-lsp
+    ]) ++ (with marketplace; [
+      github.copilot
+      vscodevim.vim
       ms-dotnettools.csdevkit
       ms-dotnettools.csharp
       ms-dotnettools.vscode-dotnet-runtime
