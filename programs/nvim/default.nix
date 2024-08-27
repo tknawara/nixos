@@ -119,10 +119,6 @@
 
       conform-nvim = {
         enable = true;
-        formatOnSave = {
-          lspFallback = true;
-          timeoutMs = 500;
-        };
         formattersByFt = {
           nix = [ "nixfmt" ];
           python = [ "isort" "black" ];
