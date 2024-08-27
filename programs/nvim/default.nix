@@ -119,12 +119,14 @@
 
       conform-nvim = {
         enable = true;
-        formattersByFt = {
-          nix = [ "nixfmt" ];
-          python = [ "isort" "black" ];
-          lua = [ "stylua" ];
-          markdown = [[ "prettierd" "prettier" ]];
-          scala = [ "scalafmt" ];
+        settings = {
+          formatter_by_ft = {
+            nix = [ "nixfmt" ];
+            python = [ "isort" "black" ];
+            lua = [ "stylua" ];
+            markdown = [[ "prettierd" "prettier" ]];
+            scala = [ "scalafmt" ];
+          };
         };
       };
 
