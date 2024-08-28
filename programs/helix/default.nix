@@ -79,6 +79,10 @@
           auto-format = true;
         }
         {
+          name = "scala";
+          auto-format = true;
+        }
+        {
           name = "unison";
           scope = "source.unison";
           injection-regex = "unison";
