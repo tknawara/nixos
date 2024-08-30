@@ -54,6 +54,7 @@
     adw-gtk3
     any-nix-shell
     anytype
+    appflowy
     bat
     bibata-cursors
     blueman

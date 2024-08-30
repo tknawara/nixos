@@ -14,7 +14,7 @@ in {
       "audio/*" = [ "vlc.desktop" ];
       "text/html" = [ "org.gnome.Epiphany.desktop" browser ];
       "video/*" = [ "vlc.dekstop" ];
-      "x-scheme-handler/appflowy-flutter" = [ "appflowy-flutter.desktop" ];
+      "x-scheme-handler/appflowy-flutter" = [ "appflowy.desktop" ];
       "x-scheme-handler/chrome" = [ browser ];
       "x-scheme-handler/http" = [ "org.gnome.Epiphany.desktop" browser ];
       "x-scheme-handler/https" = [ "org.gnome.Epiphany.desktop" browser ];
@@ -28,20 +28,10 @@ in {
       "application/xhtml+xml" = [ browser ];
       "text/html" = [ browser ];
       "x-scheme-handler/anytype" = [ "anytype.desktop" ];
-      "x-scheme-handler/appflowy-flutter" = [ "appflowy-flutter.desktop" ];
+      "x-scheme-handler/appflowy-flutter" = [ "appflowy.desktop" ];
       "x-scheme-handler/chrome" = [ browser ];
       "x-scheme-handler/http" = [ browser ];
       "x-scheme-handler/https" = [ browser ];
-    };
-  };
-
-  xdg.desktopEntries = {
-    appflowy-flutter = {
-      name = "Appflowy Flutter";
-      exec = "${pkgs.appflowy}/bin/appflowy %U";
-      terminal = false;
-      categories = [ "Application" ];
-      mimeType = [ "x-scheme-handler/appflowy-flutter" ];
     };
   };
 }
