@@ -4,6 +4,7 @@
 
   imports = [
     ./consts.nix
+    ./desktop.nix
     ./programs/atuin/default.nix
     ./programs/dunst/default.nix
     ./programs/emacs/default.nix
@@ -49,6 +50,7 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
+
     adw-gtk3
     any-nix-shell
     anytype
@@ -88,6 +90,7 @@
     slurp
     swww
     unzip
+    vlc
     wl-clipboard
     yazi
     zed-editor
