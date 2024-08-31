@@ -96,7 +96,7 @@
     isNormalUser = true;
     description = "tarek";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    shell = pkgs.fish;
+    shell = pkgs.nushell;
   };
 
   # Allow unfree packages
