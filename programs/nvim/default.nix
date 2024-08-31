@@ -182,10 +182,6 @@
       ];
     extraConfigLua = # lua
       ''
-           if vim.g.neovide then
-             vim.o.guifont = "${config.font.monospace.name}:h11"
-           end
-
            local dap, dapui = require("dap"), require("dapui")
            dap.listeners.before.attach.dapui_config = function()
            	dapui.open()

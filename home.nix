@@ -16,6 +16,7 @@
     ./programs/hyprlock/default.nix
     ./programs/index/default.nix
     ./programs/kitty/default.nix
+    ./programs/neovide/default.nix
     ./programs/nvim/default.nix
     ./programs/rofi/default.nix
     ./programs/starship/default.nix
@@ -27,6 +28,7 @@
     ./programs/zoxide/default.nix
     ./programs/zsh/default.nix
   ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "tarek";
