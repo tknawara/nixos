@@ -81,6 +81,7 @@
     libnotify
     libsecret
     lua
+    neovide
     nil
     nixfmt-classic
     obsidian
