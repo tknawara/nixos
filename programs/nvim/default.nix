@@ -23,8 +23,8 @@
     opts = {
       number = true;
       relativenumber = true;
-      tabstop = 4;
-      shiftwidth = 4;
+      tabstop = 2;
+      shiftwidth = 2;
       expandtab = true;
       mouse = "a";
       smartindent = true;
@@ -33,6 +33,7 @@
     };
 
     plugins = {
+      yazi.enable = true;
       bufferline.enable = true;
       mini.enable = true;
       noice = { enable = true; };
