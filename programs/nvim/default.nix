@@ -137,6 +137,7 @@
           nil-ls.enable = true;
           pyright.enable = true;
           lua-ls.enable = true;
+          ocamllsp.enable = true;
           sourcekit.enable = true;
           ruby-lsp.enable = true;
           gopls.enable = true;
