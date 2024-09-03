@@ -149,7 +149,7 @@
   home.pointerCursor = {
     package = config.cursor.package;
     name = "${config.cursor.name}";
-    size = 14;
+    size = 12;
     x11 = {
       enable = true;
       defaultCursor = "${config.cursor.name}";
