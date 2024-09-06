@@ -31,6 +31,7 @@ in {
       sswg.swift-lang
       catppuccin.catppuccin-vsc
       shopify.ruby-lsp
+      ocamllabs.ocaml-platform
     ]) ++ (with marketplace; [
       github.copilot
       vscodevim.vim
