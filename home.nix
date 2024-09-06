@@ -67,6 +67,7 @@
     docker
     eza
     fastfetch
+    fh
     firefox
     fzf
     git
