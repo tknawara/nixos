@@ -131,11 +131,6 @@
   stylix = {
     # enable = true;
     opacity = { terminal = 0.8; };
-    cursor = {
-      package = config.cursor.package;
-      name = "${config.cursor.name}";
-      size = config.cursor.size;
-    };
     targets = { fish.enable = false; };
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-light.yaml";

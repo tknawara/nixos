@@ -5,9 +5,6 @@ let
     ${pkgs.swww}/bin/swww init &
     ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store &
     ${pkgs.wl-clipboard}/bin/wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store &
-    ${pkgs.hyprland}/bin/hyprctl setcursor '${config.cursor.name}' ${
-      toString config.cursor.size
-    }&
 
     sleep 1
 

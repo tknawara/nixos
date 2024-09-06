@@ -12,10 +12,6 @@
       package = pkgs.adw-gtk3;
       name = "adw-gtk3";
     };
-    cursorTheme = {
-      package = config.cursor.package;
-      name = "${config.cursor.name}";
-    };
     iconTheme = {
       package = pkgs.papirus-icon-theme;
       name = "Papirus";

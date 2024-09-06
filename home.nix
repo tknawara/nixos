@@ -60,7 +60,6 @@
     anytype
     appflowy
     bat
-    bibata-cursors
     blueman
     cliphist
     delta
@@ -146,16 +145,6 @@
     # '';
   };
 
-  home.pointerCursor = {
-    package = config.cursor.package;
-    name = "${config.cursor.name}";
-    size = 12;
-    x11 = {
-      enable = true;
-      defaultCursor = "${config.cursor.name}";
-    };
-  };
-
   # Theming
   catppuccin.flavor = "mocha";
   catppuccin.enable = true;
@@ -171,7 +160,7 @@
   #
   #  /etc/profiles/per-user/tarek/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = { EDITOR = "nvim"; };
+  home.sessionVariables = { EDITOR = "hx"; };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
