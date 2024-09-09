@@ -248,13 +248,6 @@
                           (require 'lsp-pyright)
                           (lsp-deferred)))) 
  
-;; ---------------------------------------
-;; Guile scheme
-;; --------------------------------------
-(use-package geiser
-  :config
-  (add-hook 'scheme-mode-hook 'geiser-mode))
-(use-package geiser-guile :after geiser)
 
 ;; ------------------------------------
 ;; Racket
