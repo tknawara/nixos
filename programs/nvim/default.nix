@@ -147,7 +147,6 @@
           ocamllsp.enable = true;
           pyright.enable = true;
           ruby-lsp.enable = true;
-          sourcekit.enable = true;
           rust-analyzer = {
             enable = true;
             installCargo = true;
