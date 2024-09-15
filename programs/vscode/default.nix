@@ -11,33 +11,34 @@ in {
     enableExtensionUpdateCheck = true;
     package = pkgs.vscode.fhs;
     extensions = (with pkgs.vscode-extensions; [
+      catppuccin.catppuccin-vsc
+      eamodio.gitlens
+      elixir-lsp.vscode-elixir-ls
       github.vscode-github-actions
       github.vscode-pull-request-github
+      golang.go
       jnoortheen.nix-ide
       ms-python.debugpy
-      rust-lang.rust-analyzer
-      golang.go
-      tamasfe.even-better-toml
-      ms-vscode-remote.remote-containers
-      eamodio.gitlens
-      vadimcn.vscode-lldb
       ms-toolsai.jupyter
-      ms-vscode.cpptools-extension-pack
       ms-vscode.cmake-tools
       ms-vscode.cpptools
-      scalameta.metals
-      scala-lang.scala
-      sswg.swift-lang
-      catppuccin.catppuccin-vsc
-      shopify.ruby-lsp
+      ms-vscode.cpptools-extension-pack
+      ms-vscode-remote.remote-containers
       ocamllabs.ocaml-platform
+      rust-lang.rust-analyzer
+      scala-lang.scala
+      scalameta.metals
+      shopify.ruby-lsp
+      sswg.swift-lang
+      tamasfe.even-better-toml
+      vadimcn.vscode-lldb
     ]) ++ (with marketplace; [
+      betterthantomorrow.calva
       github.copilot
-      vscodevim.vim
       ms-dotnettools.csdevkit
       ms-dotnettools.csharp
       ms-dotnettools.vscode-dotnet-runtime
-      betterthantomorrow.calva
+      vscodevim.vim
     ]) ++ (with marketplace-release; [ github.copilot-chat ]);
     userSettings = {
       "editor.fontFamily" =
