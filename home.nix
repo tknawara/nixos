@@ -73,7 +73,6 @@
     git
     gnomeExtensions.blur-my-shell
     gnomeExtensions.gnome-40-ui-improvements
-    gnomeExtensions.pano
     gnome-tweaks
     grim
     gsimplecal

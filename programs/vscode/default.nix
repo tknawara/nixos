@@ -14,7 +14,6 @@ in {
       github.vscode-github-actions
       github.vscode-pull-request-github
       jnoortheen.nix-ide
-      ms-python.python
       ms-python.debugpy
       rust-lang.rust-analyzer
       golang.go
