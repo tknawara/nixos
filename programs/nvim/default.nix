@@ -44,7 +44,7 @@
       lsp-format.enable = true;
       neo-tree.enable = true;
       gitsigns.enable = true;
-      surround.enable = true;
+      vim-surround.enable = true;
       todo-comments.enable = true;
       notify = {
         enable = true;
