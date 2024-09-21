@@ -3,7 +3,6 @@
 {
   programs.kitty = {
     enable = true;
-    theme = "Catppuccin-Mocha";
     font = {
       package = config.font.monospace.package;
       name = "${config.font.monospace.name}";

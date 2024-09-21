@@ -145,8 +145,10 @@
           metals.enable = true;
           nil-ls.enable = true;
           ocamllsp.enable = true;
+          ols.enable = true;
           pyright.enable = true;
           ruby-lsp.enable = true;
+          zls.enable = true;
           rust-analyzer = {
             enable = true;
             installCargo = true;
