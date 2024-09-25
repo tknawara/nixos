@@ -33,6 +33,7 @@
 
     plugins = {
       yazi.enable = true;
+      web-devicons.enable = true;
       bufferline.enable = true;
       mini.enable = true;
       noice = { enable = true; };
