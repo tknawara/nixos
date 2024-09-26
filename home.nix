@@ -60,6 +60,7 @@
     anytype
     appflowy
     bat
+    binsider
     blueman
     cliphist
     delta
