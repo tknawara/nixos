@@ -32,6 +32,7 @@ in {
       sswg.swift-lang
       tamasfe.even-better-toml
       vadimcn.vscode-lldb
+      vscjava.vscode-java-pack
     ]) ++ (with marketplace; [
       betterthantomorrow.calva
       github.copilot
