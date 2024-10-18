@@ -3,7 +3,7 @@
 {
   nixpkgs.overlays = [ (import inputs.emacs-overlay) ];
   programs.emacs = {
-    enable = true;
+    enable = false;
     package = pkgs.emacsWithPackagesFromUsePackage {
       config = ./init.el;
       alwaysEnsure = true;
@@ -16,7 +16,7 @@
     };
   };
 
-  services.emacs.enable = true;
+  services.emacs.enable = false;
   home.packages = with pkgs; [ emacs-all-the-icons-fonts ];
   home.file = { ".emacs.d/init.el" = { source = ./init.el; }; };
 }
