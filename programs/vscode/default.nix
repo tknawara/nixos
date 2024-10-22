@@ -25,7 +25,7 @@ in {
       ms-vscode.cpptools-extension-pack
       ms-vscode-remote.remote-containers
       ocamllabs.ocaml-platform
-      rust-lang.rust-analyzer
+      # rust-lang.rust-analyzer
       scala-lang.scala
       scalameta.metals
       shopify.ruby-lsp
