@@ -5,6 +5,17 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
 
+    lix = {
+      url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
+      flake = false;
+    };
+
+    lix-module = {
+      url = "git+https://git.lix.systems/lix-project/nixos-module";
+      inputs.lix.follows = "lix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -56,11 +67,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, lix-module, ... }@inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
+        lix-module.nixosModules.default
         inputs.home-manager.nixosModules.default
         inputs.catppuccin.nixosModules.catppuccin
         inputs.stylix.nixosModules.stylix
