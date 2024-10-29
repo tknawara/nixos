@@ -199,11 +199,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1730049053,
-        "narHash": "sha256-Ay16cajt0HvwTTVqBU9kF5UdCSIWOmB+so8QRGRaWqY=",
+        "lastModified": 1730219031,
+        "narHash": "sha256-WhzEm1a/kZw9jUrXzlAWnDI6PlwjdJYv+O4+e0cI4wI=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "42247fb5d6545d95f615538de8d4186006b68357",
+        "rev": "ab38e5767457fd7bc0ef00962feeb4c4e5ddfeb8",
         "type": "github"
       },
       "original": {
@@ -649,11 +649,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1730072482,
-        "narHash": "sha256-3Aotvc0dFS9J2iDnrSVjjngdZcaD9ghfroVU3jl84Gk=",
+        "lastModified": 1730143527,
+        "narHash": "sha256-3uRuQHxAd/+8PptDpIZZlC588O0eTV1mTa+z8v4cWPU=",
         "ref": "refs/heads/main",
-        "rev": "6cf193e1662f6f750e964a3e174ae017246b4d48",
-        "revCount": 5385,
+        "rev": "d679d200299ed4670f0d0f138c793d5f507b7cec",
+        "revCount": 5390,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -681,11 +681,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1729596320,
-        "narHash": "sha256-sBPr6O2Ad916f+L7biAjmJVx4TLDITC4joKgeOT47V8=",
+        "lastModified": 1730125534,
+        "narHash": "sha256-qa2NrX6R98otWuSd7PjS591HDqxcnK+hDziBm5s+cTo=",
         "owner": "hyprwm",
         "repo": "hyprland-plugins",
-        "rev": "4d7f0b5d8b952f31f7d2e29af22ab0a55ca5c219",
+        "rev": "81bda675eedd83d16d471a83f1168f7acdb03c24",
         "type": "github"
       },
       "original": {
@@ -846,11 +846,11 @@
     "lix": {
       "flake": false,
       "locked": {
-        "lastModified": 1730069651,
-        "narHash": "sha256-DVzb3RlFOuR72K6BWMRKoJ4mfJmVOUDVjUJKQ/yXMNA=",
-        "rev": "f55ed8399186c25b7d26a8c51f31ba25f5f26a50",
+        "lastModified": 1730141569,
+        "narHash": "sha256-wuSAcXqMRuaBihrvzVNplSM+S8fdoKGj7ubibmiUGGA=",
+        "rev": "9c22a4d31b18715bcca5791fcc40089d4eca35cb",
         "type": "tarball",
-        "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/f55ed8399186c25b7d26a8c51f31ba25f5f26a50.tar.gz?rev=f55ed8399186c25b7d26a8c51f31ba25f5f26a50"
+        "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/9c22a4d31b18715bcca5791fcc40089d4eca35cb.tar.gz?rev=9c22a4d31b18715bcca5791fcc40089d4eca35cb"
       },
       "original": {
         "type": "tarball",
@@ -914,11 +914,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1729994042,
-        "narHash": "sha256-raAG3cW29BRYmu3Pxej65QgnNi88bGUqlqMkuaJRF8s=",
+        "lastModified": 1730166645,
+        "narHash": "sha256-r+cFrkHjf93QHzAid/IAIoTjY8icOFu5iCCQ5e/Sd98=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "88bf73817636e232513bff1f3a071b3ae2bcfd14",
+        "rev": "be01145d66a5cdaf0a620b8b277a8e05f1fba84b",
         "type": "github"
       },
       "original": {
@@ -1022,11 +1022,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1730058276,
-        "narHash": "sha256-t4fyRWIiDBJiDBnqqnxnk9nfT1SDTZN+koJLiuKkIT8=",
+        "lastModified": 1730214386,
+        "narHash": "sha256-FNXiFunXR2DnNrjmA0ofLznTTHcEDJjNWvCQtQExtL0=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "a20fbbc4b9665ec215e7bea061a1d64f6fd652ce",
+        "rev": "7d882356a486cf44b7fab842ac26885ecd985af3",
         "type": "github"
       },
       "original": {
