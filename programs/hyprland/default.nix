@@ -3,9 +3,10 @@ let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
     ${pkgs.swww}/bin/swww init &
+    ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store &                  
+    ${pkgs.wl-clipboard}/bin/wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store &
 
     sleep 1
-
     ${pkgs.swww}/bin/swww img ${config.image}
   '';
 in {
