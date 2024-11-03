@@ -95,6 +95,7 @@
     pavucontrol
     ripgrep
     rofi-wayland
+    sapling
     slurp
     swww
     unzip
