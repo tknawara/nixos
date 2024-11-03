@@ -6,6 +6,7 @@
     ./consts.nix
     ./desktop.nix
     ./programs/atuin/default.nix
+    ./programs/carapace/default.nix
     ./programs/direnv/default.nix
     ./programs/dunst/default.nix
     ./programs/emacs/default.nix
