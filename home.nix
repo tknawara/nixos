@@ -100,7 +100,7 @@
     unzip
     vlc
     wl-clipboard
-    yazi
+    # yazi
     zed-editor
     zoom-us
     zplug

@@ -32,7 +32,7 @@
     };
 
     plugins = {
-      yazi.enable = true;
+      # yazi.enable = true;
       web-devicons.enable = true;
       bufferline.enable = true;
       mini.enable = true;
