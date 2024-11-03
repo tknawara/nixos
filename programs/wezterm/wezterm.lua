@@ -9,5 +9,6 @@ config.harfbuzz_features = { 'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss
     'ss19', 'ss20' }
 config.enable_tab_bar = false
 config.default_cursor_style = 'SteadyBlock'
+config.max_fps = 120
 
 return config
