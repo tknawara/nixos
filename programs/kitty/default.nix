@@ -2,7 +2,7 @@
 
 {
   programs.kitty = {
-    enable = true;
+    enable = false;
     font = {
       package = config.font.monospace.package;
       name = "${config.font.monospace.name}";
