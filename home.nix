@@ -87,7 +87,7 @@
     libnotify
     libsecret
     lua
-    neovide
+    # neovide
     nil
     nixfmt-classic
     obsidian
@@ -102,7 +102,7 @@
     vlc
     wl-clipboard
     # yazi
-    zed-editor
+    # zed-editor
     zoom-us
     zplug
     zsh
