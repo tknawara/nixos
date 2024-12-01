@@ -23,7 +23,6 @@
     ./programs/nvim/default.nix
     ./programs/rofi/default.nix
     ./programs/starship/default.nix
-    ./programs/sublime/default.nix
     ./programs/tmux/default.nix
     ./programs/vscode/default.nix
     ./programs/waybar/default.nix
@@ -59,7 +58,6 @@
 
     adw-gtk3
     any-nix-shell
-    anytype
     appflowy
     bat
     binsider
