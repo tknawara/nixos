@@ -54,7 +54,7 @@
         }
       ];
 
-      background = [{ path = "${config.image}"; }];
+      background = [{ path = "${config.wallpaper}"; }];
     };
   };
 }

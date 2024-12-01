@@ -56,7 +56,7 @@ in {
       default = { };
     };
 
-    image = mkOption {
+    wallpaper = mkOption {
       type = types.path;
       default = ./wallpapers/single-mountain-landscape.jpg;
     };

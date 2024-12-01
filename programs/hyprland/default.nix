@@ -7,7 +7,7 @@ let
     ${pkgs.wl-clipboard}/bin/wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store &
 
     sleep 1
-    ${pkgs.swww}/bin/swww img ${config.image}
+    ${pkgs.swww}/bin/swww img ${config.wallpaper}
   '';
 in {
 

@@ -176,7 +176,6 @@
       config.font.sansSerif.package
       config.font.serif.package
       monaspace
-      nerdfonts
       ubuntu_font_family
     ];
     fontconfig = {
