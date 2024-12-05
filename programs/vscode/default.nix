@@ -65,7 +65,7 @@ in {
         "vscodevim.vim" = 1;
         "asvetliakov.vscode-neovim" = 1;
       };
-      "window.zoomLevel" = 0.1;
+      "window.zoomLevel" = 0.2;
       "vscode-neovim.neovimInitVimPaths.linux" =
         "/home/tarek/.config/vscode/init.lua";
       "files.watcherExclude" = {
