@@ -48,7 +48,6 @@ in {
         "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09','ss19', 'ss20'";
       "editor.semanticHighlighting.enabled" = true;
       "terminal.integrated.minimumContrastRatio" = 1;
-      "workbench.colorTheme" = "Catppuccin Mocha";
       "window.titleBarStyle" = "custom";
       "editor.fontSize" = 15;
       "terminal.integrated.fontSize" = 15;
@@ -65,7 +64,7 @@ in {
         "vscodevim.vim" = 1;
         "asvetliakov.vscode-neovim" = 1;
       };
-      "window.zoomLevel" = 0.2;
+      "window.zoomLevel" = 0.4;
       "vscode-neovim.neovimInitVimPaths.linux" =
         "/home/tarek/.config/vscode/init.lua";
       "files.watcherExclude" = {
