@@ -11,6 +11,7 @@
     ./programs/dunst/default.nix
     ./programs/emacs/default.nix
     ./programs/fish/default.nix
+    ./programs/ghostty/default.nix
     ./programs/git/default.nix
     ./programs/gtk/default.nix
     ./programs/helix/default.nix

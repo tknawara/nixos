@@ -46,6 +46,8 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ghostty = { url = "github:ghostty-org/ghostty"; };
+
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";

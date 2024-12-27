@@ -147,7 +147,7 @@
           nil_ls.enable = true;
           ols.enable = true;
           pyright.enable = true;
-          ruby_lsp.enable = true;
+          ruby_lsp.enable = false;
           zls.enable = true;
           rust_analyzer = {
             enable = true;
