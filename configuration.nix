@@ -126,8 +126,6 @@
       #  wget
     ];
 
-  programs.neovim.defaultEditor = true;
-
   # stylix
   stylix = {
     # enable = true;
