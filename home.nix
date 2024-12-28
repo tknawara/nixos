@@ -28,6 +28,7 @@
     ./programs/vscode/default.nix
     ./programs/waybar/default.nix
     ./programs/wezterm/default.nix
+    ./programs/zededitor/default.nix
     ./programs/zellij/default.nix
     ./programs/zoxide/default.nix
     ./programs/zsh/default.nix
