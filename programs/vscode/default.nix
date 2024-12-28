@@ -25,6 +25,7 @@ in {
       ms-vscode.cpptools-extension-pack
       ms-vscode-remote.remote-containers
       ocamllabs.ocaml-platform
+      redhat.java
       # rust-lang.rust-analyzer
       scala-lang.scala
       scalameta.metals
