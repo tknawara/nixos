@@ -77,6 +77,7 @@ in {
       "cmake.showOptionsMovedNotification" = false;
       "editor.formatOnSave" = true;
       "terminal.integrated.enableMultiLinePasteWarning" = false;
+      "sapling.isl.showInSidebar" = true;
       "C_Cpp.default.cppStandard" = "c++23";
       "calva.prettyPrintingOptions" = {
         "printEngine" = "pprint";
