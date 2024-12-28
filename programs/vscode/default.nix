@@ -37,6 +37,7 @@ in {
     ]) ++ (with marketplace; [
       betterthantomorrow.calva
       github.copilot
+      meta.sapling-scm
       ms-dotnettools.csdevkit
       ms-dotnettools.csharp
       ms-dotnettools.vscode-dotnet-runtime
