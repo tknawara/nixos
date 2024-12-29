@@ -3,7 +3,7 @@
 {
   programs.zed-editor = {
     enable = true;
-    extensions = [ "scala" "nix" "java" ];
+    extensions = [ "scala" "nix" "java" "assembly" ];
     userSettings = {
       features = { copilot = false; };
       vim_mode = true;
