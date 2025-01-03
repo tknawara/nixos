@@ -1,14 +1,19 @@
 { pkgs, ... }:
 
 {
+  catppuccin.zed.enable = false;
   programs.zed-editor = {
     enable = true;
-    extensions = [ "scala" "nix" "java" "assembly" "log" ];
+    extensions = [ "catppuccin" "scala" "nix" "java" "assembly" "log" ];
     userSettings = {
       features = { copilot = false; };
       vim_mode = true;
       load_direnv = "direct";
       buffer_font_size = 16;
+      theme = {
+        dark = "Catppuccin Mocha";
+        light = "Catppuccin Mocha";
+      };
       ui_font_size = 16;
       buffer_font_family = "Cascadia Code NF";
       vim = {
