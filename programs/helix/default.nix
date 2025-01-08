@@ -15,6 +15,9 @@
           insert = "bar";
           select = "underline";
         };
+        end-of-line-diagnostics = "hint";
+
+        inline-diagnostics = { cursor-line = "error"; };
 
         gutters = [ "diff" "diagnostics" "line-numbers" "spacer" ];
 
