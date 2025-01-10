@@ -17,6 +17,7 @@ in {
       github.vscode-github-actions
       github.vscode-pull-request-github
       golang.go
+      ionide.ionide-fsharp
       jnoortheen.nix-ide
       ms-python.debugpy
       ms-toolsai.jupyter
