@@ -5,7 +5,7 @@
   programs.zed-editor = {
     enable = true;
     extensions =
-      [ "catppuccin" "scala" "nix" "java" "assembly" "log" "fsharp" ];
+      [ "catppuccin" "scala" "nix" "java" "assembly" "log" "fsharp" "csharp" ];
     userSettings = {
       features = { copilot = false; };
       vim_mode = true;
