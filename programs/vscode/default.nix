@@ -19,6 +19,9 @@ in {
       golang.go
       ionide.ionide-fsharp
       jnoortheen.nix-ide
+      ms-dotnettools.csdevkit
+      ms-dotnettools.csharp
+      ms-dotnettools.vscode-dotnet-runtime
       ms-python.debugpy
       ms-toolsai.jupyter
       ms-vscode.cmake-tools
@@ -39,9 +42,6 @@ in {
       betterthantomorrow.calva
       github.copilot
       meta.sapling-scm
-      ms-dotnettools.csdevkit
-      ms-dotnettools.csharp
-      ms-dotnettools.vscode-dotnet-runtime
       vscodevim.vim
     ]) ++ (with marketplace-release; [ github.copilot-chat ]);
     userSettings = {
@@ -51,8 +51,9 @@ in {
         "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09','ss19', 'ss20'";
       "editor.semanticHighlighting.enabled" = true;
       "terminal.integrated.minimumContrastRatio" = 1;
+      "workbench.colorTheme" = "Catppuccin Mocha";
       "window.titleBarStyle" = "custom";
-      "editor.fontSize" = 15;
+      "editor.fontSize" = 16;
       "terminal.integrated.fontSize" = 15;
       "vim.leader" = "<space>";
       "vim.useSystemClipboard" = true;
