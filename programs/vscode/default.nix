@@ -11,9 +11,11 @@ in {
     enableExtensionUpdateCheck = true;
     package = pkgs.vscode.fhs;
     extensions = (with pkgs.vscode-extensions; [
+
       catppuccin.catppuccin-vsc
       eamodio.gitlens
       elixir-lsp.vscode-elixir-ls
+      github.copilot
       github.vscode-github-actions
       github.vscode-pull-request-github
       golang.go
@@ -40,15 +42,14 @@ in {
       vscjava.vscode-java-pack
     ]) ++ (with marketplace; [
       betterthantomorrow.calva
-      github.copilot
       meta.sapling-scm
       vscodevim.vim
-    ]) ++ (with marketplace-release; [ github.copilot-chat ]);
+    ]) ++ (with marketplace-release; [ ]);
     userSettings = {
       "editor.fontFamily" =
         "'${config.font.monospace.name}', 'Droid Sans Mono', 'monospace', monospace";
       "editor.fontLigatures" =
-        "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09','ss19', 'ss20'";
+        "'calt', 'liga', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09','ss19', 'ss20'";
       "editor.semanticHighlighting.enabled" = true;
       "terminal.integrated.minimumContrastRatio" = 1;
       "workbench.colorTheme" = "Catppuccin Mocha";
