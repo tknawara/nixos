@@ -16,6 +16,7 @@ in {
       eamodio.gitlens
       elixir-lsp.vscode-elixir-ls
       github.copilot
+      github.copilot-chat
       github.vscode-github-actions
       github.vscode-pull-request-github
       golang.go
