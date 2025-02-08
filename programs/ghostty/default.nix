@@ -3,7 +3,7 @@
     # toml
     ''
       font-family = "${config.font.monospace.name}"
-      font-size = 12
+      font-size = 13
       gtk-titlebar = false
       theme = "catppuccin-mocha"
       window-padding-x = 6
