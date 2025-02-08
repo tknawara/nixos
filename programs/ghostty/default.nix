@@ -3,11 +3,10 @@
     # toml
     ''
       font-family = "${config.font.monospace.name}"
+      font-size = 12
       gtk-titlebar = false
       theme = "catppuccin-mocha"
       window-padding-x = 6
       window-padding-y = 4
     '';
-
-  home.packages = [ inputs.ghostty.packages.${pkgs.system}.default ];
 }

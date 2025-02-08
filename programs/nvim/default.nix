@@ -49,17 +49,16 @@
       todo-comments.enable = true;
       notify = {
         enable = true;
-        backgroundColour = "#000000";
+        settings = { background_color = "#000000"; };
       };
       trouble = { enable = true; };
+      dap-ui.enable = true;
+      dap-virtual-text.enable = true;
+      dap-go.enable = true;
+      dap-python.enable = true;
       dap = {
         enable = true;
-        extensions = {
-          dap-ui.enable = true;
-          dap-virtual-text.enable = true;
-          dap-go.enable = true;
-          dap-python.enable = true;
-        };
+        extensions = { };
       };
 
       nvim-autopairs = { enable = true; };
@@ -202,12 +201,6 @@
           local dap = require('dap')
           dap.set_log_level('debug')
 
-          dap.adapters.lldb = {
-              type = 'executable',
-              command = '${pkgs.lldb}/bin/lldb-vscode', -- adjust as needed, must be absolute path
-              name = 'lldb'
-          }
-
           local dap = require("dap")
           dap.adapters.gdb = {
               type = "executable",
@@ -216,35 +209,6 @@
           }
 
           local dap = require('dap')
-
-          -- dap configurations per language
-          dap.configurations.rust = {
-        	{
-        		name = 'launch',
-        		type = 'lldb',
-        		request = 'launch',
-        		program = function()
-        			return vim.fn.input('path of the executable: ', vim.fn.getcwd() .. '/', 'file')
-        		end,
-        		cwd = "''${workspacefolder}",
-        		stoponentry = false,
-        		args = {},
-        	},
-        }
-
-        dap.configurations.cpp = {
-            {
-                name = 'launch',
-                type = 'lldb',
-                request = 'launch',
-        		program = function()
-        			return vim.fn.input('path of the executable: ', vim.fn.getcwd() .. '/', 'file')
-        		end,
-        		cwd = "''${workspacefolder}",
-        		stoponentry = false,
-        		args = {},
-            },
-        }
 
         -- key bindings for dap
         vim.keymap.set('n', '<F5>', function() require('dap').continue() end)

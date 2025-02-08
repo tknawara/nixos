@@ -39,7 +39,7 @@ in {
       shopify.ruby-lsp
       sswg.swift-lang
       tamasfe.even-better-toml
-      vadimcn.vscode-lldb
+      # vadimcn.vscode-lldb
       vscjava.vscode-java-pack
     ]) ++ (with marketplace; [
       betterthantomorrow.calva

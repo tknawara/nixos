@@ -58,6 +58,7 @@
     # # "Hello, world!" when run.
     # pkgs.hello
 
+    # neovide
     adw-gtk3
     any-nix-shell
     appflowy
@@ -73,10 +74,11 @@
     fh
     firefox
     fzf
+    ghostty
     git
+    gnome-tweaks
     gnomeExtensions.blur-my-shell
     gnomeExtensions.gnome-40-ui-improvements
-    gnome-tweaks
     grim
     gsimplecal
     htop
@@ -87,7 +89,6 @@
     libnotify
     libsecret
     lua
-    # neovide
     nil
     nixfmt-classic
     obsidian
