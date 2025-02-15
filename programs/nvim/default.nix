@@ -134,6 +134,7 @@
         enable = true;
         servers = {
           clangd.enable = true;
+          fsautocomplete.enable = true;
           clojure_lsp.enable = true;
           cmake.enable = true;
           dockerls.enable = true;
