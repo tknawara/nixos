@@ -58,7 +58,7 @@
     # # "Hello, world!" when run.
     # pkgs.hello
 
-    # neovide
+    neovide
     adw-gtk3
     any-nix-shell
     appflowy
