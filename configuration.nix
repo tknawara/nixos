@@ -129,45 +129,6 @@
       #  wget
     ];
 
-  # stylix
-  stylix = {
-    # enable = true;
-    opacity = { terminal = 0.8; };
-    targets = { fish.enable = false; };
-
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-light.yaml";
-    image = ./wallpapers/single-mountain-landscape.jpg;
-    fonts = {
-      monospace = {
-        package = config.font.monospace.package;
-        name = "${config.font.monospace.name}";
-      };
-
-      serif = {
-        package = config.font.serif.package;
-        name = "${config.font.serif.name}";
-      };
-
-      sansSerif = {
-        package = config.font.sansSerif.package;
-        name = "${config.font.sansSerif.name}";
-      };
-
-      emoji = {
-        package = pkgs.noto-fonts-emoji;
-        name = "Noto Color Emoji";
-      };
-
-      sizes = {
-        applications = 10;
-        desktop = 10;
-        popups = 10;
-        terminal = 11;
-      };
-
-    };
-  };
-
   # fonts
   fonts = {
     packages = with pkgs; [

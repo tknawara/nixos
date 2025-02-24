@@ -121,17 +121,6 @@
     # '')
   ];
 
-  # stylix
-  stylix = {
-    targets = {
-      rofi.enable = false;
-      waybar.enable = false;
-      kitty.enable = false;
-      nixvim.enable = false;
-      vscode.enable = false;
-    };
-  };
-
   # programs.java = { enable = true; };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

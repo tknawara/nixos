@@ -15,7 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix.url = "github:danth/stylix";
     catppuccin.url = "github:catppuccin/nix";
 
     nix-vscode-extensions = {
@@ -64,7 +63,6 @@
         # lix-module.nixosModules.default
         inputs.home-manager.nixosModules.default
         inputs.catppuccin.nixosModules.catppuccin
-        inputs.stylix.nixosModules.stylix
         { _module.args.emacs-overlay = inputs.emacs-overlay.overlay; }
       ];
     };
