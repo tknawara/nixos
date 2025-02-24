@@ -272,7 +272,7 @@
         border: 2px solid alpha(@crust, 0.3);
         color: @text;
         font-family: UbuntuMono Nerd Font, Hack, Ubuntu; 
-        font-size: 16px; 
+        font-size: 17px; 
       }
 
       #workspaces {
