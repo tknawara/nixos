@@ -18,6 +18,11 @@
         end-of-line-diagnostics = "hint";
 
         inline-diagnostics = { cursor-line = "error"; };
+        indent-guides = {
+          render = true;
+          character = "▏";
+          skip-levels = 1;
+        };
 
         gutters = [ "diff" "diagnostics" "line-numbers" "spacer" ];
 
