@@ -70,7 +70,7 @@ in {
           "vscodevim.vim" = 1;
           "asvetliakov.vscode-neovim" = 1;
         };
-        "window.zoomLevel" = 0.4;
+        "window.zoomLevel" = 0.6;
         "vscode-neovim.neovimInitVimPaths.linux" =
           "/home/tarek/.config/vscode/init.lua";
         "files.watcherExclude" = {
@@ -81,6 +81,10 @@ in {
         "cmake.showOptionsMovedNotification" = false;
         "editor.formatOnSave" = true;
         "terminal.integrated.enableMultiLinePasteWarning" = false;
+        "editor.codeActionsOnSave" = {
+          "source.organizeImports" = true;
+          "source.fixAll" = "always";
+        };
         "sapling.isl.showInSidebar" = true;
         "C_Cpp.default.cppStandard" = "c++23";
         "calva.prettyPrintingOptions" = {
