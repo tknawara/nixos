@@ -85,6 +85,7 @@ in {
       ];
     };
     extraConfig = ''
+      monitor=,preferred,auto,1.2
       bind = $mod, R, submap, resize
       submap = resize
       binde = , l, resizeactive, 10 0

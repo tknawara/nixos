@@ -8,7 +8,10 @@ in {
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = true;
-    package = pkgs.vscode.fhs;
+    package = (pkgs.vscode.override (previous: {
+      commandLineArgs = (previous.commandLineArgs or "")
+        + " --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --enable-wayland-ime --password-store=gnome --disable-gpu-sandbox";
+    }));
     profiles.default = {
       enableExtensionUpdateCheck = true;
       extensions = (with pkgs.vscode-extensions; [
@@ -70,7 +73,6 @@ in {
           "vscodevim.vim" = 1;
           "asvetliakov.vscode-neovim" = 1;
         };
-        "window.zoomLevel" = 0.6;
         "vscode-neovim.neovimInitVimPaths.linux" =
           "/home/tarek/.config/vscode/init.lua";
         "files.watcherExclude" = {

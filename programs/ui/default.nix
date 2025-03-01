@@ -36,8 +36,7 @@
   };
 
   xdg.configFile."electron-flags.conf".text = ''
-    --enable-features=UseOzonePlatform
-    --ozone-platform=wayland
+    --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland
   '';
 
   xdg.portal = {

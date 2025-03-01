@@ -5,7 +5,7 @@
       theme = "catppuccin-mocha"
 
       font-family = "${config.font.monospace.name}"
-      font-size = 13
+      font-size = 12
       font-feature = "calt"
       font-feature = "liga"
       font-feature = "ss02"
