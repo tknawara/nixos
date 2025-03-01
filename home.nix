@@ -13,7 +13,7 @@
     ./programs/fish/default.nix
     ./programs/ghostty/default.nix
     ./programs/git/default.nix
-    ./programs/gtk/default.nix
+    ./programs/ui/default.nix
     ./programs/helix/default.nix
     ./programs/hyprland/default.nix
     ./programs/hyprlock/default.nix

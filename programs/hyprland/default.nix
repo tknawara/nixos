@@ -5,6 +5,7 @@ let
     ${pkgs.swww}/bin/swww init &
     ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store &                  
     ${pkgs.wl-clipboard}/bin/wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store &
+    hyprctl setcursor 'breeze_cursorts' 25
 
     sleep 1
     ${pkgs.swww}/bin/swww img ${config.wallpaper}
