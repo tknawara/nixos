@@ -24,7 +24,6 @@ in {
         jnoortheen.nix-ide
         ms-dotnettools.csdevkit
         ms-dotnettools.csharp
-        ms-dotnettools.vscode-dotnet-runtime
         ms-python.debugpy
         ms-toolsai.jupyter
         ms-vscode.cmake-tools
@@ -44,6 +43,7 @@ in {
       ]) ++ (with marketplace; [
         betterthantomorrow.calva
         meta.sapling-scm
+        ms-dotnettools.dotnet-interactive-vscode
         vscodevim.vim
       ]) ++ (with marketplace-release; [ ]);
       userSettings = {
