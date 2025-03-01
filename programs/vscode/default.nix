@@ -82,7 +82,7 @@ in {
         "editor.formatOnSave" = true;
         "terminal.integrated.enableMultiLinePasteWarning" = "never";
         "editor.codeActionsOnSave" = {
-          "source.organizeImports" = true;
+          "source.organizeImports" = "always";
           "source.fixAll" = "always";
         };
         "sapling.isl.showInSidebar" = true;
