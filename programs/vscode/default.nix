@@ -80,7 +80,7 @@ in {
         };
         "cmake.showOptionsMovedNotification" = false;
         "editor.formatOnSave" = true;
-        "terminal.integrated.enableMultiLinePasteWarning" = false;
+        "terminal.integrated.enableMultiLinePasteWarning" = "never";
         "editor.codeActionsOnSave" = {
           "source.organizeImports" = true;
           "source.fixAll" = "always";
