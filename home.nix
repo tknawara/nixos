@@ -13,7 +13,6 @@
     ./programs/fish/default.nix
     ./programs/ghostty/default.nix
     ./programs/git/default.nix
-    ./programs/ui/default.nix
     ./programs/helix/default.nix
     ./programs/hyprland/default.nix
     ./programs/hyprlock/default.nix
@@ -24,7 +23,9 @@
     ./programs/nvim/default.nix
     ./programs/rofi/default.nix
     ./programs/starship/default.nix
+    ./programs/superfile/default.nix
     ./programs/tmux/default.nix
+    ./programs/ui/default.nix
     ./programs/vscode/default.nix
     ./programs/waybar/default.nix
     ./programs/wezterm/default.nix
