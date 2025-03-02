@@ -4,9 +4,9 @@
   gtk = {
     enable = true;
     font = {
-      package = pkgs.inter;
-      name = "Inter";
+      name = "Ubuntu";
       size = 10;
+      package = pkgs.ubuntu_font_family;
     };
     theme = {
       package = pkgs.adw-gtk3;
