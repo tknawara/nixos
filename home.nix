@@ -91,7 +91,10 @@
     lua
     nil
     nixfmt-classic
-    obsidian
+    (obsidian.override (prev: {
+      commandLineArgs = (prev.commandLineArgs or "")
+        + " --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --enable-wayland-ime";
+    }))
     papirus-icon-theme
     pavucontrol
     ripgrep
