@@ -91,6 +91,8 @@ in {
           force_zero_scaling = true
         }
 
+        windowrulev2 = fullscreen, workspace:3
+
         bind = $mod, R, submap, resize
         submap = resize
         binde = , l, resizeactive, 10 0
