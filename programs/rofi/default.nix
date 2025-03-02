@@ -6,7 +6,7 @@
       modi = "drun,run,window,filebrowser";
       show-icons = true;
       icon-theme = "Papirus-Light";
-      terminal = "kitty";
+      terminal = "ghostty";
       hide-scrollbar = true;
       sidebar-mode = true;
     };
