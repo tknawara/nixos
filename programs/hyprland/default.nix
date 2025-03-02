@@ -86,6 +86,9 @@ in {
     };
     extraConfig = ''
       monitor=,preferred,auto,1.2
+      xwayland {
+        force_zero_scaling = true
+      }
       bind = $mod, R, submap, resize
       submap = resize
       binde = , l, resizeactive, 10 0
