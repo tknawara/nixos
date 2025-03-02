@@ -84,30 +84,32 @@ in {
         "$mod SHIFT, W, exec, hyprshot -m window -o ~/Pictures/Screenshots"
       ];
     };
-    extraConfig = ''
-      monitor=,preferred,auto,1.2
-      xwayland {
-        force_zero_scaling = true
-      }
-      bind = $mod, R, submap, resize
-      submap = resize
-      binde = , l, resizeactive, 10 0
-      binde = , h, resizeactive, -10 0
-      binde = , k, resizeactive, 0 -10
-      binde = , j, resizeactive, 0 10
-      bind = , escape, submap, reset
-      submap = reset
+    extraConfig = # conf
+      ''
+        monitor=,preferred,auto,1.2
+        xwayland {
+          force_zero_scaling = true
+        }
 
-      bind = $mod, G, submap, grouping 
-      submap = grouping 
-      bind = SHIFT, h, moveintogroup, l 
-      bind = SHIFT, l, moveintogroup, r 
-      bind = SHIFT, k, moveintogroup, u 
-      bind = SHIFT, j, moveintogroup, d 
-      bind = , h, changegroupactive, b 
-      bind = , l, changegroupactive, f 
-      bind = , escape, submap, reset
-      submap = reset
-    '';
+        bind = $mod, R, submap, resize
+        submap = resize
+        binde = , l, resizeactive, 10 0
+        binde = , h, resizeactive, -10 0
+        binde = , k, resizeactive, 0 -10
+        binde = , j, resizeactive, 0 10
+        bind = , escape, submap, reset
+        submap = reset
+
+        bind = $mod, G, submap, grouping 
+        submap = grouping 
+        bind = SHIFT, h, moveintogroup, l 
+        bind = SHIFT, l, moveintogroup, r 
+        bind = SHIFT, k, moveintogroup, u 
+        bind = SHIFT, j, moveintogroup, d 
+        bind = , h, changegroupactive, b 
+        bind = , l, changegroupactive, f 
+        bind = , escape, submap, reset
+        submap = reset
+      '';
   };
 }
