@@ -16,6 +16,11 @@
       package = pkgs.papirus-icon-theme;
       name = "Papirus";
     };
+    cursorTheme = {
+      package = pkgs.kdePackages.breeze;
+      name = "breeze_cursors";
+      size = 25;
+    };
   };
 
   services.gpg-agent = {
@@ -33,6 +38,7 @@
     pointerCursor.gtk.enable = true;
     pointerCursor.x11.enable = true;
     pointerCursor.size = 25;
+    sessionVariables.XCURSOR_THEME = "breeze_cursors";
   };
 
   xdg.configFile."electron-flags.conf".text = ''
