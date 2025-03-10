@@ -2,7 +2,7 @@
 
 {
   programs.wezterm = {
-    enable = false;
+    enable = true;
     package = inputs.wezterm.packages.${pkgs.system}.default;
     enableZshIntegration = true;
     enableBashIntegration = true;
