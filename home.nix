@@ -60,6 +60,7 @@
     # pkgs.hello
 
     neovide
+    serpl
     adw-gtk3
     any-nix-shell
     appflowy
