@@ -7,46 +7,20 @@ let
 in {
   programs.vscode = {
     enable = true;
-    mutableExtensionsDir = true;
     package = (pkgs.vscode.override (previous: {
       commandLineArgs = (previous.commandLineArgs or "")
         + " --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --enable-wayland-ime --password-store=gnome --disable-gpu-sandbox";
-    }));
+    })).fhs;
     profiles.default = {
-      enableExtensionUpdateCheck = true;
-      extensions = (with pkgs.vscode-extensions; [
+      enableUpdateCheck = false;
+      enableExtensionUpdateCheck = false;
+      extensions = (with pkgs.vscode-extensions; [ ]) ++ (with marketplace; [
         catppuccin.catppuccin-vsc
         eamodio.gitlens
-        elixir-lsp.vscode-elixir-ls
-        github.copilot
-        github.copilot-chat
         github.vscode-github-actions
         github.vscode-pull-request-github
-        golang.go
-        ionide.ionide-fsharp
         jnoortheen.nix-ide
-        ms-dotnettools.csdevkit
-        ms-dotnettools.csharp
-        ms-python.debugpy
-        ms-toolsai.jupyter
-        ms-vscode.cmake-tools
-        ms-vscode.cpptools
-        ms-vscode.cpptools-extension-pack
-        ms-vscode-remote.remote-containers
-        ocamllabs.ocaml-platform
-        redhat.java
-        # rust-lang.rust-analyzer
-        scala-lang.scala
-        scalameta.metals
-        shopify.ruby-lsp
-        sswg.swift-lang
-        tamasfe.even-better-toml
-        # vadimcn.vscode-lldb
-        vscjava.vscode-java-pack
-      ]) ++ (with marketplace; [
-        betterthantomorrow.calva
         meta.sapling-scm
-        ms-dotnettools.dotnet-interactive-vscode
         vscodevim.vim
       ]) ++ (with marketplace-release; [ ]);
       userSettings = {
