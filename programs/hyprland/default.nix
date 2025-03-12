@@ -91,7 +91,9 @@ in {
           force_zero_scaling = true
         }
 
-        # windowrulev2 = fullscreen, workspace:3
+        exec-once = [workspace 1 silent] wezterm
+        exec-once = [workspace 2 silent] firefox
+        exec-once = [workspace 3 silent] wezterm
 
         bind = $mod, R, submap, resize
         submap = resize
