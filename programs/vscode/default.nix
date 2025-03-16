@@ -17,8 +17,6 @@ in {
       extensions = (with pkgs.vscode-extensions; [ ]) ++ (with marketplace; [
         catppuccin.catppuccin-vsc
         eamodio.gitlens
-        github.vscode-github-actions
-        github.vscode-pull-request-github
         jnoortheen.nix-ide
         meta.sapling-scm
         vscodevim.vim
@@ -63,6 +61,7 @@ in {
         };
         "sapling.isl.showInSidebar" = true;
         "C_Cpp.default.cppStandard" = "c++23";
+        "editor.smoothScrolling" = true;
         "calva.prettyPrintingOptions" = {
           "printEngine" = "pprint";
           "enabled" = true;
