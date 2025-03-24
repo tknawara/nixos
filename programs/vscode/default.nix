@@ -15,7 +15,6 @@ in {
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
       extensions = (with pkgs.vscode-extensions; [ ]) ++ (with marketplace; [
-        catppuccin.catppuccin-vsc
         eamodio.gitlens
         jnoortheen.nix-ide
         meta.sapling-scm
@@ -28,7 +27,6 @@ in {
           "'calt', 'liga', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09','ss19', 'ss20'";
         "editor.semanticHighlighting.enabled" = true;
         "terminal.integrated.minimumContrastRatio" = 1;
-        "workbench.colorTheme" = "Catppuccin Mocha";
         "window.titleBarStyle" = "custom";
         "editor.fontSize" = 16;
         "terminal.integrated.fontSize" = 15;
@@ -63,6 +61,7 @@ in {
         "C_Cpp.default.cppStandard" = "c++23";
         "editor.smoothScrolling" = true;
         "d.dubCompiler" = "dmd";
+        "d.dcdClientPath" = "/home/tarek/.local/share/code-d/bin/dcd-client";
         "calva.prettyPrintingOptions" = {
           "printEngine" = "pprint";
           "enabled" = true;

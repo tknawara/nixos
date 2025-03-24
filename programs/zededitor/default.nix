@@ -3,7 +3,7 @@
 {
   catppuccin.zed.enable = false;
   programs.zed-editor = {
-    enable = true;
+    enable = false;
     extensions =
       [ "catppuccin" "scala" "nix" "java" "assembly" "log" "fsharp" "csharp" ];
     userSettings = {
