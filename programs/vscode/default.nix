@@ -62,6 +62,7 @@ in {
         "sapling.isl.showInSidebar" = true;
         "C_Cpp.default.cppStandard" = "c++23";
         "editor.smoothScrolling" = true;
+        "d.dubCompiler" = "dmd";
         "calva.prettyPrintingOptions" = {
           "printEngine" = "pprint";
           "enabled" = true;
