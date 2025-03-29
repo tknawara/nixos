@@ -24,7 +24,7 @@ in {
         "editor.fontFamily" =
           "'${config.font.monospace.name}', 'Droid Sans Mono', 'monospace', monospace";
         "editor.fontLigatures" =
-          "'calt', 'liga', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09','ss19', 'ss20'";
+          "'calt', 'liga', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09','ss19', 'ss20'";
         "editor.semanticHighlighting.enabled" = true;
         "terminal.integrated.minimumContrastRatio" = 1;
         "window.titleBarStyle" = "custom";
