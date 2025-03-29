@@ -62,6 +62,7 @@ in {
         "editor.smoothScrolling" = true;
         "d.dubCompiler" = "dmd";
         "d.dcdClientPath" = "/home/tarek/.local/share/code-d/bin/dcd-client";
+        "d.dcdServerPath" = "/home/tarek/.local/share/code-d/bin/dcd-server";
         "calva.prettyPrintingOptions" = {
           "printEngine" = "pprint";
           "enabled" = true;
