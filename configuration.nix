@@ -113,7 +113,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users.tarek = {
-      imports = [ ./home.nix inputs.catppuccin.homeManagerModules.catppuccin ];
+      imports = [ ./home.nix inputs.catppuccin.homeModules.catppuccin ];
     };
   };
 
