@@ -22,8 +22,11 @@
           "vscode://file/{path}:{line}"; # opens links in vscode
       };
     };
+    extraConfig = {
+      init.defaultBranch = "main";
+      core = { editor = "hx"; };
+    };
   };
-
 
   programs.gh.enable = true;
   programs.gh.settings.version = 1;
