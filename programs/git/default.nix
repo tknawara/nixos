@@ -22,6 +22,7 @@
           "vscode://file/{path}:{line}"; # opens links in vscode
       };
     };
+    ignores = [ ".direnv/" ];
     extraConfig = {
       init.defaultBranch = "main";
       core = { editor = "hx"; };
