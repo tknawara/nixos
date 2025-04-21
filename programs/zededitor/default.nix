@@ -3,9 +3,18 @@
 {
   catppuccin.zed.enable = false;
   programs.zed-editor = {
-    enable = false;
-    extensions =
-      [ "catppuccin" "scala" "nix" "java" "assembly" "log" "fsharp" "csharp" ];
+    enable = true;
+    extensions = [
+      "catppuccin"
+      "scala"
+      "nix"
+      "java"
+      "assembly"
+      "log"
+      "fsharp"
+      "csharp"
+      "zed-d"
+    ];
     userSettings = {
       features = { copilot = false; };
       vim_mode = true;
