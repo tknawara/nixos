@@ -6,7 +6,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    initExtra = # zsh
+    initContent = # zsh
       ''
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
         any-nix-shell zsh --info-right | source /dev/stdin
