@@ -86,7 +86,7 @@
           critical = 90;
         };
         on-click =
-          "wezterm -e ${pkgs.bash}/bin/bash -ci htop --sort-key PERCENT_CPU";
+          "ghostty -e ${pkgs.bash}/bin/bash -ci htop --sort-key PERCENT_CPU";
       };
 
       idle_inhibitor = {
@@ -107,7 +107,7 @@
           critical = 90;
         };
         on-click =
-          "wezterm -e ${pkgs.bash}/bin/bash -ci htop --sort-key PERCENT_MEM";
+          "ghostty -e ${pkgs.bash}/bin/bash -ci htop --sort-key PERCENT_MEM";
         tooltip = true;
       };
 
@@ -118,7 +118,7 @@
         format-disconnected = "⚠  Disconnected";
         tooltip-format = "{ifname}: {ipaddr}";
         on-click =
-          "wezterm -e ${pkgs.bash}/bin/bash -ci ${pkgs.networkmanager}/bin/nmtui";
+          "ghostty -e ${pkgs.bash}/bin/bash -ci ${pkgs.networkmanager}/bin/nmtui";
       };
 
       "hyprland/window" = {
@@ -192,7 +192,7 @@
         interval = 5;
         format-icons = [ "" "" ];
         on-click = ''
-          wezterm -e ${pkgs.bash}/bin/bash -ci "${pkgs.networkmanager}/bin/nmtui connect"'';
+          ghostty -e ${pkgs.bash}/bin/bash -ci "${pkgs.networkmanager}/bin/nmtui connect"'';
       };
 
       "wlr/taskbar" = {

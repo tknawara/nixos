@@ -31,7 +31,7 @@ in {
 
       "$mod" = "SUPER";
       bind = [
-        "$mod, RETURN, exec, wezterm"
+        "$mod, RETURN, exec, ghostty"
 
         "$mod, SPACE, exec, rofi -show drun"
         "$mod SHIFT, SPACE, exec, rofi -show window"
@@ -91,9 +91,9 @@ in {
           force_zero_scaling = true
         }
 
-        exec-once = [workspace 1 silent] wezterm
+        exec-once = [workspace 1 silent] ghostty
         exec-once = [workspace 2 silent] firefox
-        exec-once = [workspace 3 silent] wezterm
+        exec-once = [workspace 3 silent] ghostty
 
         bind = $mod, R, submap, resize
         submap = resize
