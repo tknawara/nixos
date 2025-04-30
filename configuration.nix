@@ -129,9 +129,11 @@
       #  wget
     ];
 
-  environment.variables = {
+  environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
     __GL_GSYNC_ALLOWED = "1";
+    XDG_SESSION_TYPE = "wayland";
   };
 
   # fonts
