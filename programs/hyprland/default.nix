@@ -18,6 +18,12 @@ in {
     settings = {
       exec-once = "${startupScript}/bin/start";
 
+      general = { layout = "dwindle"; };
+
+      dwindle = {
+        preserve_split = "yes"; # you probably want this
+      };
+
       group = {
         groupbar = {
           font_family = "Cascadia Code NF";
@@ -47,6 +53,7 @@ in {
         "$mod, h, movefocus, r"
         "$mod, k, movefocus, u"
         "$mod, j, movefocus, d"
+        "$mod, I, togglesplit"
 
         "$mod SHIFT, h, movewindow, l"
         "$mod SHIFT, l, movewindow, r"
