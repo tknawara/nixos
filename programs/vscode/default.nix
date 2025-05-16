@@ -14,12 +14,14 @@ in {
     profiles.default = {
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
-      extensions = (with pkgs.vscode-extensions; [ ]) ++ (with marketplace; [
-        eamodio.gitlens
-        jnoortheen.nix-ide
-        meta.sapling-scm
-        vscodevim.vim
-      ]) ++ (with marketplace-release; [ ]);
+      extensions =
+        (with pkgs.vscode-extensions; [ ms-vscode-remote.remote-containers ])
+        ++ (with marketplace; [
+          eamodio.gitlens
+          jnoortheen.nix-ide
+          meta.sapling-scm
+          vscodevim.vim
+        ]) ++ (with marketplace-release; [ ]);
       userSettings = {
         "editor.fontFamily" =
           "'${config.font.monospace.name}', 'Droid Sans Mono', 'monospace', monospace";
