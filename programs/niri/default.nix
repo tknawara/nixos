@@ -24,6 +24,8 @@ in {
         (makeCommand
           "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store")
         (makeCommand "${pkgs.waybar}/bin/waybar")
+        (makeCommand "${pkgs.xwayland-satellite}/bin/xwayland-satellite")
+        (makeCommand "${pkgs.swww}/bin/swww init")
         (makeCommand "${pkgs.swww}/bin/swww img ${config.wallpaper}")
       ];
 
@@ -85,15 +87,13 @@ in {
     };
   };
 
-  services.swww.enable = true;
-
   systemd.user = {
     services = {
       xwayland-satellite = {
         Install = { WantedBy = [ "niri.service" ]; };
         Unit = {
           PartOf = [ "graphical-session.target" ];
-          After = [ "graphical-session.target" "niri.service" ];
+          After = [ "graphical-session.target" ];
           Requisite = [ "graphical-session.target" ];
         };
         Service = {
@@ -106,7 +106,7 @@ in {
         Install = { WantedBy = [ "niri.service" ]; };
         Unit = {
           Description = "swww-daemon";
-          After = [ "graphical-session.target" "niri.service" ];
+          After = [ "graphical-session.target" ];
           PartOf = [ "graphical-session.target" ];
         };
 

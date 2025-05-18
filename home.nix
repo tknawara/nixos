@@ -62,7 +62,6 @@
     # pkgs.hello
 
     neovide
-    xwayland-satellite
     serpl
     adw-gtk3
     any-nix-shell
