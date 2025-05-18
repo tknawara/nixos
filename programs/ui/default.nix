@@ -27,7 +27,7 @@
     enable = true;
     defaultCacheTtl = 31536000;
     maxCacheTtl = 31536000;
-    pinentryPackage = pkgs.pinentry-gnome3;
+    pinentry.package = pkgs.pinentry-gnome3;
   };
 
   services.gnome-keyring.enable = true;
@@ -48,10 +48,14 @@
   xdg.portal = {
     enable = true;
     config = {
-      common = { default = [ "hyprland" ]; };
+      common = { default = [ "gtk" "hyprland" ]; };
       hyprland = { default = [ "gtk" "hyprland" ]; };
+      niri = { default = "gtk"; };
     };
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
     xdgOpenUsePortal = true;
   };
 }
