@@ -53,6 +53,7 @@ in {
       input = { focus-follows-mouse.enable = true; };
 
       binds = with config.lib.niri.actions; {
+        "Mod+Shift+E".action = quit;
 
         # Applications
         "Mod+Space".action = spawn "fuzzel";

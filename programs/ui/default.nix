@@ -47,11 +47,6 @@
 
   xdg.portal = {
     enable = true;
-    config = {
-      common = { default = [ "gtk" "hyprland" ]; };
-      hyprland = { default = [ "gtk" "hyprland" ]; };
-      niri = { default = "gtk"; };
-    };
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       xdg-desktop-portal-gnome
