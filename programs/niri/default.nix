@@ -52,39 +52,55 @@ in {
       prefer-no-csd = true;
       input = { focus-follows-mouse.enable = true; };
 
-      binds = with config.lib.niri.actions; {
-        "Mod+Shift+E".action = quit;
+      binds = with config.lib.niri.actions;
+        let sh = spawn "sh" "-c";
+        in {
+          "Mod+Shift+E".action = quit;
+          "Mod+Shift+Slash".action = show-hotkey-overlay;
 
-        # Applications
-        "Mod+Space".action = spawn "fuzzel";
-        "Mod+Return".action = spawn "wezterm";
-        "Ctrl+Alt+L".action = spawn "hyprlock";
+          # Applications
+          "Mod+Space".action = sh "rofi -show drun -show-icon";
+          "Mod+C".action =
+            sh "cliphist list | rofi -dmenu | cliphist decode | wl-copy";
+          "Mod+Return".action = spawn "wezterm";
+          "Ctrl+Alt+L".action = spawn "hyprlock";
 
-        # Window management
-        "Mod+Q".action = close-window;
-        "Mod+S".action = switch-preset-column-width;
-        "Mod+F".action = maximize-column;
-        "Mod+Shift+F".action = fullscreen-window;
-        "Mod+V".action = toggle-window-floating;
+          # Window management
+          "Mod+Q".action = close-window;
+          "Mod+S".action = switch-preset-column-width;
+          "Mod+F".action = maximize-column;
+          "Mod+Shift+F".action = fullscreen-window;
+          "Mod+V".action = toggle-window-floating;
 
-        # Focus movement
-        "Mod+H".action = focus-column-left;
-        "Mod+L".action = focus-column-right;
-        "Mod+J".action = focus-window-or-workspace-down;
-        "Mod+K".action = focus-window-or-workspace-up;
-        "Mod+Left".action = focus-column-left;
-        "Mod+Right".action = focus-column-right;
-        "Mod+Down".action = focus-workspace-down;
-        "Mod+Up".action = focus-workspace-up;
+          # Focus movement
+          "Mod+H".action = focus-column-left;
+          "Mod+L".action = focus-column-right;
+          "Mod+J".action = focus-window-or-workspace-down;
+          "Mod+K".action = focus-window-or-workspace-up;
+          "Mod+Left".action = focus-column-left;
+          "Mod+Right".action = focus-column-right;
+          "Mod+Down".action = focus-workspace-down;
+          "Mod+Up".action = focus-workspace-up;
 
-        # Window movement
-        "Mod+Shift+H".action = move-column-left;
-        "Mod+Shift+L".action = move-column-right;
-        "Mod+Shift+K".action = move-column-to-workspace-up;
-        "Mod+Shift+J".action = move-column-to-workspace-down;
-        "Mod+Shift+Ctrl+J".action = move-column-to-monitor-down;
-        "Mod+Shift+Ctrl+K".action = move-column-to-monitor-up;
-      };
+          # Window movement
+          "Mod+Shift+H".action = move-column-left;
+          "Mod+Shift+L".action = move-column-right;
+          "Mod+Shift+K".action = move-column-to-workspace-up;
+          "Mod+Shift+J".action = move-column-to-workspace-down;
+          "Mod+Shift+Ctrl+J".action = move-column-to-monitor-down;
+          "Mod+Shift+Ctrl+K".action = move-column-to-monitor-up;
+
+          # Workspaces
+          "Mod+1".action = focus-workspace 1;
+          "Mod+2".action = focus-workspace 2;
+          "Mod+3".action = focus-workspace 3;
+          "Mod+4".action = focus-workspace 4;
+          "Mod+5".action = focus-workspace 5;
+          "Mod+6".action = focus-workspace 6;
+          "Mod+7".action = focus-workspace 7;
+          "Mod+8".action = focus-workspace 8;
+          "Mod+9".action = focus-workspace 9;
+        };
     };
   };
 
