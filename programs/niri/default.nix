@@ -2,6 +2,7 @@
 let makeCommand = command: { command = [ command ]; };
 in {
   imports = [ inputs.niri.homeModules.niri ];
+  programs.fuzzel = { enable = true; };
   programs.niri = {
     enable = true;
 
@@ -22,6 +23,8 @@ in {
           "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store")
         (makeCommand
           "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store")
+        (makeCommand "${pkgs.waybar}/bin/waybar")
+        (makeCommand "${pkgs.swww}/bin/swww img ${config.wallpaper}")
       ];
 
       outputs = {
@@ -34,10 +37,23 @@ in {
         };
       };
 
+      hotkey-overlay.skip-at-startup = false;
+
+      layout = {
+        focus-ring = {
+          enable = true;
+          width = 0.1;
+        };
+        border = { enable = false; };
+        default-column-width = { proportion = 0.5; };
+      };
+
+      input = { focus-follows-mouse.enable = true; };
+
       binds = with config.lib.niri.actions; {
 
         # Applications
-        "Mod+Space".action = spawn "rofi -show drun";
+        "Mod+Space".action = spawn "fuzzel";
         "Mod+Return".action = spawn "wezterm";
         "Ctrl+Alt+L".action = spawn "hyprlock";
 
@@ -69,18 +85,36 @@ in {
     };
   };
 
+  services.swww.enable = true;
+
   systemd.user = {
     services = {
       xwayland-satellite = {
         Install = { WantedBy = [ "niri.service" ]; };
         Unit = {
           PartOf = [ "graphical-session.target" ];
-          After = [ "graphical-session.target" ];
+          After = [ "graphical-session.target" "niri.service" ];
           Requisite = [ "graphical-session.target" ];
         };
         Service = {
           ExecStart = "${lib.getExe pkgs.xwayland-satellite}";
           Restart = "on-failure";
+        };
+      };
+
+      swww-daemon = {
+        Install = { WantedBy = [ "niri.service" ]; };
+        Unit = {
+          Description = "swww-daemon";
+          After = [ "graphical-session.target" "niri.service" ];
+          PartOf = [ "graphical-session.target" ];
+        };
+
+        Service = {
+          ExecStart = "${pkgs.swww}/bin/swww-daemon";
+          ExecStop = "${pkgs.swww}/bin/swww kill";
+          Restart = "always";
+          RestartSec = 10;
         };
       };
     };
