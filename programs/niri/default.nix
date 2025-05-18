@@ -25,8 +25,7 @@ in {
           "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store")
         (makeCommand "${pkgs.waybar}/bin/waybar")
         (makeCommand "${pkgs.xwayland-satellite}/bin/xwayland-satellite")
-        (makeCommand "${pkgs.swww}/bin/swww init")
-        (makeCommand "${pkgs.swww}/bin/swww img ${config.wallpaper}")
+        (makeCommand "${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper}")
       ];
 
       outputs = {
@@ -50,6 +49,7 @@ in {
         default-column-width = { proportion = 0.5; };
       };
 
+      prefer-no-csd = true;
       input = { focus-follows-mouse.enable = true; };
 
       binds = with config.lib.niri.actions; {
