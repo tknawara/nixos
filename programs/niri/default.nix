@@ -91,10 +91,10 @@ in {
           "Mod+Shift+Ctrl+K".action = move-column-to-monitor-up;
 
           # Resize
-          "Mod+Minus".action = set-column-width "-10%";
-          "Mod+Plus".action = set-column-width "+10%";
-          "Mod+Shift+Minus".action = set-window-height "-10%";
-          "Mod+Shift+Plus".action = set-window-height "+10%";
+          "Mod+BracketLeft".action = set-column-width "-10%";
+          "Mod+BracketRight".action = set-column-width "+10%";
+          "Mod+Shift+BracketLeft".action = set-window-height "-10%";
+          "Mod+Shift+BracketRight".action = set-window-height "+10%";
 
           # Workspaces
           "Mod+1".action = focus-workspace 1;
