@@ -110,9 +110,6 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (_: true);
 
-  programs.fish.enable = true;
-  programs.zsh.enable = true;
-
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users.tarek = {
@@ -120,9 +117,16 @@
     };
   };
 
-  programs.hyprland.enable = true;
-  programs.hyprland.package =
-    inputs.hyprland.packages."${pkgs.system}".hyprland;
+  # System wide programs
+  programs = {
+    fish.enable = true;
+    zsh.enable = true;
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+    };
+    niri.enable = true;
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

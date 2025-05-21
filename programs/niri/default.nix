@@ -1,11 +1,8 @@
-{ inputs, config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 let makeCommand = command: { command = [ command ]; };
 in {
-  imports = [ inputs.niri.homeModules.niri ];
   programs.fuzzel = { enable = true; };
   programs.niri = {
-    enable = true;
-
     settings = {
       environment = {
         CLUTTER_BACKEND = "wayland";
