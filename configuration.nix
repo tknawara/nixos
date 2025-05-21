@@ -57,7 +57,10 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm = {
+    enable = true;
+    wayland = true;
+  };
   services.xserver.desktopManager.gnome.enable = true;
   virtualisation.docker.enable = true;
 
@@ -162,8 +165,8 @@
   # Enable OpenGL
   hardware.graphics = { enable = true; };
 
-  # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = [ "nvidia" ];
+  # Load AMD + (used to be "nvidia") driver for Xorg and Wayland
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   hardware.nvidia = {
 

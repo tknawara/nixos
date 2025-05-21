@@ -20,6 +20,7 @@
     ./programs/index/default.nix
     ./programs/kitty/default.nix
     ./programs/neovide/default.nix
+    ./programs/niri/default.nix
     ./programs/nushell/default.nix
     ./programs/nvim/default.nix
     ./programs/rofi/default.nix

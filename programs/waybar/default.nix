@@ -9,7 +9,8 @@
       position = "top";
       height = 20;
 
-      modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
+      # modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
+      modules-left = [ "niri/workspaces" ];
       modules-center = [ ];
       modules-right = [
         # "idle_inhibitor"
