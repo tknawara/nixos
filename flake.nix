@@ -68,6 +68,7 @@
         # lix-module.nixosModules.default
         inputs.home-manager.nixosModules.default
         inputs.catppuccin.nixosModules.catppuccin
+        inputs.niri.nixosModules.niri
         { _module.args.emacs-overlay = inputs.emacs-overlay.overlay; }
       ];
     };
