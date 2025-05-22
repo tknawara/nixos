@@ -65,6 +65,7 @@ in {
         "d.dubCompiler" = "dmd";
         "d.dcdClientPath" = "/home/tarek/.local/share/code-d/bin/dcd-client";
         "d.dcdServerPath" = "/home/tarek/.local/share/code-d/bin/dcd-server";
+        "d.stdlibPath" = "auto";
         "calva.prettyPrintingOptions" = {
           "printEngine" = "pprint";
           "enabled" = true;
