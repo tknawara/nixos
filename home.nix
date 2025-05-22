@@ -70,7 +70,6 @@
     bat
     binsider
     blueman
-    cliphist
     delta
     discord
     docker
