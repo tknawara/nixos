@@ -62,6 +62,7 @@
     # pkgs.hello
 
     neovide
+    _1password-gui
     serpl
     adw-gtk3
     any-nix-shell
