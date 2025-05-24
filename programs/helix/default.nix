@@ -107,12 +107,6 @@
           language-servers = [ "ucm" ];
         }
       ];
-      themes = {
-        autumn_night_transparent = {
-          "inherits" = "autumn_night";
-          "ui.background" = { };
-        };
-      };
     };
 
   };
