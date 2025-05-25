@@ -6,7 +6,7 @@
       modi = "drun,run,window,filebrowser";
       show-icons = true;
       icon-theme = "Papirus-Light";
-      terminal = "ghostty";
+      terminal = "wezterm";
       hide-scrollbar = true;
       sidebar-mode = true;
     };

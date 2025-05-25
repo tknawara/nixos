@@ -24,4 +24,6 @@
       window-padding-x = 6
       window-padding-y = 4
     '';
+
+  home.packages = with pkgs; [ ghostty ];
 }

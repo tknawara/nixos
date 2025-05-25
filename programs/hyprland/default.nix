@@ -37,7 +37,7 @@ in {
 
       "$mod" = "SUPER";
       bind = [
-        "$mod, RETURN, exec, ghostty"
+        "$mod, RETURN, exec, wezterm"
 
         "$mod, SPACE, exec, rofi -show drun"
         "$mod SHIFT, SPACE, exec, rofi -show window"

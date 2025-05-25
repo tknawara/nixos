@@ -78,7 +78,6 @@
     fh
     firefox
     fzf
-    ghostty
     git
     gnome-tweaks
     gnomeExtensions.blur-my-shell
