@@ -21,7 +21,6 @@
       font-feature = "ss20"
 
       gtk-titlebar = true
-      gtk-application-prefer-dark-theme = true
       window-padding-x = 6
       window-padding-y = 4
     '';
