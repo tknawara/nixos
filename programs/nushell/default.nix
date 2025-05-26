@@ -10,5 +10,6 @@
       grep = "rg";
       update = "sudo nixos-rebuild switch --flake /home/tarek/nixos#default";
     };
+    plugins = with pkgs.nushellPlugins; [ polars query gstat ];
   };
 }
