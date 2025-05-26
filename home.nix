@@ -101,13 +101,10 @@
     papirus-icon-theme
     pavucontrol
     ripgrep
-    rofi-wayland
     sapling
     slurp
-    swww
     unzip
     vlc
-    wl-clipboard
     yazi
     zoom-us
     zplug
