@@ -48,7 +48,7 @@ in {
       };
 
       prefer-no-csd = true;
-      input = { focus-follows-mouse.enable = true; };
+      input = { focus-follows-mouse.enable = false; };
 
       binds = with config.lib.niri.actions;
         let sh = spawn "sh" "-c";
