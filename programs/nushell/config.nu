@@ -1,7 +1,7 @@
-
 $env.PROMPT_INDICATOR = ""
 $env.PROMPT_INDICATOR_VI_INSERT = ""
 $env.PROMPT_INDICATOR_VI_NORMAL = ""
+$env.EDITOR = "hx"
 $env.config = {
   buffer_editor: "hx"
   show_banner: false
