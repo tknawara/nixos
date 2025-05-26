@@ -223,7 +223,7 @@
       "custom/quit" = {
         format = "󰗼";
         tooltip = true;
-        on-click = "hyprctl dispatch exit";
+        on-click = "niri msg action quit";
         tooltip-format = "Logout";
       };
       "custom/lock" = {
