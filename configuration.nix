@@ -65,7 +65,7 @@
     enable = true;
     extraGSettingsOverrides = ''
       [org.gnome.mutter]
-      experimental-features=['scale-monitor-framebuffer']
+      experimental-features=['scale-monitor-framebuffer', 'xwayland-native-scaling']
     '';
   };
   virtualisation.docker.enable = true;
