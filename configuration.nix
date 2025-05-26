@@ -61,7 +61,13 @@
     enable = true;
     wayland = true;
   };
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome = {
+    enable = true;
+    extraGSettingsOverrides = ''
+      [org.gnome.mutter]
+      experimental-features=['scale-monitor-framebuffer']
+    '';
+  };
   virtualisation.docker.enable = true;
 
   # Configure keymap in X11
