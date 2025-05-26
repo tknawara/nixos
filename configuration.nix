@@ -130,11 +130,11 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs;
-    [
-      #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-      #  wget
-    ];
+  environment.systemPackages = with pkgs; [
+    linuxPackages.nvidia_x11
+    pciutils
+    cudaPackages.cudatoolkit
+  ];
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
@@ -169,8 +169,8 @@
   # Enable OpenGL
   hardware.graphics = { enable = true; };
 
-  # Load AMD + (used to be "nvidia") driver for Xorg and Wayland
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  # Load AMD + nvidia driver
+  services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
 
   hardware.nvidia = {
 
@@ -200,7 +200,7 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   # Some programs need SUID wrappers, can be configured further or are

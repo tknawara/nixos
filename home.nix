@@ -65,6 +65,7 @@
     _1password-gui
     serpl
     adw-gtk3
+    wl-clipboard
     any-nix-shell
     appflowy
     bat
