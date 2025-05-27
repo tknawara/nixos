@@ -129,7 +129,7 @@
     zsh.enable = true;
     niri.enable = true;
     hyprland = {
-      enable = true;
+      enable = false;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     };
   };
