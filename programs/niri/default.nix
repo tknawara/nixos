@@ -16,15 +16,7 @@ in {
         SDL_VIDEODRIVER = "wayland";
       };
 
-      spawn-at-startup = [
-        (makeCommand
-          "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store")
-        (makeCommand
-          "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store")
-        (makeCommand "${pkgs.waybar}/bin/waybar")
-        (makeCommand "${pkgs.xwayland-satellite}/bin/xwayland-satellite")
-        (makeCommand "${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper}")
-      ];
+      spawn-at-startup = [ ];
 
       outputs = {
         "DP-2" = {
@@ -35,6 +27,11 @@ in {
           };
         };
       };
+
+      window-rules = [{
+        matches = [{ app-id = "^clipse$"; }];
+        open-floating = true;
+      }];
 
       hotkey-overlay.skip-at-startup = false;
 
@@ -58,8 +55,7 @@ in {
 
           # Applications
           "Mod+Space".action = sh "rofi -show drun -show-icon";
-          "Mod+C".action =
-            sh "cliphist list | rofi -dmenu | cliphist decode | wl-copy";
+          "Mod+C".action = sh "wezterm start --class 'clipse' -e clipse";
           "Mod+Return".action = spawn "wezterm";
           "Ctrl+Alt+L".action = spawn "hyprlock";
 
@@ -123,19 +119,47 @@ in {
         };
       };
 
-      swww-daemon = {
+      clipse = {
         Install = { WantedBy = [ "niri.service" ]; };
         Unit = {
-          Description = "swww-daemon";
           After = [ "graphical-session.target" ];
           PartOf = [ "graphical-session.target" ];
+          Requisite = [ "graphical-session.target" ];
         };
 
         Service = {
-          ExecStart = "${pkgs.swww}/bin/swww-daemon";
-          ExecStop = "${pkgs.swww}/bin/swww kill";
-          Restart = "always";
-          RestartSec = 10;
+          ExecStart = "${pkgs.clipse}/bin/clipse -listen";
+          Restart = "on-failure";
+          RestartSec = 3;
+          RemainAfterExit = true;
+        };
+      };
+
+      swaybg = {
+        Install = { WantedBy = [ "niri.service" ]; };
+        Unit = {
+          After = [ "graphical-session.target" ];
+          PartOf = [ "graphical-session.target" ];
+          Requisite = [ "graphical-session.target" ];
+        };
+
+        Service = {
+          ExecStart = "${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper}";
+          Restart = "on-failure";
+        };
+      };
+
+      waybar = {
+        Install = { WantedBy = [ "niri.service" ]; };
+        Unit = {
+          After = [ "graphical-session.target" ];
+          PartOf = [ "graphical-session.target" ];
+          Requisite = [ "graphical-session.target" ];
+        };
+
+        Service = {
+          ExecStart = "${pkgs.waybar}/bin/waybar";
+          Restart = "on-failure";
         };
       };
     };

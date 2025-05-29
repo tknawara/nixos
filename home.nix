@@ -62,6 +62,9 @@
     # pkgs.hello
 
     neovide
+    xwayland-satellite
+    swww
+    clipse
     _1password-gui
     serpl
     adw-gtk3
