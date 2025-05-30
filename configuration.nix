@@ -14,7 +14,6 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -57,11 +56,11 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm = {
+  services.displayManager.gdm = {
     enable = true;
     wayland = true;
   };
-  services.xserver.desktopManager.gnome = {
+  services.desktopManager.gnome = {
     enable = true;
     extraGSettingsOverrides = ''
       [org.gnome.mutter]
