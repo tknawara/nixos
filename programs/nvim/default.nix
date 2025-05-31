@@ -104,6 +104,7 @@
         folding = false;
         settings = { indent.enable = true; };
       };
+      treesitter-context.enable = true;
 
       telescope = {
         enable = true;
