@@ -52,6 +52,7 @@ in {
           "**/.metals" = true;
           "**/.ammonite" = true;
         };
+        "workbench.iconTheme" = "catppuccin-mocha";
         "cmake.showOptionsMovedNotification" = false;
         "editor.formatOnSave" = true;
         "terminal.integrated.enableMultiLinePasteWarning" = "never";
