@@ -139,6 +139,7 @@
     linuxPackages.nvidia_x11
     pciutils
     cudaPackages.cudatoolkit
+    clinfo
   ];
 
   environment.sessionVariables = {
@@ -172,7 +173,10 @@
   };
 
   # Enable OpenGL
-  hardware.graphics = { enable = true; };
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [ amdvlk rocmPackages.clr ];
+  };
 
   # Load AMD + nvidia driver
   services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
