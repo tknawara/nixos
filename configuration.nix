@@ -142,6 +142,7 @@
     clinfo
     lact
     rocmPackages.amdsmi
+    rocmPackages.rocm-smi
     rocmPackages.rocminfo
   ];
   systemd.packages = with pkgs; [ lact ];
