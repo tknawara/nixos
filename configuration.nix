@@ -140,7 +140,12 @@
     pciutils
     cudaPackages.cudatoolkit
     clinfo
+    lact
+    rocmPackages.amdsmi
+    rocmPackages.rocminfo
   ];
+  systemd.packages = with pkgs; [ lact ];
+  systemd.services.lactd.wantedBy = [ "multi-user.target" ];
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
@@ -172,10 +177,10 @@
     };
   };
 
-  # Enable OpenGL
+  # Enable OpenCL
   hardware.graphics = {
     enable = true;
-    extraPackages = with pkgs; [ amdvlk rocmPackages.clr ];
+    extraPackages = with pkgs; [ amdvlk rocmPackages.clr rocmPackages.clr.icd ];
   };
 
   # Load AMD + nvidia driver
