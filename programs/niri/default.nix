@@ -100,6 +100,15 @@ in {
           "Mod+7".action = focus-workspace 7;
           "Mod+8".action = focus-workspace 8;
           "Mod+9".action = focus-workspace 9;
+
+          # Screenshot
+          "Print".action.screenshot = [ ];
+          "Ctrl+Print".action.screenshot-screen = [ ];
+          "Shift+Print".action.screenshot-window = [ ];
+
+          "Mod+P".action.screenshot = [ ];
+          "Mod+Ctrl+P".action.screenshot-screen = [ ];
+          "Mod+Shift+P".action.screenshot-window = [ ];
         };
     };
   };

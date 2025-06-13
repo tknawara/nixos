@@ -141,6 +141,22 @@
         "type": "github"
       }
     },
+    "flake-compat_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1696426674,
+        "narHash": "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "0f9255e01c2351cc7d116c072cb317785dd33b33",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -686,6 +702,27 @@
         "type": "github"
       }
     },
+    "nix-index": {
+      "inputs": {
+        "flake-compat": "flake-compat_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1749379652,
+        "narHash": "sha256-gxM3X3fAuQvtTr+OHA2iEfXjTVKDt602IaNvDK5LbbI=",
+        "owner": "nix-community",
+        "repo": "nix-index",
+        "rev": "01a24237f519b5c6d2f9c6a81e0559596f424f80",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-index",
+        "type": "github"
+      }
+    },
     "nix-vscode-extensions": {
       "inputs": {
         "flake-utils": [
@@ -884,6 +921,7 @@
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
         "niri": "niri",
+        "nix-index": "nix-index",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_3",
         "nixvim": "nixvim",

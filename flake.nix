@@ -10,15 +10,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-    };
+    nixvim = { url = "github:nix-community/nixvim"; };
 
     catppuccin.url = "github:catppuccin/nix";
 
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-index = {
+      url = "github:nix-community/nix-index";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -42,7 +45,6 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs";
-      # inputs.flake-utils.follows = "flake-utils";
     };
 
     catppuccin-hyprland = {
@@ -64,7 +66,6 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
-        # lix-module.nixosModules.default
         inputs.home-manager.nixosModules.default
         inputs.catppuccin.nixosModules.catppuccin
         inputs.niri.nixosModules.niri
