@@ -62,6 +62,7 @@
     # pkgs.hello
 
     neovide
+    popsicle
     xwayland-satellite
     swww
     clipse
