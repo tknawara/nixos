@@ -1,0 +1,12 @@
+{
+  "settings": {
+    "launcher": {
+      "items": [
+        {
+          "name": "Firefox",
+          "exec": "firefox"
+        }
+      ]
+    }
+  }
+}

@@ -3,38 +3,38 @@
 {
 
   imports = [
-    ./consts.nix
-    ./desktop.nix
-    ./programs/atuin/default.nix
-    ./programs/carapace/default.nix
-    ./programs/direnv/default.nix
-    ./programs/dunst/default.nix
-    ./programs/emacs/default.nix
-    ./programs/fish/default.nix
-    ./programs/gdb/default.nix
-    ./programs/ghostty/default.nix
-    ./programs/git/default.nix
-    ./programs/helix/default.nix
-    ./programs/hyprland/default.nix
-    ./programs/hyprlock/default.nix
-    ./programs/index/default.nix
-    ./programs/kitty/default.nix
-    ./programs/neovide/default.nix
-    ./programs/niri/default.nix
-    ./programs/nushell/default.nix
-    ./programs/nvim/default.nix
-    ./programs/rofi/default.nix
-    ./programs/starship/default.nix
-    ./programs/superfile/default.nix
-    ./programs/tmux/default.nix
-    ./programs/ui/default.nix
-    ./programs/vscode/default.nix
-    ./programs/waybar/default.nix
-    ./programs/wezterm/default.nix
-    ./programs/zededitor/default.nix
-    ./programs/zellij/default.nix
-    ./programs/zoxide/default.nix
-    ./programs/zsh/default.nix
+    ./modules/hosts/pc/consts.nix
+    ./modules/features/desktop.nix
+    ./modules/features/atuin/default.nix
+    ./modules/features/carapace/default.nix
+    ./modules/features/direnv/default.nix
+    ./modules/features/dunst/default.nix
+    ./modules/features/emacs/default.nix
+    ./modules/features/fish/default.nix
+    ./modules/features/gdb/default.nix
+    ./modules/features/ghostty/default.nix
+    ./modules/features/git/default.nix
+    ./modules/features/helix/default.nix
+    ./modules/features/hyprland/default.nix
+    ./modules/features/hyprlock/default.nix
+    ./modules/features/index/default.nix
+    ./modules/features/kitty/default.nix
+    ./modules/features/neovide/default.nix
+    ./modules/features/niri/default.nix
+    ./modules/features/nushell/default.nix
+    ./modules/features/nvim/default.nix
+    ./modules/features/rofi/default.nix
+    ./modules/features/starship/default.nix
+    ./modules/features/superfile/default.nix
+    ./modules/features/tmux/default.nix
+    ./modules/features/ui/default.nix
+    ./modules/features/vscode/default.nix
+    ./modules/features/waybar/default.nix
+    ./modules/features/wezterm/default.nix
+    ./modules/features/zededitor/default.nix
+    ./modules/features/zellij/default.nix
+    ./modules/features/zoxide/default.nix
+    ./modules/features/zsh/default.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -61,20 +61,15 @@
     # # "Hello, world!" when run.
     # pkgs.hello
 
-    neovide
     popsicle
     xwayland-satellite
-    swww
     clipse
     _1password-gui
     serpl
     adw-gtk3
-    wl-clipboard
-    any-nix-shell
     appflowy
     bat
     binsider
-    blueman
     delta
     discord
     docker
@@ -83,18 +78,18 @@
     fh
     firefox
     fzf
-    git
-    gnome-tweaks
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.gnome-40-ui-improvements
+    # git
+    # gnome-tweaks
+    # gnomeExtensions.blur-my-shell
+    # gnomeExtensions.gnome-40-ui-improvements
     grim
     gsimplecal
     htop
-    hyprlock
+    # hyprlock
     hyprshot
     jdk
     jetbrains.idea-community-bin
-    libnotify
+    # libnotify
     libsecret
     lua
     nil
@@ -110,10 +105,10 @@
     slurp
     unzip
     vlc
-    yazi
+    # yazi
     zoom-us
-    zplug
-    zsh
+    # zplug
+    # zsh
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
