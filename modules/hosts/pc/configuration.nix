@@ -6,7 +6,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Xanmod LTS kernel (desktop-optimized with LTS stability for Nvidia)
-  boot.kernelPackages = pkgs.linuxPackages_xanmod;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
 
   networking.hostName = "pc";
   networking.networkmanager.enable = true;
@@ -122,6 +122,8 @@
     config.boot.kernelPackages.nvidia_x11
     pciutils
     cudaPackages.cudatoolkit
+    cudaPackages.cuda_nvcc
+    cudaPackages.cuda_cudart
     clinfo
     lact
     rocmPackages.amdsmi
@@ -141,6 +143,12 @@
     imv
     wl-clipboard
     libnotify
+    # Thunar plugins
+    xfce.thunar-archive-plugin
+    xfce.tumbler
+    ffmpegthumbnailer
+    # QT theming
+    catppuccin-kvantum
   ];
 
   services.gvfs.enable = true;
@@ -162,6 +170,12 @@
     extraPackages = with pkgs; [ amdvlk rocmPackages.clr rocmPackages.clr.icd ];
   };
 
+  # QT theming with Catppuccin
+  qt = {
+    enable = true;
+    platformTheme.name = "kvantum";
+  };
+
   # Load AMD + nvidia driver
   services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
 
@@ -171,6 +185,7 @@
     powerManagement.finegrained = false;
     open = true;
     nvidiaSettings = true;
+    nvidiaPersistenced = true;  # Keep GPU initialized for ML workloads
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 

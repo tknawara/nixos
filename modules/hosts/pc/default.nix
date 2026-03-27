@@ -90,6 +90,10 @@
           }))
           papirus-icon-theme
           pavucontrol
+          # GNOME apps (post-GNOME migration)
+          gnome-calculator
+          mission-center
+          gnome-font-viewer
           ripgrep
           sapling
           slurp

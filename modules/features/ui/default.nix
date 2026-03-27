@@ -59,5 +59,11 @@
     org.freedesktop.impl.portal.ScreenCast=gnome
     org.freedesktop.impl.portal.Screenshot=gnome
   '';
+
+  # Kvantum QT theming (Catppuccin Mocha)
+  xdg.configFile."Kvantum/kvantum.kvconfig".text = ''
+    [General]
+    theme=Catppuccin-Mocha-Blue
+  '';
   };
 }
