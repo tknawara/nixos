@@ -59,6 +59,7 @@
 
         home.packages = with pkgs; [
           popsicle
+          claude-code
           clipse
           _1password-gui
           serpl
