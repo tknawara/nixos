@@ -22,6 +22,7 @@ in {
           jnoortheen.nix-ide
           meta.sapling-scm
           vscodevim.vim
+          pinage404.nix-extension-pack
         ]) ++ (with marketplace-release; [ ]);
       userSettings = {
         "editor.fontFamily" =

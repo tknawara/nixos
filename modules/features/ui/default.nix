@@ -48,8 +48,16 @@
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
     ];
     xdgOpenUsePortal = true;
   };
+
+  xdg.configFile."xdg-desktop-portal/portals.conf".text = ''
+    [preferred]
+    default=gtk
+    org.freedesktop.impl.portal.ScreenCast=gnome
+    org.freedesktop.impl.portal.Screenshot=gnome
+  '';
   };
 }

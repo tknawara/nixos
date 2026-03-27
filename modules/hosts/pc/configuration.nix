@@ -5,6 +5,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Zen kernel (optimized for desktop responsiveness)
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
   networking.hostName = "pc";
   networking.networkmanager.enable = true;
 
@@ -116,7 +119,7 @@
   # Essential utilities
   environment.systemPackages = with pkgs; [
     # GPU
-    linuxPackages.nvidia_x11
+    config.boot.kernelPackages.nvidia_x11
     pciutils
     cudaPackages.cudatoolkit
     clinfo
