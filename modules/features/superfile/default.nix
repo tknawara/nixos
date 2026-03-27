@@ -1,5 +1,6 @@
-{ pkgs, ... }: {
-  xdg.configFile."superfile/config.toml".text = # toml
+{ ... }: {
+  flake.hmModules.superfile = { pkgs, ... }: {
+    xdg.configFile."superfile/config.toml".text = # toml
     ''
       # More details are at https://superfile.netlify.app/configure/superfile-config/
       #
@@ -132,4 +133,5 @@
     '';
 
   home.packages = with pkgs; [ superfile ];
+  };
 }

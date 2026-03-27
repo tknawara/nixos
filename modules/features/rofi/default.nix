@@ -1,5 +1,6 @@
-{ pkgs, inputs, ... }: {
-  programs.rofi = {
+{ inputs, ... }: {
+  flake.hmModules.rofi = { pkgs, ... }: {
+    programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
     extraConfig = {
@@ -10,5 +11,6 @@
       hide-scrollbar = true;
       sidebar-mode = true;
     };
+  };
   };
 }

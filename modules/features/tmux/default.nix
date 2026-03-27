@@ -1,7 +1,6 @@
-{ pkgs, configs, ... }:
-
-{
-  programs.tmux = {
+{ ... }: {
+  flake.hmModules.tmux = { pkgs, configs, ... }: {
+    programs.tmux = {
     enable = true;
     escapeTime = 0;
     clock24 = true;
@@ -11,5 +10,6 @@
     extraConfig = ''
       set -g mouse on
     '';
+  };
   };
 }

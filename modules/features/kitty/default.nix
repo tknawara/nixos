@@ -1,6 +1,5 @@
-{ pkgs, config, ... }:
-
-{
+{ ... }: {
+  flake.hmModules.kitty = { pkgs, config, ... }: {
   programs.kitty = {
     enable = false;
     font = {
@@ -18,4 +17,4 @@
       tab_bar_margin_width = 5;
     };
   };
-}
+}; };

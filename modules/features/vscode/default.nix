@@ -1,5 +1,6 @@
-{ inputs, pkgs, config, ... }:
-let
+{ inputs, ... }: {
+  flake.hmModules.vscode = { pkgs, config, ... }:
+  let
   marketplace =
     inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace;
   marketplace-release =
@@ -80,5 +81,6 @@ in {
   xdg.configFile."vscode" = {
     source = ./dotfiles;
     recursive = true;
+  };
   };
 }

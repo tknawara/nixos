@@ -1,6 +1,5 @@
-{ pkgs, inputs, config, ... }:
-
-{
+{ inputs, ... }: {
+  flake.hmModules.nvim = { pkgs, config, ... }: {
 
   imports = [ inputs.nixvim.homeManagerModules.nixvim ];
 
@@ -251,4 +250,4 @@
         vim.g.neovide_padding_left = 10
       '';
   };
-}
+}; };

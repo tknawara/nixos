@@ -37,6 +37,12 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
+  # Unlock gnome-keyring on login
+  security.pam.services.greetd.enableGnomeKeyring = true;
+
+  # Polkit agent (needed without GNOME for privilege escalation prompts)
+  security.polkit.enable = true;
+
   # Minimal login
   services.greetd = {
     enable = true;
@@ -75,18 +81,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users.tarek = {
-      imports = [ ../../../home.nix inputs.catppuccin.homeModules.catppuccin ];
-    };
-  };
-
   # System wide programs
-  programs = {
-    fish.enable = true;
-    niri.enable = true;
-  };
+  programs.fish.enable = true;
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [

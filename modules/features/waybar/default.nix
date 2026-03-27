@@ -1,7 +1,6 @@
-{ config, pkgs, inputs, ... }:
-
-{
-  programs.waybar.enable = true;
+{ inputs, ... }: {
+  flake.hmModules.waybar = { config, pkgs, ... }: {
+    programs.waybar.enable = true;
 
   programs.waybar.settings = {
     mainBar = {
@@ -485,4 +484,5 @@
       }
 
     '';
+  };
 }

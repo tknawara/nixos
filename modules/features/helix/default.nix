@@ -1,6 +1,5 @@
-{ pkgs, ... }:
-
-{
+{ ... }: {
+  flake.hmModules.helix = { pkgs, ... }: {
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -110,4 +109,4 @@
     };
 
   };
-}
+}; };

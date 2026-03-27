@@ -10,10 +10,26 @@
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       settings = {
+        environment = {
+          CLUTTER_BACKEND = "wayland";
+          DISPLAY = ":0";
+          GDK_BACKEND = "wayland,x11";
+          MOZ_ENABLE_WAYLAND = "1";
+          NIXOS_OZONE_WL = "1";
+          QT_QPA_PLATFORM = "wayland;xcb";
+          QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+          SDL_VIDEODRIVER = "wayland";
+        };
+
+        outputs."*".scale = 1.5;
+
+        prefer-no-csd = null;
+
         spawn-at-startup = [
           { command = [ (lib.getExe self'.packages.myNoctalia) ]; }
           { command = [ (lib.getExe pkgs.xwayland-satellite) ]; }
           { command = [ "${pkgs.clipse}/bin/clipse" "-listen" ]; }
+          { command = [ "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1" ]; }
         ];
 
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
@@ -42,8 +58,7 @@
           "Mod+Q".close-window = null;
           "Mod+Space".spawn.command = [ (lib.getExe self'.packages.vicinae) ];
           "Mod+C".spawn.command = [ "wezterm" "start" "--class" "clipse" "-e" "clipse" ];
-          "Ctrl+Alt+L".spawn.command = [ "hyprlock" ];
-          "Mod+S".spawn.command = [ (lib.getExe self'.packages.myNoctalia) "ipc" "call" "launcher" "toggle" ];
+          "Ctrl+Alt+L".spawn.command = [ (lib.getExe self'.packages.myNoctalia) "ipc" "call" "lockscreen" "lock" ];
           
           "Mod+Shift+E".quit = null;
           "Mod+Shift+Slash".show-hotkey-overlay = null;

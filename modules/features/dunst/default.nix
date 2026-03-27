@@ -1,8 +1,10 @@
-{ pkgs, config, ... }:
+{ ... }: {
+  flake.hmModules.dunst = { pkgs, config, ... }:
 
-{
-  services.dunst = {
-    enable = true;
-    settings = { global = { font = "${config.font.monospace.name} 9"; }; };
-  };
+    {
+      services.dunst = {
+        enable = true;
+        settings = { global = { font = "${config.font.monospace.name} 9"; }; };
+      };
+    };
 }

@@ -1,7 +1,6 @@
-{ pkgs, ... }:
-
-{
-  catppuccin.zed.enable = false;
+{ ... }: {
+  flake.hmModules.zededitor = { pkgs, ... }: {
+    catppuccin.zed.enable = false;
   programs.zed-editor = {
     enable = true;
     extensions = [
@@ -31,5 +30,6 @@
         toggle_relative_line_numbers = true;
       };
     };
+  };
   };
 }

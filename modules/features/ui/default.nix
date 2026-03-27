@@ -1,7 +1,6 @@
-{ pkgs, lib, config, ... }:
-
-{
-  gtk = {
+{ ... }: {
+  flake.hmModules.ui = { pkgs, lib, config, ... }: {
+    gtk = {
     enable = true;
     font = {
       name = "Ubuntu";
@@ -27,7 +26,7 @@
     enable = true;
     defaultCacheTtl = 31536000;
     maxCacheTtl = 31536000;
-    pinentry.package = pkgs.pinentry-gnome3;
+    pinentry.package = pkgs.pinentry-qt;
   };
 
   services.gnome-keyring.enable = true;
@@ -49,8 +48,8 @@
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
-      xdg-desktop-portal-gnome
     ];
     xdgOpenUsePortal = true;
+  };
   };
 }

@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }:
+{ inputs, ... }: {
+  flake.hmModules.nushell = { pkgs, ... }:
 let nix-index-pkg = inputs.nix-index.packages.${pkgs.system}.default;
 in {
   programs.nushell = {
@@ -23,4 +24,4 @@ in {
         # highlight
       ];
   };
-}
+}; };

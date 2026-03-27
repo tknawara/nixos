@@ -1,4 +1,5 @@
-{ pkgs, config, inputs, ... }:
+{ inputs, ... }: {
+  flake.hmModules.hyprland = { pkgs, config, ... }:
 let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
@@ -123,4 +124,4 @@ in {
         submap = reset
       '';
   };
-}
+}; };

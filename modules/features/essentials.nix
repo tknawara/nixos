@@ -11,12 +11,10 @@
       imv
       wl-clipboard
       libnotify
-      swww # Wallpaper
-      kitty # Terminal
-      wezterm
     ];
 
     services.gvfs.enable = true; # Needed for thunar
     services.udisks2.enable = true; # Needed for thunar
+    services.blueman.enable = true; # Bluetooth GUI
   };
 }

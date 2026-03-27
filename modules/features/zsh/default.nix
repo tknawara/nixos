@@ -1,7 +1,6 @@
-{ config, inputs, pkgs, ... }:
-
-{
-  programs.zsh = {
+{ inputs, ... }: {
+  flake.hmModules.zsh = { config, pkgs, ... }: {
+    programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
@@ -27,5 +26,6 @@
       enable = true;
       plugins = [ ];
     };
+  };
   };
 }
