@@ -13,7 +13,7 @@ in {
       ff = "fastfetch";
       cat = "bat";
       grep = "rg";
-      update = "sudo nixos-rebuild switch --flake /home/tarek/nixos#default";
+      update = "sudo nixos-rebuild switch --flake /home/tarek/workspace/nixos#pc";
     };
     plugins = with pkgs.nushellPlugins;
       [

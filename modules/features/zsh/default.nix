@@ -18,7 +18,7 @@
       cat = "bat";
       grep = "rg";
       em = "emacsclient -n";
-      update = "sudo nixos-rebuild switch --flake /home/tarek/nixos#default";
+      update = "sudo nixos-rebuild switch --flake /home/tarek/workspace/nixos#pc";
     };
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";
