@@ -21,7 +21,14 @@
           SDL_VIDEODRIVER = "wayland";
         };
 
-        outputs."*".scale = 1.5;
+        outputs."*" = {
+          scale = 1.5;
+          mode = {
+            width = 3840;
+            height = 2160;
+            refresh = 120.0;
+          };
+        };
 
         prefer-no-csd = null;
 
