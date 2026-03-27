@@ -69,6 +69,8 @@ in {
         "d.dcdClientPath" = "/home/tarek/.local/share/code-d/bin/dcd-client";
         "d.dcdServerPath" = "/home/tarek/.local/share/code-d/bin/dcd-server";
         "d.stdlibPath" = "auto";
+        "nix.enableLanguageServer" = true;
+        "nix.serverPath" = "nixd";
         "calva.prettyPrintingOptions" = {
           "printEngine" = "pprint";
           "enabled" = true;

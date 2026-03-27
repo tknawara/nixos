@@ -78,11 +78,10 @@
           gsimplecal
           htop
           hyprshot
-          jdk
-          jetbrains.idea-community-bin
           libsecret
           lua
           nil
+          nixd
           nixfmt-classic
           (obsidian.override (prev: {
             commandLineArgs = (prev.commandLineArgs or "")
