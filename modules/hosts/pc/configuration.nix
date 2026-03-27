@@ -5,8 +5,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Zen kernel (optimized for desktop responsiveness)
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  # Xanmod LTS kernel (desktop-optimized with LTS stability for Nvidia)
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
 
   networking.hostName = "pc";
   networking.networkmanager.enable = true;

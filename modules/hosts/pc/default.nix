@@ -30,13 +30,10 @@
           self.hmModules.atuin
           self.hmModules.carapace
           self.hmModules.direnv
-          self.hmModules.emacs
           self.hmModules.fish
           self.hmModules.gdb
-          self.hmModules.ghostty
           self.hmModules.git
           self.hmModules.helix
-          self.hmModules.hyprland
           self.hmModules.index
           self.hmModules.neovide
           self.hmModules.nushell
@@ -62,7 +59,6 @@
 
         home.packages = with pkgs; [
           popsicle
-          xwayland-satellite
           clipse
           _1password-gui
           serpl
