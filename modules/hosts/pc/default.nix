@@ -15,8 +15,6 @@
       ./consts.nix
       # System-level features
       self.nixosModules.niri
-      self.nixosModules.shell
-      self.nixosModules.essentials
       self.nixosModules.vicinae
     ];
 

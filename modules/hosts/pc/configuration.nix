@@ -78,14 +78,44 @@
     shell = pkgs.fish; # Switch to fish
   };
 
+  # Docker
+  virtualisation.docker.enable = true;
+
+  # Printing
+  services.printing.enable = true;
+
+  # Fonts
+  fonts = {
+    packages = with pkgs; [
+      cantarell-fonts
+      cascadia-code
+      config.font.monospace.package
+      config.font.sansSerif.package
+      config.font.serif.package
+      monaspace
+      nerd-fonts.ubuntu
+      nerd-fonts.ubuntu-mono
+      ubuntu_font_family
+    ];
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        monospace = [ "${config.font.monospace.name}" ];
+        serif = [ "${config.font.serif.name}" ];
+        sansSerif = [ "${config.font.sansSerif.name}" ];
+      };
+    };
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # System wide programs
   programs.fish.enable = true;
 
-  # List packages installed in system profile.
+  # Essential utilities
   environment.systemPackages = with pkgs; [
+    # GPU
     linuxPackages.nvidia_x11
     pciutils
     cudaPackages.cudatoolkit
@@ -94,8 +124,25 @@
     rocmPackages.amdsmi
     rocmPackages.rocm-smi
     rocmPackages.rocminfo
+    # Login
     greetd.tuigreet
+    # File management
+    yazi
+    xfce.thunar
+    xfce.thunar-volman
+    gvfs
+    # Desktop utilities
+    blueman
+    networkmanagerapplet
+    zathura
+    imv
+    wl-clipboard
+    libnotify
   ];
+
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.blueman.enable = true;
   systemd.packages = with pkgs; [ lact ];
   systemd.services.lactd.wantedBy = [ "multi-user.target" ];
 
