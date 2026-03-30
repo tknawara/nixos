@@ -9,6 +9,7 @@ in {
     services.vicinae = {
       enable = true;
       package = vicinae.packages.${pkgs.system}.default;
+      systemd.enable = true;
     };
   };
 
