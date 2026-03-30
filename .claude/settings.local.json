@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nix flake check:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(gh api:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(nix:*)",
+      "WebSearch",
+      "Bash(curl:*)",
+      "Bash(git -C /home/tarek/nixos diff modules/hosts/pc/hardware.nix)",
+      "Bash(lsblk:*)",
+      "Bash(sudo nix-env:*)",
+      "Bash(lspci:*)",
+      "Bash(lsmod:*)",
+      "Bash(sudo ls:*)"
+    ]
+  }
+}

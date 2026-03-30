@@ -19,6 +19,7 @@
 
     # Home Manager configuration
     home-manager = {
+      backupFileExtension = "backup";
       extraSpecialArgs = { inherit inputs self; };
       users.tarek = {
         imports = [
