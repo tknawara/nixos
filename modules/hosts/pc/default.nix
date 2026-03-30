@@ -8,14 +8,13 @@
     ];
   };
 
-  flake.nixosModules.pcConfiguration = { pkgs, lib, ... }: {
+  flake.nixosModules.pcConfiguration = { pkgs, ... }: {
     imports = [
-      ./configuration.nix
-      ./hardware.nix
-      ./consts.nix
+      self.nixosModules.pcConsts
+      self.nixosModules.pcHardware
+      self.nixosModules.pcSystem
       # System-level features
       self.nixosModules.niri
-      self.nixosModules.vicinae
     ];
 
     # Home Manager configuration
@@ -24,7 +23,7 @@
       users.tarek = {
         imports = [
           inputs.catppuccin.homeModules.catppuccin
-          ./consts.nix
+          self.hmModules.pcConsts
           # Home Manager features
           self.hmModules.desktop
           self.hmModules.atuin
@@ -48,6 +47,7 @@
           self.hmModules.zellij
           self.hmModules.zoxide
           self.hmModules.zsh
+          self.hmModules.vicinae
         ];
 
         home.username = "tarek";

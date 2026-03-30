@@ -5,4 +5,4 @@
     enableZshIntegration = true;
     enableFishIntegration = true;
   };
-}; };
+}; }

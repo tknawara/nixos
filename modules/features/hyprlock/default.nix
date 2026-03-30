@@ -11,4 +11,4 @@
       background = [{ path = "${config.wallpaper}"; }];
     };
   };
-}; };
+}; }

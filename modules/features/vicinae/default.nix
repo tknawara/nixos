@@ -1,16 +1,19 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.vicinae = { pkgs, ... }: {
-    imports = [ inputs.vicinae.nixosModules.default ];
-    
-    programs.vicinae = {
+{ self, inputs, ... }:
+let
+  vicinae = inputs.vicinae;
+in {
+  # Vicinae is a Home Manager module
+  flake.hmModules.vicinae = { pkgs, ... }: {
+    imports = [ vicinae.homeManagerModules.default ];
+
+    services.vicinae = {
       enable = true;
-      package = inputs.vicinae.packages.${pkgs.system}.default;
-      # catppuccin.enable = true; # If available, but let's check settings
+      package = vicinae.packages.${pkgs.system}.default;
     };
   };
 
   # Package definition for niri binds if needed
   perSystem = { pkgs, ... }: {
-    packages.vicinae = inputs.vicinae.packages.${pkgs.system}.default;
+    packages.vicinae = vicinae.packages.${pkgs.system}.default;
   };
 }

@@ -250,4 +250,4 @@
         vim.g.neovide_padding_left = 10
       '';
   };
-}; };
+}; }

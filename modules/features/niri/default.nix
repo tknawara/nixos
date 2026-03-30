@@ -33,10 +33,10 @@
         prefer-no-csd = null;
 
         spawn-at-startup = [
-          { command = [ (lib.getExe self'.packages.myNoctalia) ]; }
-          { command = [ (lib.getExe pkgs.xwayland-satellite) ]; }
-          { command = [ "${pkgs.clipse}/bin/clipse" "-listen" ]; }
-          { command = [ "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1" ]; }
+          [ (lib.getExe self'.packages.myNoctalia) ]
+          [ (lib.getExe pkgs.xwayland-satellite) ]
+          [ "${pkgs.clipse}/bin/clipse" "-listen" ]
+          [ "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1" ]
         ];
 
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;

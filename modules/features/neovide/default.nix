@@ -4,4 +4,4 @@
     source = ./dotfiles;
     recursive = true;
   };
-}; };
+}; }

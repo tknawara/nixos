@@ -17,4 +17,4 @@
       tab_bar_margin_width = 5;
     };
   };
-}; };
+}; }
