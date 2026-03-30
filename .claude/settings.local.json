@@ -27,7 +27,8 @@
       "Bash(while read d)",
       "Bash(done)",
       "Bash(ls:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(xargs:*)"
     ]
   }
 }

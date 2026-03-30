@@ -4,8 +4,8 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    # Xanmod LTS kernel (6.12.x - desktop-optimized, matches NixOS default kernel series)
-    boot.kernelPackages = pkgs.linuxPackages_xanmod;
+    # Standard kernel (testing - xanmod had issues with AMD PCIe/SATA)
+    # boot.kernelPackages = pkgs.linuxPackages_xanmod;
 
     networking.hostName = "pc";
     networking.networkmanager.enable = true;
