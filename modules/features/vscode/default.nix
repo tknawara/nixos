@@ -32,7 +32,8 @@ in {
         "editor.semanticHighlighting.enabled" = true;
         "terminal.integrated.minimumContrastRatio" = 1;
         "window.titleBarStyle" = "custom";
-        "editor.fontSize" = 16;
+        "editor.fontSize" = 15;
+        "window.zoomLevel" = 0.2;
         "terminal.integrated.fontSize" = 15;
         "vim.leader" = "<space>";
         "vim.useSystemClipboard" = true;
