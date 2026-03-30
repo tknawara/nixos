@@ -14,7 +14,20 @@
       "Bash(sudo nix-env:*)",
       "Bash(lspci:*)",
       "Bash(lsmod:*)",
-      "Bash(sudo ls:*)"
+      "Bash(sudo ls:*)",
+      "Bash(git show:*)",
+      "Bash(sudo lspci:*)",
+      "Bash(/run/current-system/sw/bin/lspci -k)",
+      "Bash(modinfo:*)",
+      "Bash(cpio:*)",
+      "Bash(skipcpio:*)",
+      "Bash(zstdcat:*)",
+      "Bash(lsinitrd:*)",
+      "Bash(nix-store:*)",
+      "Bash(while read d)",
+      "Bash(done)",
+      "Bash(ls:*)",
+      "Bash(grep:*)"
     ]
   }
 }
