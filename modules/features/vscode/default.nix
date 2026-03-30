@@ -2,9 +2,9 @@
   flake.hmModules.vscode = { pkgs, config, ... }:
   let
   marketplace =
-    inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace;
+    inputs.nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace;
   marketplace-release =
-    inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace-release;
+    inputs.nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace-release;
 in {
   programs.vscode = {
     enable = true;

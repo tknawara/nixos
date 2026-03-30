@@ -87,7 +87,7 @@
             lua
             nil
             nixd
-            nixfmt-classic
+            nixfmt
             (obsidian.override (prev: {
               commandLineArgs =
                 (prev.commandLineArgs or "")

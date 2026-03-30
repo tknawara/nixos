@@ -1,7 +1,7 @@
 { inputs, ... }: {
   flake.hmModules.nvim = { pkgs, config, ... }: {
 
-  imports = [ inputs.nixvim.homeManagerModules.nixvim ];
+  imports = [ inputs.nixvim.homeModules.nixvim ];
 
   programs.nixvim = {
     enable = true;
@@ -100,7 +100,7 @@
         enable = true;
         nixGrammars = true;
         nixvimInjections = true;
-        folding = false;
+        folding.enable = false;
         settings = { indent.enable = true; };
       };
       treesitter-context.enable = true;

@@ -37,7 +37,19 @@
       "Bash(niri validate:*)",
       "Bash(find /etc -name *.kdl)",
       "Bash(niri --help)",
-      "Bash(niri --config)"
+      "Bash(niri --config)",
+      "Bash(nix eval:*)",
+      "Bash(nix build:*)",
+      "Read(//home/tarek/**)",
+      "Bash(nix shell:*)",
+      "Bash(systemctl --user list-units)",
+      "Bash(systemctl:*)",
+      "Bash(journalctl:*)",
+      "Bash(find /nix/store -maxdepth 1 -name *vicinae*homeManager* -o -name *vicinae*hm*)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(k\\) for k in d.keys\\(\\)]\")",
+      "Bash(python3 -c \":*)",
+      "Bash(find /nix/store -maxdepth 1 -name *vicinae* -type d)",
+      "Bash(find /nix/store -maxdepth 2 -path *vicinae*homeManager* -o -path *vicinae*hm* -o -path *vicinae*/nix*)"
     ]
   }
 }

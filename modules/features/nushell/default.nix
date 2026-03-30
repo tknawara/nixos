@@ -1,6 +1,6 @@
 { inputs, ... }: {
   flake.hmModules.nushell = { pkgs, ... }:
-let nix-index-pkg = inputs.nix-index.packages.${pkgs.system}.default;
+let nix-index-pkg = inputs.nix-index.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
   programs.nushell = {
     enable = true;

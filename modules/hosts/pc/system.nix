@@ -61,7 +61,7 @@
         enable = true;
         settings = {
           default_session = {
-            command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd niri";
+            command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri";
             user = "tarek";
           };
         };
@@ -144,11 +144,11 @@
         rocmPackages.rocm-smi
         rocmPackages.rocminfo
         # Login
-        greetd.tuigreet
+        tuigreet
         # File management
         yazi
-        xfce.thunar
-        xfce.thunar-volman
+        thunar
+        thunar-volman
         gvfs
         # Desktop utilities
         blueman
@@ -158,8 +158,8 @@
         wl-clipboard
         libnotify
         # Thunar plugins
-        xfce.thunar-archive-plugin
-        xfce.tumbler
+        thunar-archive-plugin
+        tumbler
         ffmpegthumbnailer
         # QT theming
         catppuccin-kvantum

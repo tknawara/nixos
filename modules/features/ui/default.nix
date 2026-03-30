@@ -11,6 +11,7 @@
       package = pkgs.adw-gtk3;
       name = "adw-gtk3";
     };
+    gtk4.theme = null;
     cursorTheme = {
       package = pkgs.kdePackages.breeze;
       name = "Breeze_Dark";

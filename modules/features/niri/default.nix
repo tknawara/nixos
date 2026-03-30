@@ -19,6 +19,7 @@
     {
       packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
         inherit pkgs;
+        v2-settings = true;
         settings = {
           environment = {
             CLUTTER_BACKEND = "wayland";
@@ -36,7 +37,7 @@
             mode = "3840x2160@120";
           };
 
-          prefer-no-csd = null;
+          prefer-no-csd = _: {};
 
           spawn-at-startup = [
             [ (lib.getExe pkgs.noctalia-shell) ]
@@ -50,7 +51,7 @@
 
           input = {
             keyboard.xkb.layout = "us";
-            focus-follows-mouse = null;
+            focus-follows-mouse = _: {};
           };
 
           layout = {
@@ -68,7 +69,7 @@
 
           binds = {
             "Mod+Return".spawn = "wezterm";
-            "Mod+Q".close-window = null;
+            "Mod+Q".close-window = _: {};
             "Mod+Space".spawn = [
               (lib.getExe self'.packages.vicinae)
               "toggle"
@@ -82,17 +83,40 @@
               "clipse"
             ];
 
-            "Mod+Shift+E".quit = null;
-            "Mod+Shift+Slash".show-hotkey-overlay = null;
+            "Mod+Shift+E".quit = _: {};
+            "Mod+Shift+Slash".show-hotkey-overlay = _: {};
 
-            "Mod+H".focus-column-left = null;
-            "Mod+L".focus-column-right = null;
-            "Mod+J".focus-window-or-workspace-down = null;
-            "Mod+K".focus-window-or-workspace-up = null;
+            # Window management
+            "Mod+S".switch-preset-column-width = _: {};
+            "Mod+F".maximize-column = _: {};
+            "Mod+Shift+F".fullscreen-window = _: {};
+            "Mod+V".toggle-window-floating = _: {};
 
-            "Mod+Shift+H".move-column-left = null;
-            "Mod+Shift+L".move-column-right = null;
+            # Focus movement
+            "Mod+H".focus-column-left = _: {};
+            "Mod+L".focus-column-right = _: {};
+            "Mod+J".focus-window-or-workspace-down = _: {};
+            "Mod+K".focus-window-or-workspace-up = _: {};
+            "Mod+Left".focus-column-left = _: {};
+            "Mod+Right".focus-column-right = _: {};
+            "Mod+Down".focus-workspace-down = _: {};
+            "Mod+Up".focus-workspace-up = _: {};
 
+            # Window movement
+            "Mod+Shift+H".move-column-left = _: {};
+            "Mod+Shift+L".move-column-right = _: {};
+            "Mod+Shift+K".move-column-to-workspace-up = _: {};
+            "Mod+Shift+J".move-column-to-workspace-down = _: {};
+            "Mod+Shift+Ctrl+J".move-column-to-monitor-down = _: {};
+            "Mod+Shift+Ctrl+K".move-column-to-monitor-up = _: {};
+
+            # Resize
+            "Mod+BracketLeft".set-column-width = "-10%";
+            "Mod+BracketRight".set-column-width = "+10%";
+            "Mod+Shift+BracketLeft".set-window-height = "-10%";
+            "Mod+Shift+BracketRight".set-window-height = "+10%";
+
+            # Workspaces
             "Mod+1".focus-workspace = 1;
             "Mod+2".focus-workspace = 2;
             "Mod+3".focus-workspace = 3;
@@ -103,8 +127,13 @@
             "Mod+8".focus-workspace = 8;
             "Mod+9".focus-workspace = 9;
 
-            "Print".screenshot = null;
-            "Mod+P".screenshot = null;
+            # Screenshots
+            "Print".screenshot = _: {};
+            "Ctrl+Print".screenshot-screen = _: {};
+            "Shift+Print".screenshot-window = _: {};
+            "Mod+P".screenshot = _: {};
+            "Mod+Ctrl+P".screenshot-screen = _: {};
+            "Mod+Shift+P".screenshot-window = _: {};
           };
         };
       };

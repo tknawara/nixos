@@ -8,13 +8,17 @@ in {
 
     services.vicinae = {
       enable = true;
-      package = vicinae.packages.${pkgs.system}.default;
+      package = vicinae.packages.${pkgs.stdenv.hostPlatform.system}.default;
       systemd.enable = true;
     };
+
+    systemd.user.services.vicinae.Service.Environment = [
+      "QT_QPA_PLATFORM=wayland"
+    ];
   };
 
   # Package definition for niri binds if needed
   perSystem = { pkgs, ... }: {
-    packages.vicinae = vicinae.packages.${pkgs.system}.default;
+    packages.vicinae = vicinae.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
 }
