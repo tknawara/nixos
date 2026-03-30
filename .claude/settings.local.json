@@ -50,7 +50,15 @@
       "Bash(python3 -c \":*)",
       "Bash(find /nix/store -maxdepth 1 -name *vicinae* -type d)",
       "Bash(find /nix/store -maxdepth 2 -path *vicinae*homeManager* -o -path *vicinae*hm* -o -path *vicinae*/nix*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(nix flake:*)",
+      "Bash(vicinae --help)",
+      "Bash(vicinae -h)",
+      "Bash(vicinae app:*)",
+      "Bash(vicinae config:*)",
+      "Bash(vicinae script:*)",
+      "Bash(vicinae state:*)",
+      "Bash(clipse --help)"
     ]
   }
 }
