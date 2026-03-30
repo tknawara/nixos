@@ -4,8 +4,8 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    # Standard kernel (testing - xanmod had issues with AMD PCIe/SATA)
-    # boot.kernelPackages = pkgs.linuxPackages_xanmod;
+    # Xanmod kernel (6.12.x - compatible with nvidia)
+    boot.kernelPackages = pkgs.linuxPackages_xanmod;
 
     networking.hostName = "pc";
     networking.networkmanager.enable = true;
