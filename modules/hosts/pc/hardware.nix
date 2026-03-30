@@ -10,19 +10,21 @@
     boot.blacklistedKernelModules = [ "nouveau" ];
     boot.extraModulePackages = [ ];
 
-    fileSystems."/" = {
-      device = "/dev/disk/by-uuid/8b749ce6-4668-43ff-9f69-ea0781cca44c";
+
+
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/19ec9b96-4c3a-4fd7-818c-2b284c184461";
       fsType = "ext4";
     };
 
-    fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/89EF-33D3";
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/036C-70BE";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-    swapDevices =
-      [{ device = "/dev/disk/by-uuid/e1360b18-0e31-499b-94be-f27cf8523870"; }];
+
+  swapDevices = [ ];
 
     networking.useDHCP = lib.mkDefault true;
 
