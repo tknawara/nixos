@@ -14,6 +14,7 @@ in {
 
     systemd.user.services.vicinae.Service.Environment = [
       "QT_QPA_PLATFORM=wayland"
+      "WAYLAND_DISPLAY=wayland-1"
     ];
   };
 
