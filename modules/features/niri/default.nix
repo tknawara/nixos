@@ -10,9 +10,6 @@
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       settings = {
-        # Use v2 settings to avoid deprecation warnings
-        v2-settings = true;
-
         environment = {
           CLUTTER_BACKEND = "wayland";
           DISPLAY = ":0";
@@ -29,30 +26,23 @@
           mode = "3840x2160@120";
         };
 
-        prefer-no-csd = _: {};
+        prefer-no-csd = null;
 
         spawn-at-startup = [
-          # Noctalia disabled due to upstream quickshell build issue
-          # [ (lib.getExe pkgs.noctalia-shell) ]
           [ (lib.getExe pkgs.xwayland-satellite) ]
           [ "${pkgs.clipse}/bin/clipse" "-listen" ]
           [ "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1" ]
         ];
 
-        xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
-
         input = {
           keyboard.xkb.layout = "us";
-          focus-follows-mouse.enable = false;
+          focus-follows-mouse = null;
         };
 
         layout = {
           gaps = 5;
-          focus-ring = {
-            enable = true;
-            width = 0.1;
-          };
-          default-column-width = { proportion = 0.5; };
+          focus-ring.width = 2;
+          default-column-width.proportion = 0.5;
         };
 
         window-rules = [{
@@ -61,21 +51,21 @@
         }];
 
         binds = {
-          "Mod+Return".spawn.command = [ "wezterm" ];
-          "Mod+Q".close-window = _: {};
-          "Mod+Space".spawn.command = [ (lib.getExe self'.packages.vicinae) ];
-          "Mod+C".spawn.command = [ "wezterm" "start" "--class" "clipse" "-e" "clipse" ];
+          "Mod+Return".spawn = "wezterm";
+          "Mod+Q".close-window = null;
+          "Mod+Space".spawn = lib.getExe self'.packages.vicinae;
+          "Mod+C".spawn = [ "wezterm" "start" "--class" "clipse" "-e" "clipse" ];
 
-          "Mod+Shift+E".quit = _: {};
-          "Mod+Shift+Slash".show-hotkey-overlay = _: {};
+          "Mod+Shift+E".quit = null;
+          "Mod+Shift+Slash".show-hotkey-overlay = null;
 
-          "Mod+H".focus-column-left = _: {};
-          "Mod+L".focus-column-right = _: {};
-          "Mod+J".focus-window-or-workspace-down = _: {};
-          "Mod+K".focus-window-or-workspace-up = _: {};
+          "Mod+H".focus-column-left = null;
+          "Mod+L".focus-column-right = null;
+          "Mod+J".focus-window-or-workspace-down = null;
+          "Mod+K".focus-window-or-workspace-up = null;
 
-          "Mod+Shift+H".move-column-left = _: {};
-          "Mod+Shift+L".move-column-right = _: {};
+          "Mod+Shift+H".move-column-left = null;
+          "Mod+Shift+L".move-column-right = null;
 
           "Mod+1".focus-workspace = 1;
           "Mod+2".focus-workspace = 2;
@@ -87,8 +77,8 @@
           "Mod+8".focus-workspace = 8;
           "Mod+9".focus-workspace = 9;
 
-          "Print".screenshot = _: {};
-          "Mod+P".screenshot = _: {};
+          "Print".screenshot = null;
+          "Mod+P".screenshot = null;
         };
       };
     };
