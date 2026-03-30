@@ -5,15 +5,11 @@
     font = {
       name = "Ubuntu";
       size = 10;
-      package = pkgs.ubuntu_font_family;
+      package = pkgs.ubuntu-classic;
     };
     theme = {
       package = pkgs.adw-gtk3;
       name = "adw-gtk3";
-    };
-    iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus";
     };
     cursorTheme = {
       package = pkgs.kdePackages.breeze;

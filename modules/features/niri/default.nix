@@ -32,7 +32,7 @@
           # [ (lib.getExe pkgs.noctalia-shell) ]
           [ (lib.getExe pkgs.xwayland-satellite) ]
           [ "${pkgs.clipse}/bin/clipse" "-listen" ]
-          [ "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1" ]
+          # [ "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1" ]
         ];
 
         input = {
