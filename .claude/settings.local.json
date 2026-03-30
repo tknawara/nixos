@@ -28,7 +28,16 @@
       "Bash(done)",
       "Bash(ls:*)",
       "Bash(grep:*)",
-      "Bash(xargs:*)"
+      "Bash(xargs:*)",
+      "Bash(niri msg:*)",
+      "Bash(find /etc -name config.kdl -path *niri*)",
+      "Read(//run/**)",
+      "Read(//nix/store/**)",
+      "Bash(niri --version)",
+      "Bash(niri validate:*)",
+      "Bash(find /etc -name *.kdl)",
+      "Bash(niri --help)",
+      "Bash(niri --config)"
     ]
   }
 }
