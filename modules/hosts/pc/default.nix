@@ -1,4 +1,5 @@
-{ self, inputs, ... }: {
+{ self, inputs, ... }:
+{
   flake.nixosConfigurations.pc = inputs.nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs self; };
     modules = [
@@ -8,115 +9,119 @@
     ];
   };
 
-  flake.nixosModules.pcConfiguration = { pkgs, ... }: {
-    imports = [
-      self.nixosModules.pcConsts
-      self.nixosModules.pcHardware
-      self.nixosModules.pcSystem
-      # System-level features
-      self.nixosModules.niri
-    ];
+  flake.nixosModules.pcConfiguration =
+    { pkgs, ... }:
+    {
+      imports = [
+        self.nixosModules.pcConsts
+        self.nixosModules.pcHardware
+        self.nixosModules.pcSystem
+        # System-level features
+        self.nixosModules.niri
+      ];
 
-    # Home Manager configuration
-    home-manager = {
-      backupFileExtension = "backup";
-      extraSpecialArgs = { inherit inputs self; };
-      users.tarek = {
-        imports = [
-          inputs.catppuccin.homeModules.catppuccin
-          self.hmModules.pcConsts
-          # Home Manager features
-          self.hmModules.desktop
-          self.hmModules.atuin
-          self.hmModules.carapace
-          self.hmModules.direnv
-          self.hmModules.fish
-          self.hmModules.gdb
-          self.hmModules.git
-          self.hmModules.helix
-          self.hmModules.index
-          self.hmModules.neovide
-          self.hmModules.nushell
-          self.hmModules.nvim
-          self.hmModules.starship
-          self.hmModules.superfile
-          self.hmModules.tmux
-          self.hmModules.ui
-          self.hmModules.vscode
-          self.hmModules.wezterm
-          self.hmModules.zededitor
-          self.hmModules.zellij
-          self.hmModules.zoxide
-          self.hmModules.zsh
-          self.hmModules.vicinae
-        ];
+      # Home Manager configuration
+      home-manager = {
+        backupFileExtension = "backup";
+        extraSpecialArgs = { inherit inputs self; };
+        users.tarek = {
+          imports = [
+            inputs.catppuccin.homeModules.catppuccin
+            self.hmModules.pcConsts
+            # Home Manager features
+            self.hmModules.desktop
+            self.hmModules.atuin
+            self.hmModules.carapace
+            self.hmModules.direnv
+            self.hmModules.fish
+            self.hmModules.gdb
+            self.hmModules.git
+            self.hmModules.helix
+            self.hmModules.index
+            self.hmModules.neovide
+            self.hmModules.nushell
+            self.hmModules.nvim
+            self.hmModules.starship
+            self.hmModules.superfile
+            self.hmModules.tmux
+            self.hmModules.ui
+            self.hmModules.vscode
+            self.hmModules.wezterm
+            self.hmModules.zededitor
+            self.hmModules.zellij
+            self.hmModules.zoxide
+            self.hmModules.zsh
+            self.hmModules.vicinae
+          ];
 
-        home.username = "tarek";
-        home.homeDirectory = "/home/tarek";
-        home.stateVersion = "23.11";
+          home.username = "tarek";
+          home.homeDirectory = "/home/tarek";
+          home.stateVersion = "23.11";
 
-        nixpkgs.config.allowUnfree = true;
-        nixpkgs.config.allowUnfreePredicate = (_: true);
+          nixpkgs.config.allowUnfree = true;
+          nixpkgs.config.allowUnfreePredicate = (_: true);
 
-        home.packages = with pkgs; [
-          popsicle
-          claude-code
-          clipse
-          _1password-gui
-          serpl
-          adw-gtk3
-          appflowy
-          bat
-          binsider
-          delta
-          discord
-          docker
-          eza
-          fastfetch
-          fh
-          firefox
-          fzf
-          grim
-          gsimplecal
-          htop
-          hyprshot
-          libsecret
-          lua
-          nil
-          nixd
-          nixfmt-classic
-          (obsidian.override (prev: {
-            commandLineArgs = (prev.commandLineArgs or "")
-              + " --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --enable-wayland-ime";
-          }))
-          papirus-icon-theme
-          pavucontrol
-          # GNOME apps (post-GNOME migration)
-          gnome-calculator
-          mission-center
-          gnome-font-viewer
-          ripgrep
-          sapling
-          slurp
-          unzip
-          vlc
-          zoom-us
-        ];
+          home.packages = with pkgs; [
+            popsicle
+            claude-code
+            clipse
+            _1password-gui
+            serpl
+            adw-gtk3
+            appflowy
+            bat
+            binsider
+            delta
+            discord
+            docker
+            eza
+            fastfetch
+            fh
+            firefox
+            fzf
+            grim
+            gsimplecal
+            htop
+            hyprshot
+            libsecret
+            lua
+            nil
+            nixd
+            nixfmt-classic
+            (obsidian.override (prev: {
+              commandLineArgs =
+                (prev.commandLineArgs or "")
+                + " --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --enable-wayland-ime";
+            }))
+            pavucontrol
+            # GNOME apps (post-GNOME migration)
+            gnome-calculator
+            mission-center
+            gnome-font-viewer
+            ripgrep
+            sapling
+            slurp
+            unzip
+            vlc
+            zoom-us
+          ];
 
-        catppuccin.flavor = "mocha";
-        catppuccin.enable = true;
+          catppuccin.flavor = "mocha";
+          catppuccin.enable = true;
 
-        home.file.".config/nixpkgs/config.nix".text = ''
-          {
-            allowUnfree = true;
-            allowUnfreePredicate = _: true;
-          }
-        '';
+          home.file.".config/nixpkgs/config.nix".text = ''
+            {
+              allowUnfree = true;
+              allowUnfreePredicate = _: true;
+            }
+          '';
 
-        home.sessionVariables = { EDITOR = "hx"; };
+          home.sessionVariables = {
+            EDITOR = "hx";
+          };
 
-        programs.home-manager.enable = true;
+          programs.home-manager.enable = true;
+        };
       };
     };
-  };
 }
