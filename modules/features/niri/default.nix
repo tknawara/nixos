@@ -40,12 +40,14 @@
           prefer-no-csd = _: {};
 
           spawn-at-startup = [
+            [ "sh" "-c" "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" ]
             [ (lib.getExe pkgs.noctalia-shell) ]
             [ (lib.getExe pkgs.xwayland-satellite) ]
             [
               "${pkgs.clipse}/bin/clipse"
               "-listen"
             ]
+            [ (lib.getExe self'.packages.vicinae) "server" ]
             # [ "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1" ]
           ];
 

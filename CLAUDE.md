@@ -26,7 +26,7 @@ modules/
 │   ├── desktop.nix                    # hmModule: XDG mime associations (default apps)
 │   ├── niri/default.nix               # nixosModule + perSystem: niri compositor (wrapper-modules)
 │   ├── noctalia/default.nix           # perSystem: noctalia-shell wrapper
-│   ├── vicinae/default.nix            # nixosModule + perSystem: vicinae app launcher
+│   ├── vicinae/default.nix            # hmModule + perSystem: vicinae app launcher (spawned by niri)
 │   └── <name>/default.nix             # hmModule: individual program configs
 └── hosts/
     └── pc/
@@ -44,7 +44,7 @@ modules/
 
 - **Compositor**: Niri (Wayland) via wrapper-modules
 - **Shell**: Noctalia-shell — replaces waybar, dunst, hyprlock, swww (status bar, notifications, lock screen, wallpaper)
-- **App launcher**: Vicinae (Mod+Space in niri keybinds)
+- **App launcher**: Vicinae — spawned by niri (not systemd), `Mod+Space` runs `vicinae toggle`
 - **Terminal**: Wezterm
 - **Editor**: Helix (default EDITOR), Neovim (nixvim), VS Code, Zed
 - **Shell**: Fish (system-level), with starship prompt
@@ -67,6 +67,8 @@ These modules exist in `features/` but are NOT imported in `hosts/pc/default.nix
 - **consts.nix** is imported in both NixOS and Home Manager contexts (defines `font.*` and `wallpaper` options used by multiple modules).
 - **Scaling**: `outputs."*".scale = 1.5` in niri config applies to all monitors (4x DP ports on GPU).
 - **wrapper-modules**: Used for niri and noctalia to wrap programs with declarative config (vimjoyer pattern).
+- **Vicinae must be spawned by niri, not systemd**: The systemd user service lacks session env vars (WAYLAND_DISPLAY, PATH, QT_QPA_PLATFORM). Running as a systemd service causes Qt platform plugin crashes and inability to launch apps. The HM module sets `systemd.enable = false` and niri spawns `vicinae server` via `spawn-at-startup` instead.
+- **Niri `spawn-at-startup` imports env**: Runs `systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP` so other user services get Wayland vars.
 
 ## Build
 
