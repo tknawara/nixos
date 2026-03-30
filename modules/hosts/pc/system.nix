@@ -196,6 +196,9 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
 
+    # XDG portal configuration (fixes portal backend warning)
+    xdg.portal.config.common.default = "*";
+
     system.stateVersion = "24.05";
   };
 }

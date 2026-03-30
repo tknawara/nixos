@@ -10,6 +10,9 @@
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       settings = {
+        # Use v2 settings to avoid deprecation warnings
+        v2-settings = true;
+
         environment = {
           CLUTTER_BACKEND = "wayland";
           DISPLAY = ":0";
@@ -30,10 +33,11 @@
           };
         };
 
-        prefer-no-csd = null;
+        prefer-no-csd = _: {};
 
         spawn-at-startup = [
-          [ (lib.getExe self'.packages.myNoctalia) ]
+          # Noctalia disabled due to upstream quickshell build issue
+          # [ (lib.getExe self'.packages.myNoctalia) ]
           [ (lib.getExe pkgs.xwayland-satellite) ]
           [ "${pkgs.clipse}/bin/clipse" "-listen" ]
           [ "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1" ]
@@ -62,22 +66,23 @@
 
         binds = {
           "Mod+Return".spawn.command = [ "wezterm" ];
-          "Mod+Q".close-window = null;
+          "Mod+Q".close-window = _: {};
           "Mod+Space".spawn.command = [ (lib.getExe self'.packages.vicinae) ];
           "Mod+C".spawn.command = [ "wezterm" "start" "--class" "clipse" "-e" "clipse" ];
-          "Ctrl+Alt+L".spawn.command = [ (lib.getExe self'.packages.myNoctalia) "ipc" "call" "lockscreen" "lock" ];
-          
-          "Mod+Shift+E".quit = null;
-          "Mod+Shift+Slash".show-hotkey-overlay = null;
+          # Noctalia lock disabled due to upstream quickshell build issue
+          # "Ctrl+Alt+L".spawn.command = [ (lib.getExe self'.packages.myNoctalia) "ipc" "call" "lockscreen" "lock" ];
 
-          "Mod+H".focus-column-left = null;
-          "Mod+L".focus-column-right = null;
-          "Mod+J".focus-window-or-workspace-down = null;
-          "Mod+K".focus-window-or-workspace-up = null;
-          
-          "Mod+Shift+H".move-column-left = null;
-          "Mod+Shift+L".move-column-right = null;
-          
+          "Mod+Shift+E".quit = _: {};
+          "Mod+Shift+Slash".show-hotkey-overlay = _: {};
+
+          "Mod+H".focus-column-left = _: {};
+          "Mod+L".focus-column-right = _: {};
+          "Mod+J".focus-window-or-workspace-down = _: {};
+          "Mod+K".focus-window-or-workspace-up = _: {};
+
+          "Mod+Shift+H".move-column-left = _: {};
+          "Mod+Shift+L".move-column-right = _: {};
+
           "Mod+1".focus-workspace = 1;
           "Mod+2".focus-workspace = 2;
           "Mod+3".focus-workspace = 3;
@@ -88,8 +93,8 @@
           "Mod+8".focus-workspace = 8;
           "Mod+9".focus-workspace = 9;
 
-          "Print".screenshot = null;
-          "Mod+P".screenshot = null;
+          "Print".screenshot = _: {};
+          "Mod+P".screenshot = _: {};
         };
       };
     };
