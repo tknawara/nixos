@@ -26,18 +26,14 @@
 
         outputs."*" = {
           scale = 1.5;
-          mode = {
-            width = 3840;
-            height = 2160;
-            refresh = 120.0;
-          };
+          mode = "3840x2160@120";
         };
 
         prefer-no-csd = _: {};
 
         spawn-at-startup = [
           # Noctalia disabled due to upstream quickshell build issue
-          # [ (lib.getExe self'.packages.myNoctalia) ]
+          # [ (lib.getExe pkgs.noctalia-shell) ]
           [ (lib.getExe pkgs.xwayland-satellite) ]
           [ "${pkgs.clipse}/bin/clipse" "-listen" ]
           [ "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1" ]
@@ -69,8 +65,6 @@
           "Mod+Q".close-window = _: {};
           "Mod+Space".spawn.command = [ (lib.getExe self'.packages.vicinae) ];
           "Mod+C".spawn.command = [ "wezterm" "start" "--class" "clipse" "-e" "clipse" ];
-          # Noctalia lock disabled due to upstream quickshell build issue
-          # "Ctrl+Alt+L".spawn.command = [ (lib.getExe self'.packages.myNoctalia) "ipc" "call" "lockscreen" "lock" ];
 
           "Mod+Shift+E".quit = _: {};
           "Mod+Shift+Slash".show-hotkey-overlay = _: {};

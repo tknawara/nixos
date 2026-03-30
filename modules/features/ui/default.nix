@@ -51,6 +51,7 @@
       xdg-desktop-portal-gnome
     ];
     xdgOpenUsePortal = true;
+    config.common.default = "*";
   };
 
   xdg.configFile."xdg-desktop-portal/portals.conf".text = ''

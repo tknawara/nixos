@@ -1,12 +1,5 @@
 { ... }: {
   flake.nixosModules.pcSystem = { config, pkgs, inputs, ... }: {
-    # Add noctalia-shell to pkgs via overlay
-    nixpkgs.overlays = [
-      (final: prev: {
-        noctalia-shell = inputs.noctalia-shell.packages.${pkgs.system}.default;
-      })
-    ];
-
     # Bootloader
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;

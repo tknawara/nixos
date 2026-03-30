@@ -1,13 +1,9 @@
-{ self, inputs, ... }:
-let
-  noctalia-shell = inputs.noctalia-shell;
-in {
+{ self, inputs, ... }: {
+  # Noctalia shell wrapper (currently disabled due to upstream quickshell build issue)
   perSystem = { pkgs, system, ... }: {
     packages.myNoctalia = inputs.wrapper-modules.wrappers.noctalia-shell.wrap {
       inherit pkgs;
-      settings = {
-        package = noctalia-shell.packages.${system}.default;
-      } // (builtins.fromJSON (builtins.readFile ./noctalia.json)).settings;
+      settings = (builtins.fromJSON (builtins.readFile ./noctalia.json)).settings;
     };
   };
 }

@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
@@ -14,13 +13,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = { url = "github:nix-community/nixvim"; };
+    nixvim.url = "github:nix-community/nixvim";
 
     catppuccin.url = "github:catppuccin/nix";
 
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
-      inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -29,44 +27,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = { url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; };
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia-shell = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    wezterm = {
-      url = "github:wez/wezterm?dir=nix";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs";
-    };
-
-    catppuccin-hyprland = {
-      url = "github:catppuccin/hyprland/main";
-      flake = false;
-    };
-    catppuccin-waybar = {
-      url = "github:catppuccin/waybar/main";
-      flake = false;
-    };
-    catppuccin-rofi = {
-      url = "github:catppuccin/rofi/main";
-      flake = false;
     };
   };
 
