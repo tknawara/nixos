@@ -29,7 +29,7 @@
         prefer-no-csd = null;
 
         spawn-at-startup = [
-          # [ (lib.getExe pkgs.noctalia-shell) ]
+          [ (lib.getExe pkgs.noctalia-shell) ]
           [ (lib.getExe pkgs.xwayland-satellite) ]
           [ "${pkgs.clipse}/bin/clipse" "-listen" ]
           # [ "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1" ]
@@ -54,7 +54,7 @@
         binds = {
           "Mod+Return".spawn = "wezterm";
           "Mod+Q".close-window = null;
-          "Mod+Space".spawn = lib.getExe self'.packages.vicinae;
+          "Mod+Space".spawn = [ (lib.getExe self'.packages.vicinae) "toggle" ];
           "Mod+C".spawn = [ "wezterm" "start" "--class" "clipse" "-e" "clipse" ];
 
           "Mod+Shift+E".quit = null;
