@@ -103,6 +103,7 @@
             slurp
             unzip
             vlc
+            devcontainer
             zoom-us
           ];
 
