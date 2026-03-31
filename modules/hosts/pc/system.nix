@@ -25,6 +25,21 @@
       # Enable bluetooth
       hardware.bluetooth.enable = true;
 
+      # MediaTek MT7921 BT firmware sometimes fails to load on boot (HCI Reset
+      # races with the WiFi side of the combo chip).  Reloading btusb after
+      # bluetooth.service starts reliably re-triggers firmware upload.
+      systemd.services.btusb-reload = {
+        description = "Reload btusb to work around MediaTek MT7921 BT init race";
+        after = [ "bluetooth.service" ];
+        wantedBy = [ "bluetooth.target" ];
+        serviceConfig = {
+          Type = "oneshot";
+          ExecStart = "${pkgs.kmod}/bin/modprobe -r btusb";
+          ExecStartPost = "${pkgs.kmod}/bin/modprobe btusb";
+          RemainAfterExit = true;
+        };
+      };
+
       # Enable flakes
       nix.settings = {
         experimental-features = [

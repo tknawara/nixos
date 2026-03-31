@@ -65,7 +65,22 @@
       "Read(//etc/secureboot/keys/**)",
       "Read(//etc/secureboot/**)",
       "Read(//etc/**)",
-      "Bash(find /home/tarek/nixos -type f -name *.md -o -name *.txt)"
+      "Bash(find /home/tarek/nixos -type f -name *.md -o -name *.txt)",
+      "Bash(findmnt:*)",
+      "Read(//sys/block/sda/device/**)",
+      "Bash(udevadm info:*)",
+      "Read(//sys/devices/pci0000:00/0000:00:02.1/0000:06:00.0/0000:07:0c.0/0000:13:00.0/usb4/4-1/**)",
+      "Bash(lsusb -t)",
+      "Bash(bluetoothctl show:*)",
+      "Bash(rfkill list:*)",
+      "Bash(dmesg)",
+      "Bash(lsusb)",
+      "Bash(hciconfig -a)",
+      "Read(//sys/devices/pci0000:00/0000:00:02.1/0000:06:00.0/0000:07:08.0/0000:09:00.0/0000:0a:0c.0/0000:11:00.0/usb1/1-6/**)",
+      "Bash(sudo dmesg:*)",
+      "Bash(find /nix/store/*firmware*/lib/firmware/mediatek -name *BT*)",
+      "Bash(bluetoothctl power:*)",
+      "Bash(hciconfig hci0:*)"
     ]
   }
 }
