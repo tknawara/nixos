@@ -32,7 +32,7 @@
             SDL_VIDEODRIVER = "wayland";
           };
 
-          outputs."DP-1" = {
+          outputs."DP-5" = {
             scale = 1.5;
             mode = "3840x2160@120";
           };

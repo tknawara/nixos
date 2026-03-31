@@ -11,15 +11,13 @@
     boot.blacklistedKernelModules = [ "nouveau" ];
     boot.extraModulePackages = [ ];
 
-
-
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/19ec9b96-4c3a-4fd7-818c-2b284c184461";
+    { device = "/dev/disk/by-uuid/4a0610d7-76fd-4276-a743-2460d84859f0";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/036C-70BE";
+    { device = "/dev/disk/by-uuid/FDC2-25F2";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
