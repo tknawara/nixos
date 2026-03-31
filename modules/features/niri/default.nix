@@ -33,8 +33,8 @@
           };
 
           outputs."DP-5" = {
-            scale = 1.5;
             mode = "3840x2160@120";
+            scale = 1.5;
           };
 
           prefer-no-csd = _: {};
@@ -52,7 +52,11 @@
           ];
 
           input = {
-            keyboard.xkb.layout = "us";
+            keyboard = {
+              xkb.layout = "us";
+              repeat-delay = 200;
+              repeat-rate = 50;
+            };
             focus-follows-mouse = _: {};
           };
 
