@@ -8,9 +8,13 @@
       ...
     }:
     {
-      # Bootloader
-      boot.loader.systemd-boot.enable = true;
+      # Bootloader (lanzaboote for Secure Boot)
+      boot.loader.systemd-boot.enable = pkgs.lib.mkForce false;
       boot.loader.efi.canTouchEfiVariables = true;
+      boot.lanzaboote = {
+        enable = true;
+        pkiBundle = "/var/lib/sbctl";
+      };
 
       # Xanmod kernel (6.12.x - compatible with nvidia)
       boot.kernelPackages = pkgs.linuxPackages_xanmod;
@@ -150,6 +154,8 @@
         thunar
         thunar-volman
         gvfs
+        # Secure Boot
+        sbctl
         # Desktop utilities
         blueman
         networkmanagerapplet

@@ -61,7 +61,10 @@
       "Bash(clipse --help)",
       "Bash(find /home/tarek/nixos -name *configuration.nix -type f)",
       "Bash(find /home/tarek/nixos -type f -name *.nix)",
-      "Bash(secret-tool lookup:*)"
+      "Bash(secret-tool lookup:*)",
+      "Read(//etc/secureboot/keys/**)",
+      "Read(//etc/secureboot/**)",
+      "Read(//etc/**)"
     ]
   }
 }

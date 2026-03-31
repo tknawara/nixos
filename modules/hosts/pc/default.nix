@@ -6,6 +6,7 @@
       self.nixosModules.pcConfiguration
       inputs.home-manager.nixosModules.default
       inputs.catppuccin.nixosModules.catppuccin
+      inputs.lanzaboote.nixosModules.lanzaboote
     ];
   };
 
