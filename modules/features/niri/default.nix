@@ -32,7 +32,7 @@
             SDL_VIDEODRIVER = "wayland";
           };
 
-          outputs."DP-5" = {
+          outputs."ASUSTek COMPUTER INC PG32UCDM S9LMQS137402" = {
             mode = "3840x2160@120";
             scale = 1.5;
           };

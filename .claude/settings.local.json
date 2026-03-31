@@ -64,7 +64,8 @@
       "Bash(secret-tool lookup:*)",
       "Read(//etc/secureboot/keys/**)",
       "Read(//etc/secureboot/**)",
-      "Read(//etc/**)"
+      "Read(//etc/**)",
+      "Bash(find /home/tarek/nixos -type f -name *.md -o -name *.txt)"
     ]
   }
 }
