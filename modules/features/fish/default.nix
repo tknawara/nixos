@@ -1,5 +1,7 @@
-{ ... }: {
-  flake.hmModules.fish = { pkgs, ... }:
+{ ... }:
+{
+  flake.hmModules.fish =
+    { pkgs, ... }:
 
     {
       programs.fish = {
@@ -21,6 +23,13 @@
           em = "emacsclient -n";
           update = "sudo nixos-rebuild switch --flake /home/tarek/nixos#pc";
         };
+        functions.dce = ''
+          if test -z "$DC_CONTAINER"
+            echo "No devcontainer detected"
+            return 1
+          end
+          docker exec -it -u vscode $DC_CONTAINER bash
+        '';
       };
     };
 }
