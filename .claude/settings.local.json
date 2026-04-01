@@ -85,7 +85,15 @@
       "Bash(find /run/current-system/kernel-modules/ -name *mt76*)",
       "Bash(find /run/current-system/kernel-modules/ -name *.ko*)",
       "Bash(find /run/current-system/kernel-modules/lib/modules/6.18.20-xanmod1/ -path */net/wireless/* -name *.ko*)",
-      "Bash(modprobe mt7925e:*)"
+      "Bash(modprobe mt7925e:*)",
+      "Bash(command grep:*)",
+      "Bash(command lsusb:*)",
+      "Bash(command lspci:*)",
+      "Read(//sys/class/bluetooth/**)",
+      "Read(//sys/module/btusb/**)",
+      "Read(//sys/module/btmtk/**)",
+      "Bash(bluetoothctl list:*)",
+      "Read(//sys/devices/pci0000:00/0000:00:02.1/0000:06:00.0/0000:07:08.0/0000:09:00.0/0000:0a:04.0/0000:0c:00.0/**)"
     ]
   }
 }
