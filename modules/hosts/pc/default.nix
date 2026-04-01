@@ -71,6 +71,7 @@
             adw-gtk3
             appflowy
             bat
+            brave
             binsider
             delta
             discord
