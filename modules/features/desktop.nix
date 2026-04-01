@@ -1,6 +1,6 @@
 { ... }: {
   flake.hmModules.desktop = { pkgs, ... }:
-    let browser = "firefox.desktop";
+    let browser = "brave-browser.desktop";
     in {
 
       xdg.mimeApps = {
