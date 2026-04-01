@@ -182,6 +182,7 @@
         MOZ_ENABLE_WAYLAND = "1";
         __GL_GSYNC_ALLOWED = "1";
         XDG_SESSION_TYPE = "wayland";
+        LIBVA_DRIVER_NAME = "radeonsi";
       };
 
       # Enable OpenCL
@@ -190,6 +191,10 @@
         extraPackages = with pkgs; [
           rocmPackages.clr
           rocmPackages.clr.icd
+          libva
+          libva-utils
+          libva-vdpau-driver
+          libvdpau-va-gl
         ];
       };
 

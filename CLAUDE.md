@@ -118,6 +118,12 @@ Secure boot is enabled via [lanzaboote](https://github.com/nix-community/lanzabo
 - If boot fails after enrollment, enter BIOS and reset Secure Boot keys to factory defaults, then retry from step 1.
 - `sbctl verify` should be clean before enrolling keys — any unsigned files will cause boot failure once Secure Boot is enforced.
 
+## Package Renames
+
+When adding nixpkgs packages, be aware of these renames (using old names causes build errors):
+
+- `vaapiVdpau` → `libva-vdpau-driver`
+
 ## Build
 
 ```sh
