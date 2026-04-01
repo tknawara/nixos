@@ -80,7 +80,12 @@
       "Bash(sudo dmesg:*)",
       "Bash(find /nix/store/*firmware*/lib/firmware/mediatek -name *BT*)",
       "Bash(bluetoothctl power:*)",
-      "Bash(hciconfig hci0:*)"
+      "Bash(hciconfig hci0:*)",
+      "Bash(ip link:*)",
+      "Bash(find /run/current-system/kernel-modules/ -name *mt76*)",
+      "Bash(find /run/current-system/kernel-modules/ -name *.ko*)",
+      "Bash(find /run/current-system/kernel-modules/lib/modules/6.18.20-xanmod1/ -path */net/wireless/* -name *.ko*)",
+      "Bash(modprobe mt7925e:*)"
     ]
   }
 }

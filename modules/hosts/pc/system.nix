@@ -25,15 +25,25 @@
       # Enable bluetooth
       hardware.bluetooth.enable = true;
 
-      # MediaTek MT7921 BT firmware sometimes fails to load on boot (HCI Reset
-      # races with the WiFi side of the combo chip).  Reloading btusb after
-      # bluetooth.service starts reliably re-triggers firmware upload.
+      # MediaTek MT7927 (Filogic 380) combo chip: PCI ID 14c3:7927 is not in
+      # the mt7925e alias table on this kernel, so we bind it via a udev rule.
+      # The BT side (USB) needs the WiFi side (PCIe/mt76) to finish init first,
+      # so we reload btusb after the mt7925e driver has claimed the device.
+      services.udev.extraRules = ''
+        # Bind MediaTek MT7927 to the mt7925e driver
+        ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x14c3", ATTR{device}=="0x7927", \
+          RUN+="${pkgs.bash}/bin/bash -c 'echo 14c3 7927 > /sys/bus/pci/drivers/mt7925e/new_id || true'"
+      '';
+
       systemd.services.btusb-reload = {
-        description = "Reload btusb to work around MediaTek MT7921 BT init race";
+        description = "Reload btusb to work around MediaTek MT7927 BT init race";
         after = [ "bluetooth.service" ];
-        wantedBy = [ "bluetooth.target" ];
+        requires = [ "bluetooth.service" ];
+        wantedBy = [ "multi-user.target" ];
         serviceConfig = {
           Type = "oneshot";
+          # Give the WiFi/mt76 side time to finish firmware init before reloading BT
+          ExecStartPre = "${pkgs.coreutils}/bin/sleep 3";
           ExecStart = "${pkgs.kmod}/bin/modprobe -r btusb";
           ExecStartPost = "${pkgs.kmod}/bin/modprobe btusb";
           RemainAfterExit = true;
