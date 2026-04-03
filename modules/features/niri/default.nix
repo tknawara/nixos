@@ -68,6 +68,12 @@
 
           window-rules = [
             {
+              geometry-corner-radius = _: {
+                props = [ 12.0 12.0 12.0 12.0 ];
+              };
+              clip-to-geometry = true;
+            }
+            {
               matches = [ { app-id = "^clipse$"; } ];
               open-floating = true;
             }
