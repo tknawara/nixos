@@ -64,7 +64,7 @@
 
           home.packages = with pkgs; [
             popsicle
-            claude-code
+            # claude-code # temporarily removed — upstream npm tarball 404s (2026-04-03)
             clipse
             _1password-gui
             serpl
